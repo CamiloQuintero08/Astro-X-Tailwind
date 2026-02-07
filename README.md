@@ -1,46 +1,65 @@
-# Astro Starter Kit: Basics
+# Astro + Tailwind CSS
 
-```sh
-npm create astro@latest -- --template basics
-```
+Proyecto iniciado con un enfoque práctico para aprender y dominar Tailwind CSS, construido sobre Astro. Aunque comenzó como un entorno de práctica, el proyecto está pensado para evolucionar progresivamente hacia una página informativa real, manteniendo buenas prácticas de estructura, rendimiento y diseño moderno.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tecnologías
 
-## 🚀 Project Structure
+* Astro
+* Tailwind CSS
+* HTML
+* CSS
+* JavaScript
+* Flowbite
 
-Inside of your Astro project, you'll see the following folders and files:
+## Descripción
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Este proyecto muestra una landing page simple con un diseño oscuro, tipografía clara y una estética tecnológica. Incluye una estructura básica de navegación, una sección principal de bienvenida y estilos reutilizables con Tailwind. Está pensado para experimentar, probar componentes y buenas prácticas.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Estructura del proyecto
 
-## 🧞 Commands
+src/pages contiene las páginas principales del sitio.
+src/components contiene los componentes reutilizables como header, footer o secciones.
+src/layouts contiene los layouts base.
+src/assets contiene imágenes y recursos estáticos.
 
-All commands are run from the root of the project, from a terminal:
+## Instalación
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Clona el repositorio e instala las dependencias.
 
-## 👀 Want to learn more?
+npm install
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Desarrollo
+
+Inicia el servidor de desarrollo.
+
+npm run dev
+
+El proyecto estará disponible en [http://localhost:4321](http://localhost:4321)
+
+## Build
+
+Para generar la versión de producción.
+
+npm run build
+
+## Objetivo del proyecto
+
+Practicar y profundizar en el uso de Tailwind CSS dentro de un proyecto Astro, experimentando con layouts, estilos y componentes reutilizables. A largo plazo, el objetivo es convertir esta base en una página informativa real, escalable y bien estructurada, que pueda seguir creciendo sin perder claridad ni rendimiento.
+
+## Notas
+
+Este proyecto no está orientado a producción. Es únicamente educativo y puede evolucionar con nuevas secciones, animaciones y componentes.
+
+## Muestras del proyecto 
+
+# Inicio
+
+![alt text](image.png)
+
+# Articulos
+
+![alt text](image-1.png)
+
+# Carrusel de imagenes 
+
+![alt text](image-3.png)

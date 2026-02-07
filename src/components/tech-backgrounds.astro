@@ -1,0 +1,451 @@
+<!-- OPCIÓN 1: Fondo Oscuro Profesional con Efecto de Partículas -->
+<div class="background-option-3 hidden">
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-linear-to-br from-gray-900 via-slate-900 to-gray-950"></div>
+    <div class="absolute inset-0" 
+         style="background-image: radial-gradient(circle, rgba(100, 116, 139, 0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-blue-600/10 via-cyan-500/5 to-transparent blur-3xl"></div>
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute left-1/4 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-blue-400 to-transparent"></div>
+      <div class="absolute left-2/4 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-cyan-400 to-transparent"></div>
+      <div class="absolute left-3/4 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-indigo-400 to-transparent"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- OPCIÓN 2: Fondo Moderno con Ondas Fluidas -->
+<div class="background-option-4 hidden">
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <!-- Base -->
+    <div class="absolute inset-0 bg-slate-950"></div>
+    <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.1" />
+          <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.05" />
+        </linearGradient>
+        <linearGradient id="wave-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.1" />
+          <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.05" />
+        </linearGradient>
+      </defs>
+      
+      <path d="M0,100 Q250,50 500,100 T1000,100 T1500,100 T2000,100 L2000,0 L0,0 Z" 
+            fill="url(#wave-gradient-1)" class="animate-wave-slow">
+        <animate attributeName="d" 
+                 dur="15s" 
+                 repeatCount="indefinite"
+                 values="M0,100 Q250,50 500,100 T1000,100 T1500,100 T2000,100 L2000,0 L0,0 Z;
+                         M0,100 Q250,150 500,100 T1000,100 T1500,100 T2000,100 L2000,0 L0,0 Z;
+                         M0,100 Q250,50 500,100 T1000,100 T1500,100 T2000,100 L2000,0 L0,0 Z"/>
+      </path>
+      
+      <path d="M0,150 Q300,100 600,150 T1200,150 T1800,150 L2000,0 L0,0 Z" 
+            fill="url(#wave-gradient-2)" class="animate-wave-slower">
+        <animate attributeName="d" 
+                 dur="20s" 
+                 repeatCount="indefinite"
+                 values="M0,150 Q300,100 600,150 T1200,150 T1800,150 L2000,0 L0,0 Z;
+                         M0,150 Q300,200 600,150 T1200,150 T1800,150 L2000,0 L0,0 Z;
+                         M0,150 Q300,100 600,150 T1200,150 T1800,150 L2000,0 L0,0 Z"/>
+      </path>
+    </svg>
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-float opacity-40"></div>
+      <div class="absolute top-3/4 left-2/3 w-1 h-1 bg-cyan-400 rounded-full animate-float-slow opacity-30"></div>
+      <div class="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-indigo-400 rounded-full animate-float-slower opacity-35"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- OPCIÓN 3: Fondo Negro con Rayos y Circuitos Cyan-->
+<div class="background-option-5">
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-black"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lightning-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+          <stop offset="50%" style="stop-color:#22d3ee;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <g class="lightning-bolt" filter="url(#glow)">
+        <path d="M 150,50 L 120,180 L 160,180 L 130,350" 
+              stroke="url(#lightning-gradient)" 
+              stroke-width="3" 
+              fill="none"
+              stroke-linecap="round">
+          <animate attributeName="opacity" 
+                   values="0;1;1;0;0" 
+                   dur="3s" 
+                   repeatCount="indefinite"/>
+        </path>
+      </g>
+      <g class="lightning-bolt" filter="url(#glow)">
+        <path d="M 50%,10 L 48%,25% L 52%,25% L 50%,45%" 
+              stroke="url(#lightning-gradient)" 
+              stroke-width="2.5" 
+              fill="none"
+              stroke-linecap="round">
+          <animate attributeName="opacity" 
+                   values="0;0;1;1;0" 
+                   dur="4s" 
+                   repeatCount="indefinite"/>
+        </path>
+      </g>
+      <g class="lightning-bolt" filter="url(#glow)">
+        <path d="M 85%,80 L 82%,35% L 88%,35% L 85%,60%" 
+              stroke="url(#lightning-gradient)" 
+              stroke-width="3" 
+              fill="none"
+              stroke-linecap="round">
+          <animate attributeName="opacity" 
+                   values="0;1;0;0;0" 
+                   dur="5s" 
+                   repeatCount="indefinite"/>
+        </path>
+      </g>
+    </svg>
+    <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="circuit-board" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="50" x2="80" y2="50" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="120" y1="50" x2="200" y2="50" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="0" y1="150" x2="60" y2="150" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="140" y1="150" x2="200" y2="150" stroke="#06b6d4" stroke-width="1.5"/>
+    
+          <line x1="50" y1="0" x2="50" y2="80" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="50" y1="120" x2="50" y2="200" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="150" y1="0" x2="150" y2="60" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="150" y1="140" x2="150" y2="200" stroke="#06b6d4" stroke-width="1.5"/>
+          
+          <circle cx="50" cy="50" r="4" fill="#22d3ee"/>
+          <circle cx="150" cy="50" r="4" fill="#22d3ee"/>
+          <circle cx="50" cy="150" r="4" fill="#22d3ee"/>
+          <circle cx="150" cy="150" r="4" fill="#22d3ee"/>
+          
+          <rect x="45" y="45" width="10" height="10" fill="none" stroke="#06b6d4" stroke-width="1"/>
+          <rect x="145" y="145" width="10" height="10" fill="none" stroke="#06b6d4" stroke-width="1"/>
+          
+          <line x1="80" y1="50" x2="120" y2="50" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
+          <line x1="60" y1="150" x2="140" y2="150" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
+        </pattern>
+      </defs>
+      
+      <rect width="100%" height="100%" fill="url(#circuit-board)"/>
+    </svg>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl animate-pulse-glow animation-delay-2000"></div>
+    <div class="absolute top-1/2 right-1/4 w-64 h-64 bg-teal-400/10 rounded-full blur-3xl animate-pulse-glow animation-delay-4000"></div>
+    
+    <div class="absolute inset-0">
+      <div class="absolute top-[15%] left-[20%] w-1 h-1 bg-cyan-400 rounded-full animate-particle opacity-60"></div>
+      <div class="absolute top-[45%] left-[60%] w-1.5 h-1.5 bg-cyan-300 rounded-full animate-particle-slow opacity-70"></div>
+      <div class="absolute top-[70%] left-[35%] w-1 h-1 bg-teal-400 rounded-full animate-particle-slower opacity-50"></div>
+      <div class="absolute top-[25%] right-[25%] w-2 h-2 bg-cyan-500 rounded-full animate-particle opacity-80"></div>
+      <div class="absolute top-[60%] right-[15%] w-1 h-1 bg-cyan-400 rounded-full animate-particle-slow opacity-60"></div>
+      <div class="absolute bottom-[20%] left-[50%] w-1.5 h-1.5 bg-teal-300 rounded-full animate-particle-slower opacity-55"></div>
+    </div>
+    
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" 
+           style="background-image: 
+                  linear-gradient(to right, #06b6d4 1px, transparent 1px),
+                  linear-gradient(to bottom, #06b6d4 1px, transparent 1px);
+                  background-size: 50px 50px;">
+      </div>
+    </div>
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-cyan-500/20 via-cyan-600/5 to-transparent blur-3xl"></div>
+  </div>
+</div>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    50% { 
+      transform: scale(1.1);
+      opacity: 0.2;
+    }
+  }
+  
+  @keyframes particle {
+    0% { 
+      transform: translate(0, 0) scale(1);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    50% { 
+      transform: translate(10px, -30px) scale(1.2);
+      opacity: 1;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    100% { 
+      transform: translate(20px, -60px) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-float-slower {
+    animation: float 10s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+  
+  .animate-particle {
+    animation: particle 8s ease-in-out infinite;
+  }
+  
+  .animate-particle-slow {
+    animation: particle 10s ease-in-out infinite;
+  }
+  
+  .animate-particle-slower {
+    animation: particle 12s ease-in-out infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+
+</style>
+
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+    
+    const pulses = document.querySelectorAll('.background-option-5 .bg-cyan-500\\/10, .background-option-5 .bg-cyan-400\\/10, .background-option-5 .bg-teal-400\\/10');
+    pulses.forEach((pulse, index) => {
+      const speed = (index + 1) * 0.3;
+      pulse.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
+      pulse.style.transition = 'transform 0.3s ease-out';
+    });
+    
+    // Mover resplandor superior
+    const glow = document.querySelector('.background-option-5 .bg-gradient-to-b');
+    if (glow) {
+      glow.style.transform = `translate(calc(-50% + ${moveX * 0.5}px), ${moveY * 0.3}px)`;
+      glow.style.transition = 'transform 0.3s ease-out';
+    }
+  });
+  
+  let clickCount = 0;
+  document.addEventListener('click', (e) => {
+    const bgOption5 = document.querySelector('.background-option-5');
+    if (!bgOption5 || bgOption5.classList.contains('hidden')) return;
+    
+    clickCount++;
+    
+    const lightning = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    lightning.setAttribute('class', 'absolute pointer-events-none');
+    lightning.style.left = e.clientX + 'px';
+    lightning.style.top = e.clientY + 'px';
+    lightning.style.width = '200px';
+    lightning.style.height = '300px';
+    lightning.style.transform = 'translate(-50%, -50%)';
+    lightning.style.zIndex = '1';
+    
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+    const segments = 5;
+    let d = 'M 100,0';
+    let currentX = 100;
+    let currentY = 0;
+    
+    for (let i = 0; i < segments; i++) {
+      const nextX = currentX + (Math.random() - 0.5) * 40;
+      const nextY = currentY + 60;
+      d += ` L ${nextX},${nextY}`;
+      currentX = nextX;
+      currentY = nextY;
+    }
+    
+    path.setAttribute('d', d);
+    path.setAttribute('stroke', '#22d3ee');
+    path.setAttribute('stroke-width', '3');
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('filter', 'url(#glow)');
+    path.style.opacity = '0';
+    
+    lightning.appendChild(path);
+    bgOption5.querySelector('div').appendChild(lightning);
+    
+    setTimeout(() => {
+      path.style.transition = 'opacity 0.05s';
+      path.style.opacity = '0.8';
+    }, 10);
+    
+    setTimeout(() => {
+      path.style.transition = 'opacity 0.1s';
+      path.style.opacity = '0';
+    }, 150);
+    
+    setTimeout(() => {
+      lightning.remove();
+    }, 300);
+    
+    const ripple = document.createElement('div');
+    ripple.style.position = 'absolute';
+    ripple.style.left = e.clientX + 'px';
+    ripple.style.top = e.clientY + 'px';
+    ripple.style.width = '10px';
+    ripple.style.height = '10px';
+    ripple.style.borderRadius = '50%';
+    ripple.style.border = '2px solid #06b6d4';
+    ripple.style.transform = 'translate(-50%, -50%)';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.zIndex = '1';
+    
+    bgOption5.querySelector('div').appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.style.transition = 'all 0.6s ease-out';
+      ripple.style.width = '100px';
+      ripple.style.height = '100px';
+      ripple.style.opacity = '0';
+    }, 10);
+    
+    setTimeout(() => {
+      ripple.remove();
+    }, 650);
+  });
+  
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  setInterval(() => {
+    const particles = document.querySelectorAll('.background-option-5 .animate-particle, .background-option-5 .animate-particle-slow');
+    
+    particles.forEach((particle, index) => {
+      const rect = particle.getBoundingClientRect();
+      const particleX = rect.left + rect.width / 2;
+      const particleY = rect.top + rect.height / 2;
+      
+      const deltaX = (mouseX - particleX) * 0.02;
+      const deltaY = (mouseY - particleY) * 0.02;
+      
+      const currentTransform = particle.style.transform || '';
+      const baseTransform = currentTransform.replace(/translate\([^)]+\)/, '').trim();
+      
+      particle.style.transform = `translate(${deltaX}px, ${deltaY}px) ${baseTransform}`;
+    });
+  }, 50);
+  
+  let hoverGlow = null;
+  
+  document.addEventListener('mousemove', (e) => {
+    const bgOption5 = document.querySelector('.background-option-5');
+    if (!bgOption5 || bgOption5.classList.contains('hidden')) return;
+    
+    // Crear o actualizar brillo de mouse
+    if (!hoverGlow) {
+      hoverGlow = document.createElement('div');
+      hoverGlow.style.position = 'fixed';
+      hoverGlow.style.width = '300px';
+      hoverGlow.style.height = '300px';
+      hoverGlow.style.borderRadius = '50%';
+      hoverGlow.style.background = 'radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%)';
+      hoverGlow.style.pointerEvents = 'none';
+      hoverGlow.style.zIndex = '0';
+      hoverGlow.style.transition = 'opacity 0.3s';
+      bgOption5.querySelector('div').appendChild(hoverGlow);
+    }
+    
+    hoverGlow.style.left = (e.clientX - 150) + 'px';
+    hoverGlow.style.top = (e.clientY - 150) + 'px';
+    hoverGlow.style.opacity = '1';
+  });
+  
+  document.addEventListener('mouseleave', () => {
+    if (hoverGlow) {
+      hoverGlow.style.opacity = '0';
+    }
+  });
+  
+  document.addEventListener('mouseenter', () => {
+    if (hoverGlow) {
+      hoverGlow.style.opacity = '1';
+    }
+  });
+
+  let stormActive = false;
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'l') {
+      const bgOption5 = document.querySelector('.background-option-5');
+      if (!bgOption5 || bgOption5.classList.contains('hidden')) return;
+      
+      if (stormActive) return;
+      stormActive = true;
+  
+      let stormCount = 0;
+      const stormInterval = setInterval(() => {
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight * 0.3;
+        
+        const fakeEvent = new MouseEvent('click', {
+          clientX: x,
+          clientY: y
+        });
+        
+        document.dispatchEvent(fakeEvent);
+        
+        stormCount++;
+        if (stormCount >= 15) {
+          clearInterval(stormInterval);
+          setTimeout(() => {
+            stormActive = false;
+          }, 2000);
+        }
+      }, 150);
+    }
+  });
+  
+  console.log('Fondo interactivo activado!');
+  console.log('Haz clic para crear rayos');
+  console.log('Presiona "L" para una tormenta eléctrica');
+</script>
