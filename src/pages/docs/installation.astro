@@ -1,0 +1,318 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout>
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+    <section
+      class="text-center mb-12 p-8 bg-gradient-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+      >
+        Instalación de Astro + Tailwind CSS
+      </h1>
+      <p class="text-lg text-body/80">
+        Guía completa para configurar Astro con Tailwind CSS en tu proyecto
+      </p>
+    </section>
+    <section class="space-y-6 mb-12">
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+      >
+        <div
+          class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+        >
+          1
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-white mb-2">
+            Crear un nuevo proyecto Astro
+          </h2>
+          <p class="text-body/80 mb-4">
+            Ejecuta el siguiente comando para crear un nuevo proyecto de Astro:
+          </p>
+          <div
+            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+          >
+            <code>npm create astro@latest mi-proyecto</code>
+          </div>
+          <div
+            class="mt-4 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg"
+          >
+            <p class="text-blue-200 text-sm">
+              💡 Sigue las instrucciones interactivas para configurar tu
+              proyecto. Selecciona las opciones que mejor se adapten a tus
+              necesidades.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+      >
+        <div
+          class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+        >
+          2
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-white mb-2">
+            Acceder al directorio del proyecto
+          </h2>
+          <p class="text-body/80 mb-4">Navega a la carpeta de tu proyecto:</p>
+          <div
+            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+          >
+            <code>cd mi-proyecto</code>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+      >
+        <div
+          class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+        >
+          3
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-white mb-2">
+            Instalar Tailwind CSS
+          </h2>
+          <p class="text-body/80 mb-4">
+            Usa el comando oficial de Astro para instalar y configurar Tailwind
+            CSS automáticamente:
+          </p>
+          <div
+            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+          >
+            <code>npx astro add tailwind</code>
+          </div>
+          <div
+            class="mt-4 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg"
+          >
+            <p class="text-blue-200 text-sm mb-3">
+              💡 Este comando hace lo siguiente automáticamente:
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-body/80 text-sm">
+                <span class="text-green-400 font-bold mt-0.5">✓</span>
+                <span
+                  >Instala los paquetes necesarios: <code
+                    class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >tailwindcss</code
+                  > y <code
+                    class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >autoprefixer</code
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-2 text-body/80 text-sm">
+                <span class="text-green-400 font-bold mt-0.5">✓</span>
+                <span
+                  >Crea el archivo de configuración de Tailwind: <code
+                    class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >tailwind.config.mjs</code
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-2 text-body/80 text-sm">
+                <span class="text-green-400 font-bold mt-0.5">✓</span>
+                <span
+                  >Crea el archivo CSS global: <code
+                    class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >src/globals.css</code
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-2 text-body/80 text-sm">
+                <span class="text-green-400 font-bold mt-0.5">✓</span>
+                <span>Actualiza la configuración de Astro</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+      >
+        <div
+          class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+        >
+          4
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-white mb-2">
+            Configurar Tailwind CSS (Opcional)
+          </h2>
+          <p class="text-body/80 mb-4">
+            Edita el archivo <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >tailwind.config.mjs</code
+            > si necesitas personalizar Tailwind:
+          </p>
+          <div
+            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto"
+          >
+            <pre
+              class="text-cyan-300"><code>/** @type {import('tailwindcss').Config} */
+                <!-- export default {
+                  content: [
+                    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
+                  ],
+                  theme: {
+                    extend: {},
+                  },
+                  plugins: [],
+                }</code></pre> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group">
+        <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+          5
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-white mb-2">Verificar la instalación</h2>
+          <p class="text-body/80 mb-4">
+            Inicia el servidor de desarrollo para verificar que todo funciona correctamente:
+          </p>
+          <div class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto">
+            <code>npm run dev</code>
+          </div>
+          <div class="mt-4 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+            <p class="text-blue-200 text-sm">
+              💡 Tu proyecto debería estar ejecutándose en <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">http://localhost:4321</code>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group">
+        <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+          6
+        </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold text-white mb-2">Comenzar a usar Tailwind</h2>
+          <p class="text-body/80 mb-4">
+            Ahora puedes usar las clases de Tailwind CSS en tus componentes Astro:
+          </p>
+          <div class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto">
+            <pre class="text-cyan-300"><code>&lt;div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600"&gt;
+  &lt;h1 class="text-4xl font-bold text-white"&gt;¡Hola Astro + Tailwind!&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </code>
+    <section class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+        <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Verificación de la instalación
+      </h2>
+      <div class="space-y-3">
+        <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group">
+          <input type="checkbox" class="w-5 h-5 accent-cyan-500 cursor-pointer" />
+          <span class="text-body/90 group-hover:text-white transition-colors">Astro instalado correctamente</span>
+        </label>
+        <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group">
+          <input type="checkbox" class="w-5 h-5 accent-cyan-500 cursor-pointer" />
+          <span class="text-body/90 group-hover:text-white transition-colors">Tailwind CSS integrado en el proyecto</span>
+        </label>
+        <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group">
+          <input type="checkbox" class="w-5 h-5 accent-cyan-500 cursor-pointer" />
+          <span class="text-body/90 group-hover:text-white transition-colors">Archivo <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">tailwind.config.mjs</code> presente</span>
+        </label>
+        <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group">
+          <input type="checkbox" class="w-5 h-5 accent-cyan-500 cursor-pointer" />
+          <span class="text-body/90 group-hover:text-white transition-colors">Servidor de desarrollo ejecutándose</span>
+        </label>
+        <label class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group">
+          <input type="checkbox" class="w-5 h-5 accent-cyan-500 cursor-pointer" />
+          <span class="text-body/90 group-hover:text-white transition-colors">Clases de Tailwind funcionando correctamente</span>
+        </label>
+      </div>
+    </section>
+    <section class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Comandos útiles</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-linear-to-br from-cyan-500 to-blue-500 p-5 rounded-lg hover:-translate-y-1 transition-transform duration-200">
+          <h3 class="text-white font-semibold mb-3 text-sm">Iniciar servidor de desarrollo</h3>
+          <code class="block bg-black/30 text-white px-3 py-2 rounded font-mono text-sm">npm run dev</code>
+        </div>
+        <div class="bg-linear-to-br from-cyan-500 to-blue-500 p-5 rounded-lg hover:-translate-y-1 transition-transform duration-200">
+          <h3 class="text-white font-semibold mb-3 text-sm">Construir para producción</h3>
+          <code class="block bg-black/30 text-white px-3 py-2 rounded font-mono text-sm">npm run build</code>
+        </div>
+        <div class="bg-linear-to-br from-cyan-500 to-blue-500 p-5 rounded-lg hover:-translate-y-1 transition-transform duration-200">
+          <h3 class="text-white font-semibold mb-3 text-sm">Vista previa de producción</h3>
+          <code class="block bg-black/30 text-white px-3 py-2 rounded font-mono text-sm">npm run preview</code>
+        </div>
+        <div class="bg-linear-to-br from-cyan-500 to-blue-500 p-5 rounded-lg hover:-translate-y-1 transition-transform duration-200">
+          <h3 class="text-white font-semibold mb-3 text-sm">Verificar el proyecto</h3>
+          <code class="block bg-black/30 text-white px-3 py-2 rounded font-mono text-sm">npx astro check</code>
+        </div>
+      </div>
+    </section>
+    <section class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8">
+      <h2 class="text-3xl font-bold text-white mb-6">Recursos útiles</h2>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="text-2xl">🔗</span>
+          <a href="https://docs.astro.build" target="_blank" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">
+            Documentación oficial de Astro
+          </a>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-2xl">🔗</span>
+          <a href="https://tailwindcss.com/docs" target="_blank" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">
+            Documentación oficial de Tailwind CSS
+          </a>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-2xl">🔗</span>
+          <a href="https://docs.astro.build/es/guides/integrations-guide/tailwind/" target="_blank" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">
+            Integración de Tailwind en Astro
+          </a>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-2xl">🔗</span>
+          <a href="https://tailwindcss.com/blog/tailwindcss-v4" target="_blank" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">
+            Novedades de Tailwind CSS v4
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default">
+      <h2 class="text-3xl font-bold text-white mb-6">Solución de problemas</h2>
+      <div class="space-y-6">
+        <div class="pb-6 border-b border-default">
+          <h3 class="text-xl font-semibold text-white mb-2">❓ Los estilos de Tailwind no se aplican</h3>
+          <p class="text-body/80 leading-relaxed">
+            Verifica que la configuración <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">content</code> en <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">tailwind.config.mjs</code> incluya las rutas correctas de tus archivos Astro (.astro).
+          </p>
+        </div>
+        <div class="pb-6 border-b border-default">
+          <h3 class="text-xl font-semibold text-white mb-2">❓ Error durante la instalación</h3>
+          <p class="text-body/80 leading-relaxed">
+            Intenta eliminar la carpeta <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">node_modules</code> y el archivo <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">package-lock.json</code>, luego ejecuta <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">npm install</code> nuevamente.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-2">❓ Las clases de Tailwind se marcan en rojo en el editor</h3>
+          <p class="text-body/80 leading-relaxed">
+            Instala la extensión oficial de Tailwind CSS para VS Code para obtener autocompletado e intellisense.
+          </p>
+        </div>
+      </div>
+    </section>
+  </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocsLayout>

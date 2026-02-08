@@ -63,3 +63,17 @@ Este proyecto no está orientado a producción. Es únicamente educativo y puede
 # Carrusel de imagenes 
 
 ![alt text](image-3.png)
+
+## Docs
+
+# Inicio 
+
+![alt text](image-4.png)
+
+# Installation 
+
+![alt text](image-5.png)
+
+## Importante 
+Este proyecto esta realizado con un fin informativo y practico, se recomienda ingresar a 
+los sitios oficiales de Tailwind y Astro y revisar su respectiva documentacion en caso de cualquier duda.
