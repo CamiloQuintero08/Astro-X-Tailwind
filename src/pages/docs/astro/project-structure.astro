@@ -1,0 +1,773 @@
+---
+import DocsLayout from "../../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout>
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+    <section
+      class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
+    >
+      <div class="flex justify-center items-center gap-3 mb-4">
+        <svg
+          class="w-10 h-10 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M16 3v4M8 3v4"></path>
+        </svg>
+        <h1
+          class="text-center text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text"
+        >
+          Project Structure
+        </h1>
+      </div>
+
+      <p class="text-body/90 text-lg leading-relaxed">
+        A clear and practical layout for Astro projects. Learn how to organize
+        your files for scalability, maintainability, and ease of navigation.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+          ></path>
+        </svg>
+        Overview
+      </h2>
+      <p class="text-body/80 text-base mb-6 leading-relaxed">
+        Organize files by purpose: content, presentation, reusable components,
+        and public assets. This approach keeps projects scalable and easy to
+        navigate.
+      </p>
+
+      <div
+        class="bg-white/10 p-6 rounded-lg border border-cyan-500/30 overflow-auto"
+      >
+        <pre
+          class="text-sm text-cyan-300 font-mono"><code>/
+├── 📄 astro.config.mjs           # Astro configuration
+├── 📄 package.json               # Project metadata & dependencies
+├── 📄 tailwind.config.mjs        # Tailwind CSS configuration
+├── 📄 tsconfig.json              # TypeScript settings (optional)
+├── 📄 .gitignore                 # Git ignore rules
+├── 📄 README.md                  # Project documentation
+│
+├── 📁 public/                    # Static assets (served as-is)
+│   ├── favicon.svg
+│   ├── robots.txt
+│   ├── images/
+│   │   └── logo.png
+│   └── fonts/
+│       └── custom-font.woff2
+│
+└── 📁 src/
+    ├── 📁 pages/                 # Routes & content pages
+    │   ├── index.astro           # Homepage (/)
+    │   ├── about.astro           # About page (/about)
+    │   ├── blog/
+    │   │   ├── index.astro       # Blog index (/blog)
+    │   │   └── [slug].astro      # Dynamic blog posts
+    │   └── docs/
+    │       ├── index.astro       # Docs home (/docs)
+    │       └── installation.astro
+    │
+    ├── 📁 layouts/               # Layout components
+    │   ├── Layout.astro          # Base layout
+    │   ├── DocsLayout.astro      # Documentation layout
+    │   └── BlogLayout.astro      # Blog post layout
+    │
+    ├── 📁 components/            # Reusable UI components
+    │   ├── Header.astro
+    │   ├── Footer.astro
+    │   ├── SideBar.astro
+    │   ├── Button.astro
+    │   └── Card.astro
+    │
+    ├── 📁 assets/                # Images, SVGs, illustrations
+    │   ├── images/
+    │   │   └── hero-bg.jpg
+    │   └── icons/
+    │       └── AstroIcon.astro
+    │
+    ├── 📁 styles/                # Global CSS
+    │   └── global.css            # Tailwind directives & globals
+    │
+    ├── 📁 content/               # Content collections (optional)
+    │   ├── config.ts             # Collection schema
+    │   ├── blog/
+    │   │   ├── post-1.md
+    │   │   └── post-2.md
+    │   └── docs/
+    │       └── guide.mdx
+    │
+    ├── 📁 utils/                 # Utility functions
+    │   ├── formatDate.ts
+    │   └── slugify.ts
+    │
+    └── 📁 data/                  # Static data files
+        └── navigation.json       # Site navigation data</code></pre>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9.5l-7-3.5-7 3.5V7"></path>
+        </svg>
+        Core Directories
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3
+            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+          >
+            <span class="text-2xl">📁</span>
+            src/pages/
+          </h3>
+          <p class="text-body/80 mb-4">
+            The heart of your Astro site. Every <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">.astro</code
+            >, <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >.md</code
+            >, or <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >.mdx</code
+            > file here becomes a route.
+          </p>
+          <ul class="space-y-2 text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >index.astro</code
+                > → Homepage <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">/</code
+                ></span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >about.astro</code
+                > → <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >/about</code
+                ></span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >blog/[slug].astro</code
+                > → Dynamic routes like <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >/blog/my-post</code
+                ></span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >api/data.json.ts</code
+                > → API endpoints</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3
+            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+          >
+            <span class="text-2xl">📁</span>
+            src/layouts/
+          </h3>
+          <p class="text-body/80 mb-4">
+            Wrapper components that define the structure of your pages. Layouts
+            typically include common elements like headers, footers, and
+            metadata.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">Example: Layout.astro</p>
+            <pre
+              class="text-xs text-cyan-200"><code>&lt;!-- Layout.astro --&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;{Astro.props.title}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;Header /&gt;
+    &lt;main&gt;
+      &lt;slot /&gt; &lt;!-- Page content goes here --&gt;
+    &lt;/main&gt;
+    &lt;Footer /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3
+            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+          >
+            <span class="text-2xl">📁</span>
+            src/components/
+          </h3>
+          <p class="text-body/80 mb-4">
+            Reusable UI building blocks. Keep components small, focused, and
+            composable.
+          </p>
+          <ul class="space-y-2 text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><strong class="text-white">Astro components</strong> (.astro) - Server-rendered
+                by default</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><strong class="text-white">Framework components</strong> (.jsx, .vue,
+                .svelte) - For interactive islands</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span
+                ><strong class="text-white">Organize by feature</strong> - Group related
+                components in subdirectories</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3
+            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+          >
+            <span class="text-2xl">📁</span>
+            public/
+          </h3>
+          <p class="text-body/80 mb-4">
+            Static files served directly without processing. Perfect for assets
+            that don't need optimization.
+          </p>
+          <ul class="space-y-2 text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span>Favicons, robots.txt, sitemap.xml</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span>Large media files (videos, downloadable PDFs)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 font-bold mt-0.5">✓</span>
+              <span>Web fonts (if not using CDN)</span>
+            </li>
+          </ul>
+          <div
+            class="mt-4 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg"
+          >
+            <p class="text-blue-200 text-sm">
+              💡 <strong>Tip:</strong> Files in <code
+                class="bg-black/30 px-2 py-0.5 rounded">public/</code
+              > are served at the root. So <code
+                class="bg-black/30 px-2 py-0.5 rounded">public/favicon.ico</code
+              > becomes <code class="bg-black/30 px-2 py-0.5 rounded"
+                >/favicon.ico</code
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3
+            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+          >
+            <span class="text-2xl">📁</span>
+            src/content/ <span
+              class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded"
+              >Optional</span
+            >
+          </h3>
+          <p class="text-body/80 mb-4">
+            Content Collections for type-safe Markdown/MDX content. Great for
+            blogs, documentation, and portfolios.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">Example: config.ts</p>
+            <!-- <pre class="text-xs text-cyan-200"><code>import { defineCollection, z } from 'astro:content';
+
+const blog = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    author: z.string(),
+  }),
+});
+
+export const collections = { blog };</code></pre> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+          ></path>
+        </svg>
+        Naming Conventions
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+      >
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3
+              class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+            >
+              <span class="text-green-400">✓</span>
+              Recommended
+            </h3>
+            <ul class="space-y-2 text-sm text-body/80">
+              <li class="flex items-start gap-2">
+                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >kebab-case</code
+                >
+                <span
+                  >for files: <code
+                    class="bg-black/30 px-1 py-0.5 rounded text-xs"
+                    >my-component.astro</code
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >PascalCase</code
+                >
+                <span
+                  >for components: <code
+                    class="bg-black/30 px-1 py-0.5 rounded text-xs"
+                    >Button.astro</code
+                  ></span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >lowercase</code
+                >
+                <span
+                  >for pages: <code
+                    class="bg-black/30 px-1 py-0.5 rounded text-xs"
+                    >about.astro</code
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+            >
+              <span class="text-red-400">✗</span>
+              Avoid
+            </h3>
+            <ul class="space-y-2 text-sm text-body/80">
+              <li class="flex items-start gap-2">
+                <code class="bg-black/30 px-2 py-0.5 rounded text-red-300"
+                  >snake_case</code
+                >
+                <span>for files (inconsistent)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <code class="bg-black/30 px-2 py-0.5 rounded text-red-300"
+                  >UPPERCASE</code
+                >
+                <span>for regular files</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <code class="bg-black/30 px-2 py-0.5 rounded text-red-300"
+                  >spaces</code
+                >
+                <span>in filenames</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Best Practices
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          class="bg-linear-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20"
+        >
+          <h3
+            class="text-lg font-semibold text-green-400 mb-4 flex items-center gap-2"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            DO
+          </h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span
+                >Group related pages in folders (e.g., <code
+                  class="bg-black/30 px-1 rounded text-xs">docs/</code
+                >, <code class="bg-black/30 px-1 rounded text-xs">blog/</code
+                >)</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span>Keep components focused on a single responsibility</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span>Use TypeScript for better type safety</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span
+                >Extract shared utilities to <code
+                  class="bg-black/30 px-1 rounded text-xs">src/utils/</code
+                ></span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400 mt-1">✓</span>
+              <span>Document complex components with comments</span>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-linear-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20"
+        >
+          <h3
+            class="text-lg font-semibold text-red-400 mb-4 flex items-center gap-2"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+            DON'T
+          </h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-1">✗</span>
+              <span
+                >Put processed assets in <code
+                  class="bg-black/30 px-1 rounded text-xs">public/</code
+                > (use <code class="bg-black/30 px-1 rounded text-xs"
+                  >src/assets/</code
+                > instead)</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-1">✗</span>
+              <span
+                >Create deeply nested folder structures (max 3-4 levels)</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-1">✗</span>
+              <span>Mix business logic with presentation components</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-1">✗</span>
+              <span>Hardcode values that should be configuration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-1">✗</span>
+              <span
+                >Import components using relative paths like <code
+                  class="bg-black/30 px-1 rounded text-xs">../../../</code
+                ></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Advanced Tips
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-lg font-semibold text-white mb-3">
+            Use Path Aliases
+          </h3>
+          <p class="text-body/80 mb-4">
+            Configure path aliases in <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >tsconfig.json</code
+            > to avoid long relative imports:
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <!-- <pre class="text-xs text-cyan-200"><code>{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@utils/*": ["src/utils/*"]
+    }
+  }
+}</code></pre> -->
+          </div>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">Usage:</p>
+            <pre
+              class="text-xs text-cyan-200"><code>// Instead of:
+import Button from '../../../components/Button.astro';
+
+// Use:
+import Button from '@components/Button.astro';</code></pre>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-lg font-semibold text-white mb-3">
+            Environment Variables
+          </h3>
+          <p class="text-body/80 mb-4">
+            Store configuration in <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">.env</code
+            > files:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-black/30 p-4 rounded-lg">
+              <p class="text-cyan-300 text-sm mb-2">.env</p>
+              <pre
+                class="text-xs text-cyan-200"><code>PUBLIC_API_URL=https://api.example.com
+SECRET_API_KEY=abc123</code></pre>
+            </div>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <p class="text-cyan-300 text-sm mb-2">Usage in .astro</p>
+              <pre
+                class="text-xs text-cyan-200"><code>const apiUrl = import.meta.env.PUBLIC_API_URL;
+// Only accessible server-side:
+const apiKey = import.meta.env.SECRET_API_KEY;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        Real-World Example
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30"
+      >
+        <p class="text-body/80 mb-4">
+          Here's how a documentation site might be structured:
+        </p>
+        <div class="bg-white/10 p-4 rounded-lg overflow-auto">
+          <pre
+            class="text-sm text-cyan-300 font-mono"><code>my-docs-site/
+├── src/
+│   ├── pages/
+│   │   ├── index.astro                # Homepage
+│   │   ├── docs/
+│   │   │   ├── index.astro            # Docs home
+│   │   │   ├── installation.astro
+│   │   │   ├── astro/
+│   │   │   │   ├── project-structure.astro
+│   │   │   │   └── components.astro
+│   │   │   └── tailwind/
+│   │   │       └── configuration.astro
+│   │   └── api/
+│   │       └── search.json.ts         # Search API endpoint
+│   │
+│   ├── layouts/
+│   │   ├── Layout.astro               # Base layout
+│   │   └── DocsLayout.astro           # Docs with sidebar
+│   │
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   ├── SideBar.astro
+│   │   └── docs/
+│   │       ├── CodeBlock.astro
+│   │       └── TableOfContents.astro
+│   │
+│   ├── styles/
+│   │   └── global.css
+│   │
+│   └── utils/
+│       ├── formatDate.ts
+│       └── generateToc.ts
+│
+└── public/
+    ├── favicon.svg
+    └── images/
+        └── og-image.png</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="p-6 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30"
+    >
+      <div class="flex items-start gap-4">
+        <svg
+          class="w-8 h-8 text-cyan-400 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">
+            Ready to start building?
+          </h3>
+          <p class="text-body/80 mb-4">
+            Use this structure as a foundation and adapt it to your project's
+            needs. Remember: organization is about making your code easy to find
+            and maintain.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/docs/installation"
+              class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"
+            >
+              Get Started
+            </a>
+            <a
+              href="/docs/astro/components"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default"
+            >
+              Learn Components
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocsLayout>
