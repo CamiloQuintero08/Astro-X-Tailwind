@@ -94,8 +94,8 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             Edit the <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">tailwind.config.mjs</code> file if you need to customize Tailwind:
           </p>
           <div class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto">
-            <!-- <pre class="text-cyan-300"><code>/** @type {import('tailwindcss').Config} */ -->
-<!-- export default {
+            <pre class="text-cyan-300"><code>{`/** @type {import('tailwindcss').Config} */ 
+ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
@@ -105,12 +105,11 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     },
   },
   plugins: [],
-}</code></pre> -->
+            }`}</code></pre>
           </div>
         </div>
       </div>
 
-      <!-- Step 5 -->
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group">
         <div class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
           5
@@ -131,7 +130,6 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
         </div>
       </div>
 
-      <!-- Step 6 -->
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group">
         <div class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
           6
@@ -181,7 +179,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <!-- Commands Section -->
+    
     <section class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8">
       <h2 class="text-3xl font-bold text-white mb-6">Useful Commands</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

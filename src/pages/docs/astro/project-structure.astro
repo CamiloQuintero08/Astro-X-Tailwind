@@ -335,7 +335,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           </p>
           <div class="bg-black/30 p-4 rounded-lg">
             <p class="text-cyan-300 text-sm mb-2">Example: config.ts</p>
-            <!-- <pre class="text-xs text-cyan-200"><code>import { defineCollection, z } from 'astro:content';
+            <pre class="text-xs text-cyan-200"><code>{`import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
   schema: z.object({
@@ -345,7 +345,7 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };</code></pre> -->
+export const collections = { blog };`}</code></pre>
           </div>
         </div>
       </div>
@@ -607,7 +607,7 @@ export const collections = { blog };</code></pre> -->
             > to avoid long relative imports:
           </p>
           <div class="bg-black/30 p-4 rounded-lg mb-3">
-            <!-- <pre class="text-xs text-cyan-200"><code>{
+            <pre class="text-xs text-cyan-200"><code>{`{
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -615,8 +615,8 @@ export const collections = { blog };</code></pre> -->
       "@layouts/*": ["src/layouts/*"],
       "@utils/*": ["src/utils/*"]
     }
-  }
-}</code></pre> -->
+  } 
+}`}</code></pre>
           </div>
           <div class="bg-black/30 p-4 rounded-lg">
             <p class="text-cyan-300 text-sm mb-2">Usage:</p>

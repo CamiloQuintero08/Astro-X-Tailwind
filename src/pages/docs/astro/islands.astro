@@ -1,9 +1,665 @@
 ---
 import DocsLayout from "../../../layouts/DocsLayout.astro";
-
-
 ---
 
 <DocsLayout>
-    <h1>Contenido aun no disponible</h1>
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+    <!-- Hero Section -->
+    <section class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+        </svg>
+        <h1 class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text">
+          Astro Islands
+        </h1>
+      </div>
+
+      <p class="text-body/90 text-lg leading-relaxed mb-4">
+        Astro Islands (also known as Component Islands) is a revolutionary architecture pattern that allows you to build fast, interactive websites by hydrating only the components that need JavaScript.
+      </p>
+
+      <div class="bg-linear-to-r from-cyan-950/40 to-blue-950/40 border-l-4 border-cyan-400 p-4 rounded-lg">
+        <p class="text-cyan-200 text-sm">
+          🏝️ <strong>Core Concept:</strong> By default, Astro renders everything to HTML at build time with zero JavaScript. Islands let you selectively add interactivity only where needed, resulting in dramatically faster page loads.
+        </p>
+      </div>
+    </section>
+
+    <!-- What are Islands -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        What are Astro Islands?
+      </h2>
+
+      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default mb-6">
+        <p class="text-body/80 mb-4 leading-relaxed">
+          Think of your page as an ocean of static HTML. Islands are the interactive components that "float" on top:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-linear-to-br from-gray-950/50 to-slate-950/50 p-6 rounded-lg border border-gray-500/20">
+            <h3 class="text-lg font-semibold text-gray-400 mb-3">🌊 The Ocean (Static)</h3>
+            <ul class="space-y-2 text-sm text-body/80">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400">→</span>
+                <span>Header, footer, navigation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400">→</span>
+                <span>Blog posts, articles</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400">→</span>
+                <span>Images, text content</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400">→</span>
+                <span><strong>Zero JavaScript shipped</strong></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-linear-to-br from-cyan-950/50 to-blue-950/50 p-6 rounded-lg border border-cyan-500/20">
+            <h3 class="text-lg font-semibold text-cyan-400 mb-3">🏝️ The Islands (Interactive)</h3>
+            <ul class="space-y-2 text-sm text-body/80">
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400">→</span>
+                <span>Image carousels</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400">→</span>
+                <span>Search bars with autocomplete</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400">→</span>
+                <span>Shopping carts, forms</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400">→</span>
+                <span><strong>Only these load JavaScript</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+          <p class="text-blue-200 text-sm">
+            💡 <strong>Key Benefit:</strong> A page with 10 components might only ship JavaScript for the 2 that actually need it. The other 8 are pure HTML/CSS.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        How It Works
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-lg rounded-full flex items-center justify-center">
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-2">Server Renders Everything</h3>
+              <p class="text-body/80">
+                Astro renders all components to HTML on the server at build time. This includes both Astro components and framework components (React, Vue, etc.).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-lg rounded-full flex items-center justify-center">
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-2">Strips JavaScript by Default</h3>
+              <p class="text-body/80">
+                By default, Astro removes all JavaScript from framework components. They become static HTML.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-10 h-10 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-lg rounded-full flex items-center justify-center">
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-2">You Choose What Hydrates</h3>
+              <p class="text-body/80 mb-4">
+                Use client directives to tell Astro which components need JavaScript and when to load it.
+              </p>
+              <div class="bg-black/30 p-4 rounded-lg">
+                <pre class="text-sm text-cyan-200"><code>{`---
+import Counter from '../components/Counter.jsx';
+import Carousel from '../components/Carousel.vue';
+---
+
+<!-- Static: No JavaScript -->
+<Counter />
+
+<!-- Island: Loads JavaScript immediately -->
+<Counter client:load />
+
+<!-- Island: Loads JavaScript when visible -->
+<Carousel client:visible />`}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Directives -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        Client Directives
+      </h2>
+
+      <p class="text-body/80 mb-6">
+        Client directives tell Astro <strong class="text-white">when</strong> to hydrate a component. Choose based on priority and user experience:
+      </p>
+
+      <div class="space-y-4">
+        <!-- client:load -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-bold text-cyan-400">client:load</h3>
+            <span class="px-3 py-1 bg-red-500/20 text-red-300 text-xs rounded-full border border-red-500/30">High Priority</span>
+          </div>
+          <p class="text-body/80 mb-3">
+            Hydrates immediately on page load. Use for critical interactive components.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <pre class="text-sm text-cyan-200"><code>{`<ShoppingCart client:load />`}</code></pre>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <span class="text-yellow-400">⚠️</span>
+            <span class="text-body/70">Use sparingly - blocks page load</span>
+          </div>
+        </div>
+
+        <!-- client:idle -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-bold text-cyan-400">client:idle</h3>
+            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded-full border border-yellow-500/30">Medium Priority</span>
+          </div>
+          <p class="text-body/80 mb-3">
+            Hydrates when browser is idle (uses <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">requestIdleCallback</code>). Best for most interactive components.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <pre class="text-sm text-cyan-200"><code>{`<SearchBar client:idle />
+<Modal client:idle />`}</code></pre>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <span class="text-green-400">✓</span>
+            <span class="text-body/70">Recommended default for interactive components</span>
+          </div>
+        </div>
+
+        <!-- client:visible -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-bold text-cyan-400">client:visible</h3>
+            <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full border border-green-500/30">Low Priority</span>
+          </div>
+          <p class="text-body/80 mb-3">
+            Hydrates when component enters viewport (uses <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">IntersectionObserver</code>). Perfect for below-the-fold content.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <pre class="text-sm text-cyan-200"><code>{`<ImageCarousel client:visible />
+<Comments client:visible />
+<Footer client:visible />`}</code></pre>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <span class="text-green-400">✓</span>
+            <span class="text-body/70">Great for components below the fold</span>
+          </div>
+        </div>
+
+        <!-- client:media -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-bold text-cyan-400">client:media</h3>
+            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30">Conditional</span>
+          </div>
+          <p class="text-body/80 mb-3">
+            Hydrates when media query matches. Useful for responsive components.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <pre class="text-sm text-cyan-200"><code>{`<!-- Only hydrate on mobile -->
+<MobileMenu client:media="(max-width: 768px)" />
+
+<!-- Only hydrate on desktop -->
+<DesktopSidebar client:media="(min-width: 1024px)" />`}</code></pre>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <span class="text-green-400">✓</span>
+            <span class="text-body/70">Perfect for mobile/desktop specific components</span>
+          </div>
+        </div>
+
+        <!-- client:only -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="text-xl font-bold text-cyan-400">client:only</h3>
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">Client-Only</span>
+          </div>
+          <p class="text-body/80 mb-3">
+            Skips server rendering entirely. Only renders on the client. Specify the framework.
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <pre class="text-sm text-cyan-200"><code>{`<!-- Components that can't render on server -->
+<WebGLCanvas client:only="react" />
+<BrowserAPI client:only="vue" />`}</code></pre>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <span class="text-yellow-400">⚠️</span>
+            <span class="text-body/70">Use only when server rendering is impossible</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Framework Support -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+        </svg>
+        Framework Support
+      </h2>
+
+      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default mb-6">
+        <p class="text-body/80 mb-6">
+          Astro Islands work with all major UI frameworks. You can even mix frameworks on the same page!
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="p-4 bg-black/30 rounded-lg border border-cyan-500/20">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <span class="text-cyan-400">⚛️</span>
+              React
+            </h4>
+            <code class="text-xs text-cyan-300">@astrojs/react</code>
+          </div>
+
+          <div class="p-4 bg-black/30 rounded-lg border border-green-500/20">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <span class="text-green-400">💚</span>
+              Vue
+            </h4>
+            <code class="text-xs text-green-300">@astrojs/vue</code>
+          </div>
+
+          <div class="p-4 bg-black/30 rounded-lg border border-orange-500/20">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <span class="text-orange-400">🔶</span>
+              Svelte
+            </h4>
+            <code class="text-xs text-orange-300">@astrojs/svelte</code>
+          </div>
+
+          <div class="p-4 bg-black/30 rounded-lg border border-blue-500/20">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <span class="text-blue-400">⚡</span>
+              Preact
+            </h4>
+            <code class="text-xs text-blue-300">@astrojs/preact</code>
+          </div>
+
+          <div class="p-4 bg-black/30 rounded-lg border border-red-500/20">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <span class="text-red-400">🅰️</span>
+              Solid
+            </h4>
+            <code class="text-xs text-red-300">@astrojs/solid-js</code>
+          </div>
+
+          <div class="p-4 bg-black/30 rounded-lg border border-purple-500/20">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+              <span class="text-purple-400">🎨</span>
+              Lit
+            </h4>
+            <code class="text-xs text-purple-300">@astrojs/lit</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Installation Example -->
+      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30">
+        <h3 class="text-xl font-bold text-white mb-4">Adding a Framework</h3>
+        <div class="bg-black/30 p-4 rounded-lg">
+          <pre class="text-sm text-cyan-200"><code>{`# Install React integration
+npx astro add react
+
+# Or manually
+npm install @astrojs/react`}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practical Examples -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+        </svg>
+        Practical Examples
+      </h2>
+
+      <div class="space-y-6">
+        <!-- E-commerce Page -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
+          <h3 class="text-xl font-bold text-white mb-3">E-commerce Product Page</h3>
+          <p class="text-body/80 mb-4">
+            Smart loading strategy for optimal performance:
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre class="text-sm text-cyan-200"><code>{`---
+import Header from '../components/Header.astro';
+import ProductImages from '../components/ProductImages.jsx';
+import AddToCart from '../components/AddToCart.jsx';
+import Reviews from '../components/Reviews.jsx';
+import Footer from '../components/Footer.astro';
+---
+
+<!-- Static HTML - no JS -->
+<Header />
+
+<!-- Load immediately - critical functionality -->
+<ProductImages client:load />
+<AddToCart client:load />
+
+<!-- Load when visible - below fold -->
+<Reviews client:visible />
+
+<!-- Static HTML - no JS -->
+<Footer />`}</code></pre>
+          </div>
+        </div>
+
+        <!-- Blog with Comments -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
+          <h3 class="text-xl font-bold text-white mb-3">Blog Post with Interactive Elements</h3>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre class="text-sm text-cyan-200"><code>{`---
+import BlogHeader from '../components/BlogHeader.astro';
+import ShareButtons from '../components/ShareButtons.jsx';
+import TableOfContents from '../components/TableOfContents.jsx';
+import Comments from '../components/Comments.jsx';
+import NewsletterSignup from '../components/NewsletterSignup.jsx';
+---
+
+<!-- Static - just HTML -->
+<BlogHeader title={frontmatter.title} author={frontmatter.author} />
+
+<!-- Hydrate when idle - low priority -->
+<ShareButtons client:idle title={frontmatter.title} />
+<TableOfContents client:idle headings={headings} />
+
+<!-- Static content -->
+<article>
+  <slot />
+</article>
+
+<!-- Hydrate when visible - at bottom of page -->
+<Comments client:visible postId={frontmatter.id} />
+<NewsletterSignup client:visible />`}</code></pre>
+          </div>
+        </div>
+
+        <!-- Responsive Navigation -->
+        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
+          <h3 class="text-xl font-bold text-white mb-3">Responsive Navigation</h3>
+          <p class="text-body/80 mb-4">
+            Different components for different screen sizes:
+          </p>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre class="text-sm text-cyan-200"><code>{`---
+import DesktopNav from '../components/DesktopNav.astro';
+import MobileMenu from '../components/MobileMenu.jsx';
+---
+
+<!-- Static on desktop -->
+<DesktopNav />
+
+<!-- Only hydrate on mobile devices -->
+<MobileMenu client:media="(max-width: 768px)" />`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Comparison -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        Performance Impact
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Traditional SPA -->
+        <div class="bg-red-950/20 border border-red-500/30 p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-red-400 mb-4 flex items-center gap-2">
+            <span>📦</span>
+            Traditional SPA (React/Vue)
+          </h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">→</span>
+              <span>Ships <strong class="text-white">entire framework</strong> (~50-100KB)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">→</span>
+              <span>Hydrates <strong class="text-white">all components</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">→</span>
+              <span>JavaScript runs <strong class="text-white">before anything interactive</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">→</span>
+              <span>Slower Time to Interactive (TTI)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Astro Islands -->
+        <div class="bg-green-950/20 border border-green-500/30 p-6 rounded-lg">
+          <h3 class="text-lg font-semibold text-green-400 mb-4 flex items-center gap-2">
+            <span>🏝️</span>
+            Astro Islands
+          </h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">→</span>
+              <span>Ships <strong class="text-white">only what you use</strong> (~5-20KB)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">→</span>
+              <span>Hydrates <strong class="text-white">only interactive components</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">→</span>
+              <span>Page is <strong class="text-white">immediately interactive</strong> (static parts)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">→</span>
+              <span>Faster TTI and better Core Web Vitals</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 p-6 bg-gradient-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30">
+        <p class="text-cyan-200 text-sm">
+          📊 <strong>Real-world impact:</strong> Astro sites typically ship <strong>90% less JavaScript</strong> compared to traditional SPAs, resulting in 2-3x faster page loads and better SEO.
+        </p>
+      </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Best Practices
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20">
+          <h3 class="text-lg font-semibold text-green-400 mb-4">✓ DO</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use <code class="bg-black/30 px-1 rounded text-xs">client:idle</code> as your default</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use <code class="bg-black/30 px-1 rounded text-xs">client:visible</code> for below-the-fold content</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Keep islands small and focused</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use Astro components for static content</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Test with slow 3G to verify performance</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20">
+          <h3 class="text-lg font-semibold text-red-400 mb-4">✗ DON'T</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use <code class="bg-black/30 px-1 rounded text-xs">client:load</code> for everything</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Create giant "mega-components" as islands</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Hydrate components that don't need JS</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Forget to test actual bundle sizes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use framework components for everything</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Tree -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+        When to Use Islands?
+      </h2>
+
+      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30">
+        <div class="space-y-6">
+          <div class="flex items-start gap-4 p-4 bg-black/20 rounded-lg">
+            <div class="text-2xl">❓</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-2">Does it need user interaction?</h3>
+              <p class="text-sm text-body/80 mb-2">Examples: buttons that open modals, forms with validation, carousels</p>
+              <p class="text-green-400 text-sm">→ Use an Island with <code class="bg-black/30 px-2 py-0.5 rounded">client:*</code></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-black/20 rounded-lg">
+            <div class="text-2xl">❓</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-2">Is it purely presentational?</h3>
+              <p class="text-sm text-body/80 mb-2">Examples: headers, footers, blog content, images, static text</p>
+              <p class="text-cyan-400 text-sm">→ Use an Astro component (no directive needed)</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-black/20 rounded-lg">
+            <div class="text-2xl">❓</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-2">Does it need to run code on the client?</h3>
+              <p class="text-sm text-body/80 mb-2">Examples: analytics, theme toggles, local storage access</p>
+              <p class="text-green-400 text-sm">→ Use an Island or &lt;script&gt; tag</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-black/20 rounded-lg">
+            <div class="text-2xl">❓</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-2">Can it wait to load?</h3>
+              <p class="text-sm text-body/80 mb-2">Examples: comments section, newsletter signup, related articles</p>
+              <p class="text-green-400 text-sm">→ Use <code class="bg-black/30 px-2 py-0.5 rounded">client:visible</code> or <code class="bg-black/30 px-2 py-0.5 rounded">client:idle</code></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="p-6 bg-gradient-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30">
+      <div class="flex items-start gap-4">
+        <svg class="w-8 h-8 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Learn More</h3>
+          <p class="text-body/80 mb-4">
+            Astro Islands is a game-changing architecture. Explore more:
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/docs/astro/components" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors text-sm">
+              Components Guide
+            </a>
+            <a href="https://docs.astro.build/en/concepts/islands/" target="_blank" class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm">
+              Official Docs
+            </a>
+            <a href="https://jasonformat.com/islands-architecture/" target="_blank" class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm">
+              Islands Architecture
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </DocsLayout>
