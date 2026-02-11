@@ -3,25 +3,25 @@ import TailwindIcon from "../icons/Tailwind.astro";
 import AstroIcon from "../icons/AstroIcon.astro";
 ---
 
-<main class="flex flex-col items-center justify-center min-h-screen p-24">
+<main class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-8 md:p-12 lg:p-24">
   <section
     id="hero"
-    class="relative text-center my-40 text-white opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+    class="relative text-center my-8 sm:my-16 md:my-24 lg:my-40 text-white opacity-0 translate-y-10 transition-all duration-1000 ease-out w-full"
   >
     
-    <div class="absolute inset-0 flex items-center justify-center gap-100 opacity-10 pointer-events-none">
-      <AstroIcon class="w-100 h-100" />
-      <TailwindIcon class="w-100 h-100" />
+    <div class="absolute inset-0 flex items-center justify-center gap-20 sm:gap-40 md:gap-60 lg:gap-100 opacity-10 pointer-events-none">
+      <AstroIcon class="w-40 sm:w-60 md:w-80 lg:w-100 h-40 sm:h-60 md:h-80 lg:h-100" />
+      <TailwindIcon class="w-40 sm:w-60 md:w-80 lg:w-100 h-40 sm:h-60 md:h-80 lg:h-100" />
     </div>
-    <div class="relative z-10">
-      <h1 class="text-7xl text-white  font-bold text-heading mb-8">
+    <div class="relative z-10 px-2 sm:px-4">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white font-bold text-heading mb-4 sm:mb-6 md:mb-8">
         Welcome to <span class="text-shadow-lg text-shadow-amber-500">Astro</span> with 
         <span class="text-shadow-lg text-shadow-cyan-500">Tailwind</span>!
       </h1>
 
-      <p class="text-4xl text-heading text-white text-shadow-lg text-shadow-black mb-12">
+      <p class="text-lg sm:text-xl md:text-2xl lg:text-4xl text-heading text-white text-shadow-lg text-shadow-black mb-8 sm:mb-10 md:mb-12">
         Get started by editing
-        <code class="bg-black/30 px-2 py-1 rounded text-cyan-300">src/pages/index.astro</code>
+        <code class="bg-black/30 px-2 py-1 rounded text-cyan-300 text-sm sm:text-base md:text-lg lg:text-2xl">src/pages/index.astro</code>
       </p>
     </div>
   </section>
