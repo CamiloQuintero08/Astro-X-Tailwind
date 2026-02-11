@@ -1,0 +1,132 @@
+---
+import DocsLayout from "../../../layouts/DocsLayout.astro";
+---
+
+<DocsLayout>
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+    <section
+      class="text-center mb-12 p-8 bg-linear-to-r from-blue-700/30 to-cyan-300/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
+    >
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class=" size-10"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="cyan"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-spacing-horizontal"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M20 20h-2a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h2"></path><path
+            d="M4 20h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path><path
+            d="M12 8v8"></path></svg
+        >
+        <h1
+          class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text"
+        >
+          Spacing in Tailwind CSS
+        </h1>
+      </div>
+
+      <p class="text-body/90 text-lg leading-relaxed mb-4">
+        Learn how to effectively use spacing utilities in Tailwind CSS to create
+        visually appealing and well-structured layouts.
+      </p>
+
+      <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+        <p class="text-blue-200 text-sm">
+          💡 <strong>Why use Spacing?</strong> Consistent spacing creates visual harmony
+          and improves readability in your UI.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+          ></path>
+        </svg>
+        Custom Spacing & Sizing
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default bg-linear-to-br from-cyan-400/20 to-blue-500/20"
+      >
+        <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Adding Custom spacing
+        </h3>
+        <p class="text-body/80 mb-4">
+          Add custom spacing values for margin, padding, width, and height:
+        </p>
+
+        <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <pre
+            class="text-sm text-cyan-200"><code>{`export default {
+  theme: {
+    extend: {
+      spacing: {
+        '18': '4.5rem',   // 72px
+        '88': '22rem',    // 352px
+        '128': '32rem',   // 512px
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      height: {
+        'screen-1/2': '50vh',
+        'screen-3/4': '75vh',
+      },
+    },
+  },
+}`}</code></pre>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-black/20 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">Usage examples:</p>
+            <div class="space-y-2 text-sm text-body/80">
+              <div>
+                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >mt-18</code
+                > → margin-top: 4.5rem
+              </div>
+              <div>
+                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >max-w-8xl</code
+                > → max-width: 88rem
+              </div>
+              <div>
+                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  >h-screen-1/2</code
+                > → height: 50vh
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-black/20 p-4 rounded-lg flex items-center justify-center"
+          >
+            <div
+              class="w-18 h-18 bg-linear-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-sm"
+            >
+              w-18 h-18
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocsLayout>

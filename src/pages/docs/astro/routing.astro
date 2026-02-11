@@ -1,9 +1,960 @@
 ---
 import DocsLayout from "../../../layouts/DocsLayout.astro";
-
-
 ---
 
 <DocsLayout>
-    <h1>Contenido aun no disponible</h1>
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+    <section
+      class="text-center mb-12 p-8 bg-linear-to-r from-purple-400/30 to-pink-500/30 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
+    >
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg
+          class="w-10 h-10 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+          ></path>
+        </svg>
+        <h1
+          class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text"
+        >
+          Routing in Astro
+        </h1>
+      </div>
+
+      <p class="text-body/90 text-lg leading-relaxed mb-4">
+        Astro uses file-based routing, where every file in your <code
+          class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">src/pages/</code
+        > directory automatically becomes a route on your website.
+      </p>
+
+      <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+        <p class="text-blue-200 text-sm">
+          💡 <strong>Zero Configuration:</strong> No need to configure routes manually.
+          Just create files and Astro handles the rest!
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        Basic Static Routes
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default mb-6"
+      >
+        <p class="text-body/80 mb-4">
+          Each file in <code
+            class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+            >src/pages/</code
+          > creates a route based on its filename:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-3">
+              📁 File Structure
+            </h3>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <pre
+                class="text-sm text-cyan-300 font-mono"><code>{`src/pages/
+├── index.astro
+├── about.astro
+├── contact.astro
+└── blog.astro`}</code></pre>
+            </div>
+          </div>
+
+          <!-- Generated Routes -->
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-3">
+              🌐 Generated Routes
+            </h3>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <pre
+                class="text-sm text-green-300 font-mono"><code>{`/
+/about
+/contact
+/blog`}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Examples -->
+      <div class="space-y-4">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <code class="text-cyan-300 font-mono">src/pages/index.astro</code>
+            <span
+              class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full"
+              >Homepage</span
+            >
+          </div>
+          <p class="text-body/80 text-sm mb-2">
+            Creates route: <code
+              class="bg-black/30 px-2 py-0.5 rounded text-green-300">/</code>
+          </p>
+          <p class="text-body/70 text-xs">The root page of your website</p>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <code class="text-cyan-300 font-mono">src/pages/about.astro</code>
+            <span
+              class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full"
+              >Static Page</span
+            >
+          </div>
+          <p class="text-body/80 text-sm mb-2">
+            Creates route: <code
+              class="bg-black/30 px-2 py-0.5 rounded text-green-300"
+              >/about</code>
+          </p>
+          <p class="text-body/70 text-xs">Accessible at yoursite.com/about</p>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <code class="text-cyan-300 font-mono"
+              >src/pages/products/shoes.astro</code
+            >
+            <span
+              class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full"
+              >Nested Route</span
+            >
+          </div>
+          <p class="text-body/80 text-sm mb-2">
+            Creates route: <code
+              class="bg-black/30 px-2 py-0.5 rounded text-green-300"
+              >/products/shoes</code>
+          </p>
+          <p class="text-body/70 text-xs">Nested folders create nested URLs</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+          ></path>
+        </svg>
+        Nested Routes
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30"
+      >
+        <p class="text-body/80 mb-6">
+          Create nested URLs by organizing files in folders:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-3">
+              📁 File Structure
+            </h3>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <pre
+                class="text-sm text-cyan-300 font-mono"><code>{`src/pages/
+├── blog/
+│   ├── index.astro
+│   ├── post-1.astro
+│   └── post-2.astro
+└── products/
+    ├── index.astro
+    ├── shoes.astro
+    └── accessories/
+        ├── index.astro
+        └── belts.astro`}</code></pre>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-3">
+              🌐 Generated Routes
+            </h3>
+            <div class="bg-black/30 p-4 rounded-lg">
+              <pre
+                class="text-sm text-green-300 font-mono"><code>{`/blog
+/blog/post-1
+/blog/post-2
+
+/products
+/products/shoes
+/products/accessories
+/products/accessories/belts`}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-6 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg"
+        >
+          <p class="text-blue-200 text-sm">
+            💡 <strong>Index files:</strong>
+            <code class="bg-black/30 px-2 py-0.5 rounded">index.astro</code> serves
+            as the default page for that directory (like <code
+              class="bg-black/30 px-2 py-0.5 rounded">index.html</code
+            >).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Dynamic Routes
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Introduction -->
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <p class="text-body/80 mb-4">
+            Use square brackets <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >[param]</code
+            > to create dynamic routes that match multiple URLs:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="text-cyan-300 text-sm mb-2">File:</p>
+                <code class="text-cyan-300">src/pages/blog/[slug].astro</code>
+              </div>
+              <div>
+                <p class="text-green-300 text-sm mb-2">Matches:</p>
+                <div class="text-green-300 text-sm space-y-1">
+                  <div>/blog/hello-world</div>
+                  <div>/blog/getting-started</div>
+                  <div>/blog/any-slug-here</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Basic Dynamic Route
+          </h3>
+          <p class="text-body/80 mb-4">
+            Create a dynamic page that works for multiple blog posts:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">
+              src/pages/blog/[slug].astro
+            </p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`---
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'hello-world' } },
+    { params: { slug: 'getting-started' } },
+    { params: { slug: 'astro-rocks' } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<h1>Blog Post: {slug}</h1>
+<p>This is the page for {slug}</p>`}</code></pre>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Dynamic Routes with Props
+          </h3>
+          <p class="text-body/80 mb-4">
+            Pass additional data to your pages using the <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">props</code
+            > key:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`---
+export function getStaticPaths() {
+  const posts = [
+    { id: 1, slug: 'hello', title: 'Hello World', content: '...' },
+    { id: 2, slug: 'intro', title: 'Introduction', content: '...' },
+  ];
+
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<article>
+  <h1>{post.title}</h1>
+  <div>{post.content}</div>
+</article>`}</code></pre>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Multiple Dynamic Parameters
+          </h3>
+          <p class="text-body/80 mb-4">
+            Use multiple brackets for complex routes:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-3">
+            <p class="text-cyan-300 text-sm mb-2">
+              src/pages/[lang]/[category]/[slug].astro
+            </p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`---
+export function getStaticPaths() {
+  return [
+    { 
+      params: { 
+        lang: 'en', 
+        category: 'tutorials', 
+        slug: 'getting-started' 
+      }
+    },
+    { 
+      params: { 
+        lang: 'es', 
+        category: 'guias', 
+        slug: 'primeros-pasos' 
+      }
+    },
+  ];
+}
+
+const { lang, category, slug } = Astro.params;
+---
+
+<h1>Language: {lang}</h1>
+<h2>Category: {category}</h2>
+<p>Article: {slug}</p>`}</code></pre>
+          </div>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-green-300 text-sm mb-2">Generates routes like:</p>
+            <div class="text-green-300 text-sm space-y-1">
+              <div>/en/tutorials/getting-started</div>
+              <div>/es/guias/primeros-pasos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 5h16M4 12h16m-7 7h7"></path>
+        </svg>
+        Rest Parameters (Catch-all Routes)
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+      >
+        <p class="text-body/80 mb-4">
+          Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+            >[...path]</code
+          > to match any depth of nested routes:
+        </p>
+
+        <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <p class="text-cyan-300 text-sm mb-2">
+            src/pages/docs/[...slug].astro
+          </p>
+          <pre
+            class="text-sm text-cyan-200"><code>{`---
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'getting-started' } },
+    { params: { slug: 'guides/installation' } },
+    { params: { slug: 'guides/advanced/optimization' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const path = slug || '';
+---
+
+<h1>Documentation: {path}</h1>`}</code></pre>
+        </div>
+
+        <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <p class="text-green-300 text-sm mb-2">Matches:</p>
+          <div class="text-green-300 text-sm space-y-1">
+            <div>/docs/getting-started</div>
+            <div>/docs/guides/installation</div>
+            <div>/docs/guides/advanced/optimization</div>
+            <div>/docs/any/depth/of/nesting</div>
+          </div>
+        </div>
+
+        <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+          <p class="text-blue-200 text-sm">
+            💡 <strong>Use case:</strong> Perfect for documentation sites, file browsers,
+            or any deeply nested content structure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4"></path>
+        </svg>
+        Route Priority Order
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+      >
+        <p class="text-body/80 mb-6">
+          When multiple routes could match a URL, Astro uses this priority
+          order:
+        </p>
+
+        <div class="space-y-3">
+          <div
+            class="flex items-start gap-4 p-4 bg-black/20 rounded-lg border-l-4 border-cyan-500"
+          >
+            <div
+              class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center text-sm"
+            >
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-1">
+                Static routes (exact match)
+              </h3>
+              <code class="text-cyan-300 text-sm">src/pages/about.astro</code>
+              <p class="text-body/70 text-xs mt-1">
+                → Matches <code class="text-green-300">/about</code> exactly
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 p-4 bg-black/20 rounded-lg border-l-4 border-blue-500"
+          >
+            <div
+              class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white font-bold rounded-full flex items-center justify-center text-sm"
+            >
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-1">
+                Dynamic routes (with parameters)
+              </h3>
+              <code class="text-cyan-300 text-sm"
+                >src/pages/blog/[slug].astro</code
+              >
+              <p class="text-body/70 text-xs mt-1">
+                → Matches <code class="text-green-300">/blog/*</code>
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 p-4 bg-black/20 rounded-lg border-l-4 border-purple-500"
+          >
+            <div
+              class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white font-bold rounded-full flex items-center justify-center text-sm"
+            >
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-white mb-1">
+                Rest parameters (catch-all)
+              </h3>
+              <code class="text-cyan-300 text-sm"
+                >src/pages/docs/[...slug].astro</code
+              >
+              <p class="text-body/70 text-xs mt-1">
+                → Matches <code class="text-green-300">/docs/**</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-6 p-4 bg-yellow-950/30 border-l-4 border-yellow-400 rounded-lg"
+        >
+          <p class="text-yellow-200 text-sm">
+            ⚠️ <strong>Example conflict:</strong> If you have both <code
+              class="bg-black/30 px-2 py-0.5 rounded">/blog/featured.astro</code
+            > and <code class="bg-black/30 px-2 py-0.5 rounded"
+              >/blog/[slug].astro</code
+            >, the URL <code class="bg-black/30 px-2 py-0.5 rounded"
+              >/blog/featured</code
+            > will match the static route first.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        Redirects
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">Static Redirects</h3>
+          <p class="text-body/80 mb-4">
+            Configure redirects in <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >astro.config.mjs</code
+            >:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`// astro.config.mjs
+export default defineConfig({
+  redirects: {
+    '/old-page': '/new-page',
+    '/blog': '/articles',
+    '/docs/v1': '/docs/v2',
+    // With status code
+    '/temp': {
+      status: 302,
+      destination: '/permanent',
+    },
+  },
+});`}</code></pre>
+          </div>
+        </div>
+
+        <!-- Dynamic Redirects -->
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Dynamic Redirects
+          </h3>
+          <p class="text-body/80 mb-4">
+            Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >Astro.redirect()</code
+            > for runtime redirects:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`---
+// Redirect unauthenticated users
+const user = Astro.cookies.get('user');
+
+if (!user) {
+  return Astro.redirect('/login');
+}
+
+// Redirect based on parameters
+const { slug } = Astro.params;
+if (slug === 'old-slug') {
+  return Astro.redirect('/blog/new-slug', 301);
+}
+---
+
+<h1>Protected Content</h1>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Custom 404 Pages
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+      >
+        <p class="text-body/80 mb-4">
+          Create a custom 404 page by adding <code
+            class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+            >404.astro</code
+          >:
+        </p>
+
+        <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <p class="text-cyan-300 text-sm mb-2">src/pages/404.astro</p>
+          <pre
+            class="text-sm text-cyan-200"><code>{`---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found">
+  <div class="error-page">
+    <h1>404 - Page Not Found</h1>
+    <p>Sorry, the page you're looking for doesn't exist.</p>
+    <a href="/">Go back home</a>
+  </div>
+
+  <style>
+    .error-page {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      color: #06b6d4;
+    }
+  </style>
+</Layout>`}</code></pre>
+        </div>
+
+        <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+          <p class="text-blue-200 text-sm">
+            💡 <strong>Note:</strong> In development, Astro shows its own 404 page.
+            Your custom 404 will appear in production builds.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        Practical Examples
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Blog with Pagination
+          </h3>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">
+              src/pages/blog/[page].astro
+            </p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`---
+export async function getStaticPaths({ paginate }) {
+  const posts = await getAllPosts();
+  
+  // Create paginated routes
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<h1>Blog - Page {page.currentPage}</h1>
+
+{page.data.map(post => (
+  <article>
+    <h2>{post.title}</h2>
+    <a href={\`/blog/\${post.slug}\`}>Read more</a>
+  </article>
+))}
+
+<nav>
+  {page.url.prev && <a href={page.url.prev}>← Previous</a>}
+  {page.url.next && <a href={page.url.next}>Next →</a>}
+</nav>`}</code></pre>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            E-commerce Product Pages
+          </h3>
+          <div class="bg-black/30 p-4 rounded-lg">
+            <p class="text-cyan-300 text-sm mb-2">
+              src/pages/products/[category]/[id].astro
+            </p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`---
+import { getProducts } from '../../lib/api';
+
+export async function getStaticPaths() {
+  const products = await getProducts();
+  
+  return products.map(product => ({
+    params: { 
+      category: product.category,
+      id: product.id 
+    },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+---
+
+<article>
+  <h1>{product.name}</h1>
+  <p>Category: {product.category}</p>
+  <p>Price: \${product.price}</p>
+  <img src={product.image} alt={product.name} />
+</article>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Best Practices
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          class="bg-gradient-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20"
+        >
+          <h3 class="text-lg font-semibold text-green-400 mb-4">✓ DO</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use descriptive file names that match URLs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Organize related pages in folders</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span
+                >Use <code class="bg-black/30 px-1 rounded text-xs"
+                  >index.astro</code
+                > for default pages</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Keep dynamic routes simple when possible</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use kebab-case for file names</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Create custom 404 pages</span>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20"
+        >
+          <h3 class="text-lg font-semibold text-red-400 mb-4">✗ DON'T</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use special characters in file names</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Create conflicting route patterns</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Nest folders too deeply (3+ levels)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use spaces in file names</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Forget to handle edge cases in dynamic routes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Mix routing conventions (pick one style)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="p-6 bg-gradient-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30"
+    >
+      <div class="flex items-start gap-4">
+        <svg
+          class="w-8 h-8 text-cyan-400 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
+        </svg>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Learn More</h3>
+          <p class="text-body/80 mb-4">
+            Master Astro routing with these resources:
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/docs/astro/project-structure"
+              class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors text-sm"
+            >
+              Project Structure
+            </a>
+            <a
+              href="/docs/astro/content-collections"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm"
+            >
+              Content Collections
+            </a>
+            <a
+              href="https://docs.astro.build/en/core-concepts/routing/"
+              target="_blank"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm"
+            >
+              Official Docs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </DocsLayout>

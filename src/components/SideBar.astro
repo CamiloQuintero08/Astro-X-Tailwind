@@ -46,16 +46,16 @@ const isActive = (href: string) => {
       <ul class="space-y-1 font-medium">
         <li>
           <a
-            href="/docs"
+            href="/docs/introduction"
             class={`flex items-center px-2 py-1.5 rounded-base transition-colors ${
-              isActive("/docs") && currentPath === "/docs"
+              isActive("/docs") && currentPath === "/docs/introduction"
                 ? "bg-blue-500/20 text-blue-400 font-semibold"
                 : "text-body hover:bg-neutral-tertiary hover:text-fg-brand"
             } group`}
           >
             <svg
               class={`w-5 h-5 transition duration-75 ${
-                isActive("/docs") && currentPath === "/docs"
+                isActive("/docs") && currentPath === "/docs/introduction"
                   ? "text-blue-400"
                   : "group-hover:text-fg-brand"
               }`}
@@ -486,7 +486,21 @@ const isActive = (href: string) => {
       </ul>
     </div>
 
-    <div class="mb-6">
+    <div class="px-2 py-4 mb-6 bg-cyan-950/20 border border-cyan-500/30 rounded-lg">
+      <div class="flex items-start gap-2">
+        <span class="text-cyan-400 text-lg shrink-0 mt-0.5">✨</span>
+        <div>
+          <p class="text-xs font-semibold text-cyan-300 uppercase tracking-wider">
+            Coming Soon
+          </p>
+          <p class="text-xs text-white/60 mt-1 leading-relaxed">
+            More content will be available in future commits
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="mb-6">
       <h3
         class="px-2 mb-2 text-xs font-semibold text-body/60 uppercase tracking-wider"
       >
@@ -801,7 +815,7 @@ const isActive = (href: string) => {
               ></path>
             </svg>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

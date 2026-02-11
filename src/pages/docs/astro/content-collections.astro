@@ -4,7 +4,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 
 <DocsLayout>
   <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
-    <section class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
+    <section class="text-center mb-12 p-8 bg-linear-to-r from-purple-400/30 to-pink-500/30 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
       <div class="flex items-center justify-center gap-3 mb-4">
         <svg
           class="w-10 h-10 text-cyan-400"
@@ -118,12 +118,12 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           </h3>
           <div class="bg-black/30 p-4 rounded-lg text-sm">
             <pre
-              class="text-red-300"><code>{`// No type safety
+              class="text-red-300 p-2 text-pretty"><code>{`// No type safety
 const posts = await Astro.glob('../posts/*.md');
 
 // Runtime errors possible
 const title = post.frontmatter.titel; // typo!
-const date = new Date(post.frontmatter.date); // might fail`}</code></pre>
+const date = new Date(post.frontmatter.date); //might fail`}</code></pre>
           </div>
         </div>
 
