@@ -11,11 +11,11 @@ const isActive = (href: string) => {
   data-drawer-toggle="separator-sidebar"
   aria-controls="separator-sidebar"
   type="button"
-  class="fixed text-white top-20 left-4 z-50 text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm p-2 focus:outline-none inline-flex sm:hidden"
+  class="fixed text-white top-20 left-4 z-50 text-heading bg-linear-to-br from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 box-border border border-cyan-400/50 shadow-lg shadow-cyan-500/30 focus:ring-4 focus:ring-cyan-400 font-medium leading-5 rounded-lg text-sm p-3 focus:outline-none inline-flex sm:hidden transition-all duration-300 group"
 >
   <span class="sr-only">Open sidebar</span>
   <svg
-    class="w-6 h-6"
+    class="w-6 h-6 group-hover:scale-110 transition-transform"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     width="24"
