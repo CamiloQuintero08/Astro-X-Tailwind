@@ -3,48 +3,1033 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout>
-  <div class="min-h-screen w-full flex items-center justify-center px-4 py-12">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
     <section
-      class="text-center max-w-2xl w-full p-8 sm:p-12 bg-linear-to-br from-amber-950/30 to-orange-950/30 rounded-xl border-2 border-amber-500/50 backdrop-blur-sm shadow-lg shadow-amber-500/20"
+      class="text-center mb-12 p-8 bg-linear-to-r from-blue-700/30 to-cyan-300/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
     >
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg
+          class="w-10 h-10 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+          ></path>
+        </svg>
+        <h1
+          class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text"
+        >
+          Responsive Design
+        </h1>
+      </div>
+
+      <p class="text-body/90 text-lg leading-relaxed mb-4">
+        Build responsive layouts that work beautifully on any device using
+        Tailwind's mobile-first breakpoint system. Create adaptive designs with
+        simple, intuitive utility classes.
+      </p>
+
+      <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+        <p class="text-blue-200 text-sm">
+          💡 <strong>Mobile-First:</strong> Tailwind uses a mobile-first approach.
+          Unprefixed utilities apply to all screen sizes, while prefixed utilities
+          only apply at that breakpoint and above.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+          ></path>
+        </svg>
+        Default Breakpoints
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default mb-6"
+      >
+        <p class="text-body/80 mb-6">
+          Tailwind includes five default breakpoints, inspired by common device
+          resolutions:
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b-2 border-cyan-500">
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold"
+                  >Breakpoint</th
+                >
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold"
+                  >Prefix</th
+                >
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold"
+                  >Min-width</th
+                >
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold">CSS</th>
+              </tr>
+            </thead>
+            <tbody class="text-body/80">
+              <tr class="border-b border-default/50 bg-cyan-950/20">
+                <td class="py-3 px-4 font-semibold text-white">None</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >-</code
+                  ></td
+                >
+                <td class="py-3 px-4">0px</td>
+                <td class="py-3 px-4 text-xs"
+                  ><code class="text-cyan-300">/* All devices */</code></td
+                >
+              </tr>
+              <tr
+                class="border-b border-default/50 hover:bg-neutral-tertiary/30 transition-colors"
+              >
+                <td class="py-3 px-4 font-semibold text-white">Small</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >sm:</code
+                  ></td
+                >
+                <td class="py-3 px-4">640px</td>
+                <td class="py-3 px-4 text-xs"
+                  ><code class="text-cyan-300">@media (min-width: 640px)</code
+                  ></td
+                >
+              </tr>
+              <tr
+                class="border-b border-default/50 hover:bg-neutral-tertiary/30 transition-colors"
+              >
+                <td class="py-3 px-4 font-semibold text-white">Medium</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >md:</code
+                  ></td
+                >
+                <td class="py-3 px-4">768px</td>
+                <td class="py-3 px-4 text-xs"
+                  ><code class="text-cyan-300">@media (min-width: 768px)</code
+                  ></td
+                >
+              </tr>
+              <tr
+                class="border-b border-default/50 hover:bg-neutral-tertiary/30 transition-colors"
+              >
+                <td class="py-3 px-4 font-semibold text-white">Large</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >lg:</code
+                  ></td
+                >
+                <td class="py-3 px-4">1024px</td>
+                <td class="py-3 px-4 text-xs"
+                  ><code class="text-cyan-300">@media (min-width: 1024px)</code
+                  ></td
+                >
+              </tr>
+              <tr
+                class="border-b border-default/50 hover:bg-neutral-tertiary/30 transition-colors"
+              >
+                <td class="py-3 px-4 font-semibold text-white">Extra Large</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >xl:</code
+                  ></td
+                >
+                <td class="py-3 px-4">1280px</td>
+                <td class="py-3 px-4 text-xs"
+                  ><code class="text-cyan-300">@media (min-width: 1280px)</code
+                  ></td
+                >
+              </tr>
+              <tr class="hover:bg-neutral-tertiary/30 transition-colors">
+                <td class="py-3 px-4 font-semibold text-white">2X Large</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                    >2xl:</code
+                  ></td
+                >
+                <td class="py-3 px-4">1536px</td>
+                <td class="py-3 px-4 text-xs"
+                  ><code class="text-cyan-300">@media (min-width: 1536px)</code
+                  ></td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30"
+      >
+        <h3 class="text-xl font-bold text-white mb-4">
+          Visual Breakpoint Scale
+        </h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-8 bg-linear-to-r from-red-500 to-orange-500 rounded flex items-center justify-center text-white text-xs font-bold"
+            >
+              0px
+            </div>
+            <div
+              class="flex-1 h-2 bg-linear-to-r from-red-500 to-orange-500 rounded"
+            >
+            </div>
+            <span class="text-body/70 text-sm">Mobile (default)</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-8 bg-linear-to-r from-yellow-500 to-amber-500 rounded flex items-center justify-center text-white text-xs font-bold"
+            >
+              640px
+            </div>
+            <div
+              class="flex-1 h-2 bg-linear-to-r from-yellow-500 to-amber-500 rounded"
+            >
+            </div>
+            <span class="text-body/70 text-sm">sm: Small tablets</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-8 bg-linear-to-r from-green-500 to-emerald-500 rounded flex items-center justify-center text-white text-xs font-bold"
+            >
+              768px
+            </div>
+            <div
+              class="flex-1 h-2 bg-linear-to-r from-green-500 to-emerald-500 rounded"
+            >
+            </div>
+            <span class="text-body/70 text-sm">md: Tablets</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-8 bg-linear-to-r from-cyan-500 to-blue-500 rounded flex items-center justify-center text-white text-xs font-bold"
+            >
+              1024px
+            </div>
+            <div
+              class="flex-1 h-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded"
+            >
+            </div>
+            <span class="text-body/70 text-sm">lg: Laptops</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-8 bg-linear-to-r from-purple-500 to-pink-500 rounded flex items-center justify-center text-white text-xs font-bold"
+            >
+              1280px
+            </div>
+            <div
+              class="flex-1 h-2 bg-linear-to-r from-purple-500 to-pink-500 rounded"
+            >
+            </div>
+            <span class="text-body/70 text-sm">xl: Desktops</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-8 bg-linear-to-r from-indigo-500 to-violet-500 rounded flex items-center justify-center text-white text-xs font-bold"
+            >
+              1536px
+            </div>
+            <div
+              class="flex-1 h-2 bg-linear-to-r from-indigo-500 to-violet-500 rounded"
+            >
+            </div>
+            <span class="text-body/70 text-sm">2xl: Large screens</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+          ></path>
+        </svg>
+        Mobile-First Approach
+      </h2>
+
       <div class="space-y-6">
-        <div class="flex justify-center">
-          <div
-            class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-linear-to-br from-amber-500/40 to-orange-500/30 flex items-center justify-center border-2 border-amber-500/50 animate-bounce"
-          >
-            <span class="text-4xl sm:text-5xl">🚧</span>
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <p class="text-body/80 mb-4">
+            In Tailwind, unprefixed utilities apply to all screen sizes, while
+            prefixed utilities only apply at that breakpoint and above.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-red-950/20 border border-red-500/30 p-4 rounded-lg">
+              <h3
+                class="text-red-400 font-semibold mb-3 flex items-center gap-2"
+              >
+                <span>❌</span>
+                Desktop-First (Wrong)
+              </h3>
+              <div class="bg-black/30 p-3 rounded text-xs">
+                <code class="text-red-300"
+                  >{
+                    `<!-- Don't do this -->
+<div class="w-full lg:w-1/2">
+  <!-- Starts wide, gets narrow -->
+</div>`
+                  }</code
+                >
+              </div>
+            </div>
+
+            <div
+              class="bg-green-950/20 border border-green-500/30 p-4 rounded-lg"
+            >
+              <h3
+                class="text-green-400 font-semibold mb-3 flex items-center gap-2"
+              >
+                <span>✅</span>
+                Mobile-First (Correct)
+              </h3>
+              <div class="bg-black/30 p-3 rounded text-xs">
+                <code class="text-green-300"
+                  >{
+                    `<!-- Do this -->
+<div class="w-full lg:w-1/2">
+  <!-- Starts narrow, gets wide -->
+</div>`
+                  }</code
+                >
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-bold text-transparent bg-linear-to-r from-amber-300 to-orange-300 bg-clip-text mb-2">
-            Content Under Development
-          </h1>
-          <div class="h-1 w-20 mx-auto bg-linear-to-r from-amber-500 to-orange-500 rounded-full"></div>
-        </div>
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-4">How It Works</h3>
 
-        <div class="space-y-3">
-          <p class="text-lg text-white/80 leading-relaxed">
-            This section is not yet available. We are working hard to provide you with the highest quality content.
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="text-sm md:text-base lg:text-lg xl:text-xl">
+  Responsive Text
+</div>`}</code></pre>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-4 bg-red-950/20 border border-red-500/30 rounded-lg">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-red-400 font-semibold text-sm"
+                  >Mobile (0-640px)</span
+                >
+                <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-xs text-red-300"
+                  >text-sm</code
+                >
+              </div>
+              <p class="text-sm text-white">Responsive Text</p>
+            </div>
+
+            <div
+              class="p-4 bg-orange-950/20 border border-orange-500/30 rounded-lg"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-orange-400 font-semibold text-sm"
+                  >Tablet (768px+)</span
+                >
+                <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-xs text-orange-300"
+                  >md:text-base</code
+                >
+              </div>
+              <p class="text-base text-white">Responsive Text</p>
+            </div>
+
+            <div
+              class="p-4 bg-green-950/20 border border-green-500/30 rounded-lg"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-green-400 font-semibold text-sm"
+                  >Laptop (1024px+)</span
+                >
+                <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-xs text-green-300"
+                  >lg:text-lg</code
+                >
+              </div>
+              <p class="text-lg text-white">Responsive Text</p>
+            </div>
+
+            <div
+              class="p-4 bg-blue-950/20 border border-blue-500/30 rounded-lg"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-blue-400 font-semibold text-sm"
+                  >Desktop (1280px+)</span
+                >
+                <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-xs text-blue-300"
+                  >xl:text-xl</code
+                >
+              </div>
+              <p class="text-xl text-white">Responsive Text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+          ></path>
+        </svg>
+        Common Responsive Patterns
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Responsive Grid Layout
+          </h3>
+          <p class="text-body/80 mb-4">
+            Adapt grid columns based on screen size:
           </p>
 
-          <p class="text-base text-white/60">
-            Soon you will find detailed guides and useful resources about Astro and Tailwind CSS.
-          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>`}</code></pre>
+          </div>
+
+          <div class="space-y-2 text-sm text-body/70">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+              <span>Mobile: 1 column (stacked)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+              <span>Small: 2 columns (640px+)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              <span>Large: 3 columns (1024px+)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+              <span>XL: 4 columns (1280px+)</span>
+            </div>
+          </div>
         </div>
 
-        <div class="pt-4">
-          <a
-            href="/docs/"
-            class="inline-block px-6 sm:px-8 py-3 bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-cyan-500/30"
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Hide/Show Elements</h3>
+          <p class="text-body/80 mb-4">
+            Control element visibility at different breakpoints:
+          </p>
+
+          <div class="space-y-4">
+            <div>
+              <div class="bg-black/30 px-3 py-2 rounded-lg mb-2 text-sm">
+                <code class="text-cyan-300">hidden md:block</code>
+              </div>
+              <p class="text-body/70 text-sm">
+                Hidden on mobile, visible from tablet up
+              </p>
+            </div>
+
+            <div>
+              <div class="bg-black/30 px-3 py-2 rounded-lg mb-2 text-sm">
+                <code class="text-cyan-300">block md:hidden</code>
+              </div>
+              <p class="text-body/70 text-sm">
+                Visible on mobile, hidden from tablet up
+              </p>
+            </div>
+
+            <div>
+              <div class="bg-black/30 px-3 py-2 rounded-lg mb-2 text-sm">
+                <code class="text-cyan-300">hidden lg:flex</code>
+              </div>
+              <p class="text-body/70 text-sm">
+                Hidden until large screens, then flex
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mt-4 p-4 bg-blue-950/30 border-l-4 border-blue-400 rounded-lg"
           >
-            ← Back to Documentation
-          </a>
+            <p class="text-blue-200 text-sm">
+              💡 <strong>Tip:</strong> Use this for mobile navigation vs desktop navigation
+            </p>
+          </div>
         </div>
 
-        <p class="text-xs sm:text-sm text-amber-300/70 pt-6 border-t border-white/10">
-          💡 In the meantime, explore other sections of our documentation
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Responsive Typography
+          </h3>
+          <p class="text-body/80 mb-4">Scale text size based on viewport:</p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+  Responsive Heading
+</h1>
+
+<p class="text-sm sm:text-base lg:text-lg">
+  Responsive paragraph text
+</p>`}</code></pre>
+          </div>
+
+          <div class="p-4 bg-black/20 rounded-lg">
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2"
+            >
+              Responsive Heading
+            </h2>
+            <p class="text-sm sm:text-base lg:text-lg text-body/80">
+              This text scales beautifully across all screen sizes
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Responsive Spacing</h3>
+          <p class="text-body/80 mb-4">
+            Adjust padding and margins for different screens:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="p-4 sm:p-6 md:p-8 lg:p-12">
+  <!-- Padding increases with screen size -->
+</div>
+
+<div class="space-y-4 md:space-y-6 lg:space-y-8">
+  <!-- Gap between items increases -->
+</div>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        Practical Examples
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Responsive Navigation -->
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Responsive Navigation
+          </h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<nav class="flex items-center justify-between p-4">
+  <div class="text-xl font-bold">Logo</div>
+  
+  <!-- Mobile: Hamburger button -->
+  <button class="md:hidden">
+    <svg><!-- Menu icon --></svg>
+  </button>
+  
+  <!-- Desktop: Full navigation -->
+  <div class="hidden md:flex gap-6">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>`}</code></pre>
+          </div>
+
+          <div class="border border-cyan-500/30 rounded-lg overflow-hidden">
+            <nav
+              class="flex items-center justify-between p-4 bg-neutral-secondary-soft"
+            >
+              <div class="text-xl font-bold text-cyan-400">Logo</div>
+
+              <button class="md:hidden text-cyan-400 hover:text-cyan-300">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+
+              <div class="hidden md:flex gap-6">
+                <a
+                  href="#"
+                  class="text-body hover:text-cyan-400 transition-colors"
+                  >Home</a
+                >
+                <a
+                  href="#"
+                  class="text-body hover:text-cyan-400 transition-colors"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="text-body hover:text-cyan-400 transition-colors"
+                  >Contact</a
+                >
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Responsive Card Grid
+          </h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+</div>`}</code></pre>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div
+              class="bg-linear-to-br from-cyan-500 to-blue-500 p-6 rounded-lg text-white"
+            >
+              <h4 class="font-bold mb-2">Card 1</h4>
+              <p class="text-sm text-white/80">Adapts to screen size</p>
+            </div>
+            <div
+              class="bg-linear-to-br from-purple-500 to-pink-500 p-6 rounded-lg text-white"
+            >
+              <h4 class="font-bold mb-2">Card 2</h4>
+              <p class="text-sm text-white/80">Mobile: 1 col, Tablet: 2 cols</p>
+            </div>
+            <div
+              class="bg-linear-to-br from-green-500 to-emerald-500 p-6 rounded-lg text-white"
+            >
+              <h4 class="font-bold mb-2">Card 3</h4>
+              <p class="text-sm text-white/80">Desktop: 3 cols</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Responsive Hero Section
+          </h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<section class="px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold">
+      Welcome
+    </h1>
+    <p class="mt-4 text-base sm:text-lg lg:text-xl max-w-2xl">
+      Build amazing responsive layouts
+    </p>
+  </div>
+</section>`}</code></pre>
+          </div>
+
+          <div
+            class="px-4 py-8 sm:px-6 lg:px-8 bg-linear-to-br from-cyan-950/50 to-blue-950/50 rounded-lg border border-cyan-500/30"
+          >
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4"
+            >
+              Welcome to Responsive Design
+            </h2>
+            <p class="text-sm sm:text-base lg:text-lg text-body/80 max-w-2xl">
+              Build amazing responsive layouts that adapt beautifully to any
+              screen size
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Responsive Sidebar Layout
+          </h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="flex flex-col lg:flex-row gap-6">
+  <!-- Sidebar: full width on mobile, 1/4 on desktop -->
+  <aside class="w-full lg:w-1/4">
+    Sidebar
+  </aside>
+  
+  <!-- Main: full width on mobile, 3/4 on desktop -->
+  <main class="w-full lg:w-3/4">
+    Main Content
+  </main>
+</div>`}</code></pre>
+          </div>
+
+          <div class="flex flex-col lg:flex-row gap-4">
+            <aside
+              class="w-full lg:w-1/4 bg-purple-500 p-4 rounded-lg text-white font-semibold text-center"
+            >
+              Sidebar
+            </aside>
+            <main
+              class="w-full lg:w-3/4 bg-cyan-500 p-4 rounded-lg text-white font-semibold text-center"
+            >
+              Main Content
+            </main>
+          </div>
+
+          <p class="mt-4 text-sm text-body/70">
+            On mobile: stacked vertically. On desktop: side by side.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 5h16M4 12h16m-7 7h7"></path>
+        </svg>
+        Container Queries
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+      >
+        <p class="text-body/80 mb-4">
+          Style elements based on their parent container size (not viewport):
         </p>
+
+        <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <p class="text-cyan-300 text-sm mb-2">Install plugin:</p>
+          <pre
+            class="text-sm text-cyan-200"><code>{`npm install -D @tailwindcss/container-queries`}</code></pre>
+        </div>
+
+        <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <p class="text-cyan-300 text-sm mb-2">Usage:</p>
+          <pre
+            class="text-sm text-cyan-200"><code>{`<div class="@container">
+  <div class="@sm:text-lg @md:text-xl @lg:text-2xl">
+    Responds to container, not viewport!
+  </div>
+</div>`}</code></pre>
+        </div>
+
+        <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+          <p class="text-blue-200 text-sm">
+            💡 <strong>Use case:</strong> Perfect for reusable components that need
+            to adapt to their container
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Best Practices
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          class="bg-linear-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20"
+        >
+          <h3 class="text-lg font-semibold text-green-400 mb-4">✓ DO</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Start with mobile design first</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use consistent breakpoints across your app</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Test on real devices, not just browser resize</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span
+                >Use <code class="bg-black/30 px-1 rounded text-xs"
+                  >max-w-*</code
+                > to prevent overly wide content</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span
+                >Combine breakpoints: <code
+                  class="bg-black/30 px-1 rounded text-xs"
+                  >sm:text-base lg:text-lg</code
+                ></span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use Chrome DevTools device emulation</span>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-linear-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20"
+        >
+          <h3 class="text-lg font-semibold text-red-400 mb-4">✗ DON'T</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Design desktop-first and squeeze into mobile</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use too many different breakpoint values</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Forget to test touch interactions on mobile</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Make buttons too small for mobile (min 44x44px)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Hide important content on mobile</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Rely only on hover states (no touch support)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Quick Reference
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30"
+      >
+        <h3 class="text-lg font-bold text-cyan-400 mb-4">
+          Common Responsive Patterns
+        </h3>
+
+        <div class="space-y-3 text-sm">
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300"
+              >grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code
+            >
+            <span class="text-body/70 text-xs">Responsive grid</span>
+          </div>
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300">text-sm sm:text-base lg:text-lg</code>
+            <span class="text-body/70 text-xs">Responsive text</span>
+          </div>
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300">p-4 sm:p-6 md:p-8 lg:p-12</code>
+            <span class="text-body/70 text-xs">Responsive padding</span>
+          </div>
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300">hidden md:block</code>
+            <span class="text-body/70 text-xs">Hide mobile, show desktop</span>
+          </div>
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300">block md:hidden</code>
+            <span class="text-body/70 text-xs">Show mobile, hide desktop</span>
+          </div>
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300">flex-col lg:flex-row</code>
+            <span class="text-body/70 text-xs">Stack mobile, row desktop</span>
+          </div>
+          <div
+            class="flex justify-between items-center py-2 border-b border-default/30"
+          >
+            <code class="text-cyan-300">w-full lg:w-1/2</code>
+            <span class="text-body/70 text-xs">Full mobile, half desktop</span>
+          </div>
+          <div class="flex justify-between items-center py-2">
+            <code class="text-cyan-300">max-w-sm md:max-w-2xl lg:max-w-4xl</code
+            >
+            <span class="text-body/70 text-xs">Responsive max-width</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="p-6 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30"
+    >
+      <div class="flex items-start gap-4">
+        <svg
+          class="w-8 h-8 text-cyan-400 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
+        </svg>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">
+            Continue Learning
+          </h3>
+          <p class="text-body/80 mb-4">Master more Tailwind topics:</p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/docs/tailwind/flexbox"
+              class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors text-sm"
+            >
+              Flexbox & Grid
+            </a>
+            <a
+              href="/docs/tailwind/dark-mode"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm"
+            >
+              Dark Mode
+            </a>
+            <a
+              href="https://tailwindcss.com/docs/responsive-design"
+              target="_blank"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm"
+            >
+              Official Docs
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </div>

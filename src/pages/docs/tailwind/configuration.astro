@@ -121,10 +121,6 @@ export default {
       </div>
     </section>
 
-    
-
-   
-    <!-- Breakpoints -->
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
@@ -225,7 +221,6 @@ export default {
       </h2>
 
       <div class="space-y-6">
-        <!-- Typography Plugin -->
         <div
           class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
         >
@@ -288,7 +283,6 @@ export default {
           </div>
         </div>
 
-        <!-- Container Queries -->
         <div
           class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
         >
@@ -316,104 +310,6 @@ export default {
       </div>
     </section>
 
-    <!-- Dark Mode -->
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg
-          class="w-7 h-7 text-cyan-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          ></path>
-        </svg>
-        Dark Mode Configuration
-      </h2>
-
-      <div class="space-y-6">
-        <!-- Class Strategy -->
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">
-            Class-based Dark Mode
-          </h3>
-          <p class="text-body/80 mb-4">
-            Toggle dark mode with a <code
-              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">dark</code
-            > class:
-          </p>
-
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
-            <pre
-              class="text-sm text-cyan-200"><code>{`export default {
-  darkMode: 'class', // or 'media' for system preference
-  // ...
-}`}</code></pre>
-          </div>
-
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
-            <p class="text-cyan-300 text-sm mb-2">Usage:</p>
-            <pre
-              class="text-sm text-cyan-200"><code>{`<div class="bg-white dark:bg-gray-900">
-  <h1 class="text-gray-900 dark:text-white">
-    Adapts to dark mode!
-  </h1>
-</div>`}</code></pre>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div
-              class="p-4 bg-white text-gray-900 rounded-lg border border-gray-200"
-            >
-              <h3 class="font-bold mb-2">Light Mode</h3>
-              <p class="text-sm">Default appearance</p>
-            </div>
-            <div
-              class="p-4 bg-gray-900 text-white rounded-lg border border-gray-700"
-            >
-              <h3 class="font-bold mb-2">Dark Mode</h3>
-              <p class="text-sm">With dark: prefix</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Toggle Script -->
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">
-            Dark Mode Toggle Script
-          </h3>
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre
-              class="text-sm text-cyan-200"><code>{`<script is:inline>
-  // Check for saved theme or system preference
-  const theme = localStorage.getItem('theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  }
-  
-  // Toggle function
-  function toggleTheme() {
-    document.documentElement.classList.toggle('dark');
-    const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-</script>`}</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Complete Example -->
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg

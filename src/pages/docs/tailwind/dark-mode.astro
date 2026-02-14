@@ -3,48 +3,946 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout>
-  <div class="min-h-screen w-full flex items-center justify-center px-4 py-12">
-    <section
-      class="text-center max-w-2xl w-full p-8 sm:p-12 bg-linear-to-br from-amber-950/30 to-orange-950/30 rounded-xl border-2 border-amber-500/50 backdrop-blur-sm shadow-lg shadow-amber-500/20"
-    >
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+    <section class="text-center mb-12 p-8 bg-linear-to-r from-blue-700/30 to-cyan-300/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg
+          class="w-10 h-10 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </svg>
+        <h1
+          class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text"
+        >
+          Dark Mode
+        </h1>
+      </div>
+
+      <p class="text-body/90 text-lg leading-relaxed mb-4">
+        Implement beautiful dark mode designs with Tailwind's built-in dark mode
+        support. Create seamless theme switching experiences for your users.
+      </p>
+
+      <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+        <p class="text-blue-200 text-sm">
+          💡 <strong>Two Strategies:</strong> Use <code
+            class="bg-black/30 px-2 py-0.5 rounded">class</code
+          > for manual toggle or <code class="bg-black/30 px-2 py-0.5 rounded"
+            >media</code
+          > to respect system preferences automatically.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+          ></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        Configuration
+      </h2>
+
       <div class="space-y-6">
-        <div class="flex justify-center">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Class Strategy (Recommended)
+          </h3>
+          <p class="text-body/80 mb-4">
+            Manual toggle with a <code
+              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">dark</code
+            > class on the HTML element:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <p class="text-cyan-300 text-sm mb-2">tailwind.config.mjs</p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class', // Enable class-based dark mode
+  // ... rest of config
+}`}</code></pre>
+          </div>
+
           <div
-            class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-linear-to-br from-amber-500/40 to-orange-500/30 flex items-center justify-center border-2 border-amber-500/50 animate-bounce"
+            class="bg-green-950/30 border-l-4 border-green-400 p-4 rounded-lg"
           >
-            <span class="text-4xl sm:text-5xl">🚧</span>
+            <p class="text-green-200 text-sm">
+              ✓ <strong>Best for:</strong> Apps where users can manually toggle dark
+              mode with a button
+            </p>
           </div>
         </div>
 
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-bold text-transparent bg-linear-to-r from-amber-300 to-orange-300 bg-clip-text mb-2">
-            Content Under Development
-          </h1>
-          <div class="h-1 w-20 mx-auto bg-linear-to-r from-amber-500 to-orange-500 rounded-full"></div>
-        </div>
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">Media Strategy</h3>
+          <p class="text-body/80 mb-4">Automatic based on system preference:</p>
 
-        <div class="space-y-3">
-          <p class="text-lg text-white/80 leading-relaxed">
-            This section is not yet available. We are working hard to provide you with the highest quality content.
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <p class="text-cyan-300 text-sm mb-2">tailwind.config.mjs</p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'media', // Use system preference
+  // ... rest of config
+}`}</code></pre>
+          </div>
+
+          <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+            <p class="text-blue-200 text-sm">
+              💡 <strong>Best for:</strong> Sites that should match the user's OS
+              theme automatically
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        Basic Usage
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Using the dark: Prefix
+          </h3>
+          <p class="text-body/80 mb-4">
+            Add <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              >dark:</code
+            > prefix to any utility class:
           </p>
 
-          <p class="text-base text-white/60">
-            Soon you will find detailed guides and useful resources about Astro and Tailwind CSS.
-          </p>
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="bg-white dark:bg-gray-900">
+  <h1 class="text-gray-900 dark:text-white">
+    Hello World
+  </h1>
+  <p class="text-gray-600 dark:text-gray-300">
+    This text adapts to dark mode
+  </p>
+</div>`}</code></pre>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-6 bg-white rounded-lg border border-gray-300">
+              <h3 class="text-gray-900 font-bold mb-2">Light Mode</h3>
+              <p class="text-gray-600 text-sm">White background, dark text</p>
+            </div>
+            <div class="p-6 bg-gray-900 rounded-lg border border-gray-700">
+              <h3 class="text-white font-bold mb-2">Dark Mode</h3>
+              <p class="text-gray-300 text-sm">Dark background, light text</p>
+            </div>
+          </div>
         </div>
 
-        <div class="pt-4">
-          <a
-            href="/docs/"
-            class="inline-block px-6 sm:px-8 py-3 bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-cyan-500/30"
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Multiple Properties</h3>
+          <p class="text-body/80 mb-4">Apply dark variants to any property:</p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<button class="
+  bg-blue-500 dark:bg-blue-600
+  text-white dark:text-gray-100
+  border border-blue-600 dark:border-blue-500
+  hover:bg-blue-600 dark:hover:bg-blue-700
+  shadow-lg dark:shadow-2xl
+">
+  Click me
+</button>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+        Dark Mode Toggle
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Complete Toggle Implementation
+          </h3>
+          <p class="text-body/80 mb-4">
+            Full dark mode toggle with localStorage persistence:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <p class="text-cyan-300 text-sm mb-2">Add to your layout:</p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`<!-- Dark Mode Toggle Button -->
+<button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+  <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+  </svg>
+  <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+  </svg>
+</button>
+
+<script is:inline>
+  // Dark mode toggle functionality
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+  const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+  // Check for saved theme preference or default to system preference
+  const theme = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  // Set initial theme
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+    themeToggleLightIcon.classList.remove('hidden');
+  } else {
+    themeToggleDarkIcon.classList.remove('hidden');
+  }
+
+  // Toggle theme on button click
+  themeToggleBtn.addEventListener('click', () => {
+    // Toggle dark class
+    document.documentElement.classList.toggle('dark');
+    
+    // Toggle icons
+    themeToggleDarkIcon.classList.toggle('hidden');
+    themeToggleLightIcon.classList.toggle('hidden');
+    
+    // Save preference
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>`}</code></pre>
+          </div>
+
+          <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
+            <p class="text-blue-200 text-sm">
+              💡 <strong>Features:</strong> Saves preference, respects system theme,
+              smooth icon transitions
+            </p>
+          </div>
+        </div>
+
+        <!-- Simple Toggle -->
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Simple Toggle (Minimal)
+          </h3>
+          <p class="text-body/80 mb-4">Basic implementation without icons:</p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<button onclick="toggleDarkMode()">
+  Toggle Dark Mode
+</button>
+
+<script is:inline>
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+  
+  // Load saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+</script>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+          ></path>
+        </svg>
+        Color Palette Strategy
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Using CSS Variables (Recommended)
+          </h3>
+          <p class="text-body/80 mb-4">
+            Define semantic color variables that adapt to dark mode:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <p class="text-cyan-300 text-sm mb-2">global.css</p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode colors */
+    --color-bg-primary: 255 255 255;
+    --color-bg-secondary: 249 250 251;
+    --color-text-primary: 17 24 39;
+    --color-text-secondary: 75 85 99;
+    --color-border: 229 231 235;
+  }
+  
+  .dark {
+    /* Dark mode colors */
+    --color-bg-primary: 17 24 39;
+    --color-bg-secondary: 31 41 55;
+    --color-text-primary: 243 244 246;
+    --color-text-secondary: 156 163 175;
+    --color-border: 55 65 81;
+  }
+}`}</code></pre>
+          </div>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <p class="text-cyan-300 text-sm mb-2">tailwind.config.mjs</p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`export default {
+  theme: {
+    extend: {
+      colors: {
+        'bg-primary': 'rgb(var(--color-bg-primary) / <alpha-value>)',
+        'bg-secondary': 'rgb(var(--color-bg-secondary) / <alpha-value>)',
+        'text-primary': 'rgb(var(--color-text-primary) / <alpha-value>)',
+        'text-secondary': 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        'border': 'rgb(var(--color-border) / <alpha-value>)',
+      },
+    },
+  },
+}`}</code></pre>
+          </div>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <p class="text-cyan-300 text-sm mb-2">Usage:</p>
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="bg-bg-primary text-text-primary border-border">
+  <!-- Colors adapt automatically! -->
+</div>`}</code></pre>
+          </div>
+
+          <div
+            class="bg-green-950/30 border-l-4 border-green-400 p-4 rounded-lg"
           >
-            ← Back to Documentation
-          </a>
+            <p class="text-green-200 text-sm">
+              ✓ <strong>Benefits:</strong> Cleaner code, easier maintenance, automatic
+              theme switching
+            </p>
+          </div>
         </div>
 
-        <p class="text-xs sm:text-sm text-amber-300/70 pt-6 border-t border-white/10">
-          💡 In the meantime, explore other sections of our documentation
-        </p>
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">
+            Direct Utility Approach
+          </h3>
+          <p class="text-body/80 mb-4">Apply dark variants directly:</p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-gray-200 dark:border-gray-700">
+  <!-- More verbose but explicit -->
+</div>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        Practical Examples
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Card Example -->
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Dark Mode Card</h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<div class="
+  bg-white dark:bg-gray-800
+  border border-gray-200 dark:border-gray-700
+  rounded-lg p-6
+  shadow-lg dark:shadow-2xl
+">
+  <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+    Card Title
+  </h3>
+  <p class="text-gray-600 dark:text-gray-300">
+    This card adapts to dark mode beautifully
+  </p>
+</div>`}</code></pre>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div
+              class="bg-white border border-gray-200 rounded-lg p-6 shadow-lg"
+            >
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Light Card</h3>
+              <p class="text-gray-600 text-sm">White background with shadows</p>
+            </div>
+            <div
+              class="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-2xl"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">Dark Card</h3>
+              <p class="text-gray-300 text-sm">
+                Dark background with deeper shadows
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Button Variants</h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<!-- Primary Button -->
+<button class="
+  bg-blue-600 dark:bg-blue-500
+  hover:bg-blue-700 dark:hover:bg-blue-600
+  text-white
+  px-4 py-2 rounded-lg
+">
+  Primary
+</button>
+
+<!-- Secondary Button -->
+<button class="
+  bg-gray-200 dark:bg-gray-700
+  hover:bg-gray-300 dark:hover:bg-gray-600
+  text-gray-900 dark:text-white
+  px-4 py-2 rounded-lg
+">
+  Secondary
+</button>
+
+<!-- Outline Button -->
+<button class="
+  border-2 border-gray-900 dark:border-white
+  hover:bg-gray-900 dark:hover:bg-white
+  hover:text-white dark:hover:text-gray-900
+  text-gray-900 dark:text-white
+  px-4 py-2 rounded-lg
+">
+  Outline
+</button>`}</code></pre>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+            >
+              Primary
+            </button>
+            <button
+              class="bg-gray-200 hover:bg-gray-300 text-gray-900 px-4 py-2 rounded-lg transition-colors"
+            >
+              Secondary (Light)
+            </button>
+            <button
+              class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors"
+            >
+              Secondary (Dark)
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Form Elements</h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<input 
+  type="text" 
+  placeholder="Enter text..."
+  class="
+    w-full px-4 py-2 rounded-lg
+    bg-white dark:bg-gray-800
+    border border-gray-300 dark:border-gray-600
+    text-gray-900 dark:text-white
+    placeholder-gray-400 dark:placeholder-gray-500
+    focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400
+  "
+/>`}</code></pre>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Light mode input..."
+              class="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Dark mode input..."
+              class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            />
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-white mb-3">Navigation Bar</h3>
+
+          <div class="bg-black/30 p-4 rounded-lg mb-4">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<nav class="
+  bg-white dark:bg-gray-900
+  border-b border-gray-200 dark:border-gray-800
+  px-4 py-3
+">
+  <div class="flex items-center justify-between">
+    <div class="text-xl font-bold text-gray-900 dark:text-white">
+      Logo
+    </div>
+    <div class="flex gap-6">
+      <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+        Home
+      </a>
+      <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+        About
+      </a>
+    </div>
+  </div>
+</nav>`}</code></pre>
+          </div>
+
+          <div class="space-y-4">
+            <nav class="bg-white border-b border-gray-200 px-4 py-3 rounded-lg">
+              <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-gray-900">Logo (Light)</div>
+                <div class="flex gap-6 text-sm">
+                  <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+                  <a href="#" class="text-gray-600 hover:text-gray-900">About</a
+                  >
+                </div>
+              </div>
+            </nav>
+
+            <nav
+              class="bg-gray-900 border-b border-gray-800 px-4 py-3 rounded-lg"
+            >
+              <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-white">Logo (Dark)</div>
+                <div class="flex gap-6 text-sm">
+                  <a href="#" class="text-gray-300 hover:text-white">Home</a>
+                  <a href="#" class="text-gray-300 hover:text-white">About</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+          ></path>
+        </svg>
+        Images in Dark Mode
+      </h2>
+
+      <div class="space-y-6">
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">Swap Images</h3>
+          <p class="text-body/80 mb-4">
+            Show different images for light and dark modes:
+          </p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<!-- Light mode image -->
+<img src="logo-dark.png" class="block dark:hidden" alt="Logo" />
+
+<!-- Dark mode image -->
+<img src="logo-light.png" class="hidden dark:block" alt="Logo" />`}</code></pre>
+          </div>
+        </div>
+
+        <div
+          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        >
+          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+            Adjust Image Opacity
+          </h3>
+          <p class="text-body/80 mb-4">Reduce brightness in dark mode:</p>
+
+          <div class="bg-black/30 p-4 rounded-lg">
+            <pre
+              class="text-sm text-cyan-200"><code>{`<img 
+  src="photo.jpg" 
+  class="dark:opacity-80 dark:brightness-90" 
+  alt="Photo" 
+/>`}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Best Practices
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          class="bg-linear-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20"
+        >
+          <h3 class="text-lg font-semibold text-green-400 mb-4">✓ DO</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use CSS variables for semantic colors</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Test dark mode early in development</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Maintain sufficient contrast ratios (WCAG AA)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Save user preference in localStorage</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Adjust shadows for dark backgrounds</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-400">✓</span>
+              <span>Use deeper shadows in dark mode</span>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-linear-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20"
+        >
+          <h3 class="text-lg font-semibold text-red-400 mb-4">✗ DON'T</h3>
+          <ul class="space-y-3 text-sm text-body/80">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Invert all colors (looks unnatural)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use pure black backgrounds (#000)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Forget to style hover states</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Use low contrast text (gray on dark gray)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Apply dark mode as an afterthought</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400">✗</span>
+              <span>Forget about images and icons</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="w-7 h-7 text-cyan-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+          ></path>
+        </svg>
+        Recommended Color Palette
+      </h2>
+
+      <div
+        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+      >
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b-2 border-cyan-500">
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold"
+                  >Element</th
+                >
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold"
+                  >Light Mode</th
+                >
+                <th class="text-left py-3 px-4 text-cyan-400 font-bold"
+                  >Dark Mode</th
+                >
+              </tr>
+            </thead>
+            <tbody class="text-body/80">
+              <tr class="border-b border-default/50">
+                <td class="py-3 px-4 font-semibold text-white">Background</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-white text-gray-900 px-2 py-1 rounded"
+                    >white</code
+                  ></td
+                >
+                <td class="py-3 px-4"
+                  ><code class="bg-gray-900 text-white px-2 py-1 rounded"
+                    >gray-900</code
+                  ></td
+                >
+              </tr>
+              <tr class="border-b border-default/50">
+                <td class="py-3 px-4 font-semibold text-white">Surface</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-gray-50 text-gray-900 px-2 py-1 rounded"
+                    >gray-50</code
+                  ></td
+                >
+                <td class="py-3 px-4"
+                  ><code class="bg-gray-800 text-white px-2 py-1 rounded"
+                    >gray-800</code
+                  ></td
+                >
+              </tr>
+              <tr class="border-b border-default/50">
+                <td class="py-3 px-4 font-semibold text-white">Primary Text</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-white text-gray-900 px-2 py-1 rounded"
+                    >gray-900</code
+                  ></td
+                >
+                <td class="py-3 px-4"
+                  ><code class="bg-gray-900 text-white px-2 py-1 rounded"
+                    >white</code
+                  ></td
+                >
+              </tr>
+              <tr class="border-b border-default/50">
+                <td class="py-3 px-4 font-semibold text-white"
+                  >Secondary Text</td
+                >
+                <td class="py-3 px-4"
+                  ><code class="bg-white text-gray-600 px-2 py-1 rounded"
+                    >gray-600</code
+                  ></td
+                >
+                <td class="py-3 px-4"
+                  ><code class="bg-gray-900 text-gray-300 px-2 py-1 rounded"
+                    >gray-300</code
+                  ></td
+                >
+              </tr>
+              <tr class="border-b border-default/50">
+                <td class="py-3 px-4 font-semibold text-white">Border</td>
+                <td class="py-3 px-4"
+                  ><code
+                    class="bg-white text-gray-200 px-2 py-1 rounded border border-gray-200"
+                    >gray-200</code
+                  ></td
+                >
+                <td class="py-3 px-4"
+                  ><code
+                    class="bg-gray-900 text-gray-700 px-2 py-1 rounded border border-gray-700"
+                    >gray-700</code
+                  ></td
+                >
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-semibold text-white">Shadow</td>
+                <td class="py-3 px-4"
+                  ><code class="bg-white text-gray-900 px-2 py-1 rounded"
+                    >shadow-lg</code
+                  ></td
+                >
+                <td class="py-3 px-4"
+                  ><code class="bg-gray-900 text-white px-2 py-1 rounded"
+                    >shadow-2xl</code
+                  ></td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="p-6 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30"
+    >
+      <div class="flex items-start gap-4">
+        <svg
+          class="w-8 h-8 text-cyan-400 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
+        </svg>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Learn More</h3>
+          <p class="text-body/80 mb-4">Explore more Tailwind topics:</p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/docs/tailwind/configuration"
+              class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors text-sm"
+            >
+              Configuration
+            </a>
+            <a
+              href="/docs/tailwind/responsive"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm"
+            >
+              Responsive Design
+            </a>
+            <a
+              href="https://tailwindcss.com/docs/dark-mode"
+              target="_blank"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default text-sm"
+            >
+              Official Docs
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </div>

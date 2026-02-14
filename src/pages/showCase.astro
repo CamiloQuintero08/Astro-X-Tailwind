@@ -1,0 +1,525 @@
+---
+import Layout from "../layouts/Layout.astro";
+// Importa tus iconos aquí - ajusta las rutas según tu estructura
+import PaintbrushIcon from "../icons/PaintbrushIcon.astro";
+import PuzzleIcon from "../icons/PuzzleIcon.astro";
+import LightningIcon from "../icons/LightningIcon.astro";
+import RocketIcon from "../icons/RocketIcon.astro";
+import CodeIcon from "../icons/CodeIcon.astro";
+
+const showcaseProjects = [
+  {
+    title: "E-commerce Dashboard",
+    description:
+      "Modern admin dashboard with real-time analytics, built with Astro Islands and Chart.js",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    tags: ["Astro", "React", "Tailwind", "Charts"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true,
+  },
+  {
+    title: "Portfolio Template",
+    description:
+      "Clean, minimalist portfolio with dark mode and smooth animations",
+    image:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+    tags: ["Astro", "Tailwind", "TypeScript"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true,
+  },
+  {
+    title: "Blog Platform",
+    description: "SEO-optimized blog with Content Collections and MDX support",
+    image:
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
+    tags: ["Astro", "MDX", "Content Collections"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "SaaS Landing Page",
+    description:
+      "High-converting landing page with pricing tables and testimonials",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    tags: ["Astro", "Tailwind", "Animations"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Documentation Site",
+    description: "Full-featured docs site with search and interactive examples",
+    image:
+      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop",
+    tags: ["Astro", "Algolia", "Tailwind"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Restaurant Website",
+    description:
+      "Beautiful restaurant site with menu, reservations, and gallery",
+    image:
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
+    tags: ["Astro", "Tailwind", "Forms"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+];
+
+const iconComponents = {
+  paintbrush: PaintbrushIcon,
+  puzzle: PuzzleIcon,
+  lightning: LightningIcon,
+  rocket: RocketIcon,
+  code: CodeIcon,
+};
+
+const tools = [
+  {
+    name: "Tailwind CSS IntelliSense",
+    description:
+      "VS Code extension for autocomplete, syntax highlighting, and linting",
+    icon: "paintbrush",
+    category: "Development",
+    url: "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
+  },
+  {
+    name: "Headless UI",
+    description: "Unstyled, accessible UI components for Tailwind CSS",
+    icon: "puzzle",
+    category: "Components",
+    url: "https://headlessui.com",
+  },
+  {
+    name: "Hero Icons",
+    description:
+      "Beautiful hand-crafted SVG icons by the makers of Tailwind CSS",
+    icon: "lightning",
+    category: "Icons",
+    url: "https://heroicons.com",
+  },
+  {
+    name: "Tailwind Play",
+    description: "Advanced online playground for Tailwind CSS",
+    icon: "lightning",
+    category: "Development",
+    url: "https://play.tailwindcss.com",
+  },
+  {
+    name: "DaisyUI",
+    description:
+      "Component library for Tailwind CSS with tons of pre-built components",
+    icon: "puzzle",
+    category: "Components",
+    url: "https://daisyui.com",
+  },
+  {
+    name: "Flowbite",
+    description: "Open-source UI components built with Tailwind CSS",
+    icon: "puzzle",
+    category: "Components",
+    url: "https://flowbite.com",
+  },
+  {
+    name: "Tailwind Toolbox",
+    description: "Free starter templates and components for Tailwind CSS",
+    icon: "code",
+    category: "Templates",
+    url: "https://www.tailwindtoolbox.com",
+  },
+  {
+    name: "Meraki UI",
+    description: "Beautiful Tailwind CSS components that support RTL languages",
+    icon: "puzzle",
+    category: "Components",
+    url: "https://merakiui.com",
+  },
+  {
+    name: "Astro Icon",
+    description:
+      "Icon component for Astro with 100,000+ icons from popular sets",
+    icon: "rocket",
+    category: "Icons",
+    url: "https://github.com/natemoo-re/astro-icon",
+  },
+  {
+    name: "Astro SEO",
+    description: "SEO component for Astro with meta tags and JSON-LD",
+    icon: "rocket",
+    category: "Development",
+    url: "https://github.com/jonasmerlin/astro-seo",
+  },
+  {
+    name: "Prettier Plugin Tailwind",
+    description: "Automatically sort Tailwind classes",
+    icon: "code",
+    category: "Development",
+    url: "https://github.com/tailwindlabs/prettier-plugin-tailwindcss",
+  },
+  {
+    name: "Tailwind Color Shades",
+    description: "Generate color shades for Tailwind CSS",
+    icon: "paintbrush",
+    category: "Tools",
+    url: "https://tailwind-color-shades.netlify.app",
+  },
+];
+
+const categories = [...new Set(tools.map((tool) => tool.category))];
+---
+
+<Layout title="Showcase & Tools - Astro + Tailwind">
+  <section class="relative py-25 overflow-hidden text-white text-shadow-lg text-shadow-cyan-500 shadow-lg shadow-cyan-400">
+    <div
+      class="absolute inset-0 bg-linear-to-br from-cyan-7000/20 via-blue-700/20 to-purple-700/20 "
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzA4OTFiMiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full mb-6"
+      >
+        <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+        <span class="text-cyan-400 text-sm font-medium">Explore & Discover</span
+        >
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+        Showcase <span
+          class="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+          >& Tools</span
+        >
+      </h1>
+
+      <p class="text-xl text-body/80 max-w-3xl mx-auto mb-8">
+        Explore real-world projects built with Astro and Tailwind CSS, plus
+        discover essential tools to supercharge your development workflow.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="#showcase"
+          class="px-6 py-3 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-cyan-500/30 transition-all duration-300 hover:scale-105"
+        >
+          View Showcase
+        </a>
+        <a
+          href="#tools"
+          class="px-6 py-3 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-semibold border border-default transition-all duration-300 hover:scale-105"
+        >
+          Browse Tools
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section id="showcase" class="py-20 bg-neutral-secondary-soft">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-6xl font-bold bg-linear-to-r from-cyan-500 to-orange-400 bg-clip-text text-transparent  mb-2 p-3">
+          Project Showcase
+        </h2>
+        <p class="text-lg text-cyan-400 font-semibold max-w-2xl mx-auto">
+          Real-world examples of what you can build with Astro and Tailwind CSS
+        </p>
+      </div>
+
+      <div class="mb-12 text-white">
+        <h3
+          class="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-2"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            ></path>
+          </svg>
+          Featured Projects
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          {
+            showcaseProjects
+              .filter((p) => p.featured)
+              .map((project) => (
+                <div class="group bg-neutral-primary-soft rounded-xl overflow-hidden border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/10">
+                  <div class="relative overflow-hidden aspect-video">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+                    <div class="absolute top-4 right-4">
+                      <span class="px-3 py-1 bg-cyan-500 text-white text-xs font-semibold rounded-full">
+                        Featured
+                      </span>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p class="text-body/80 mb-4">{project.description}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map((tag) => (
+                        <span class="px-3 py-1 bg-neutral-tertiary text-body text-xs rounded-full border border-default">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div class="flex gap-3">
+                      <a
+                        href={project.demoUrl}
+                        class="flex-1 px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white text-center rounded-lg font-medium transition-colors text-sm"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors text-sm border border-default"
+                      >
+                        <svg
+                          class="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))
+          }
+        </div>
+      </div>
+
+      <div class="text-white">
+        <h3 class="text-xl font-bold text-white mb-6">All Projects</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            showcaseProjects
+              .filter((p) => !p.featured)
+              .map((project) => (
+                <div class="group bg-neutral-primary-soft rounded-xl overflow-hidden border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+                  <div class="relative overflow-hidden aspect-video">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+                  </div>
+                  <div class="p-5">
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p class="text-body/80 text-sm mb-3">
+                      {project.description}
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      {project.tags.slice(0, 3).map((tag) => (
+                        <span class="px-2 py-1 bg-neutral-tertiary text-body text-xs rounded-full border border-default">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div class="flex gap-2">
+                      <a
+                        href={project.demoUrl}
+                        class="flex-1 px-3 py-2 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 text-center rounded-lg font-medium transition-colors text-sm border border-cyan-500/30"
+                      >
+                        Demo
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        class="px-3 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg transition-colors text-sm border border-default"
+                      >
+                        Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section id="showcase" class="py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-5xl font-bold bg-white/10 rounded-2xl text-white/50 text-shadow-lg text-shadow-cyan-300 shadow-lg shadow-blue-700 mb-4 p-2 animate-bounce">
+        Showcase Coming Soon
+      </h2>
+      <p class="text-2xl text-cyan-400 ">
+        We're currently building this section — <span class="text-orange-400">stay tuned for amazing projects!</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="tools" class="py-20 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-6xl font-bold text-white mb-4">
+          Essential Tools
+        </h2>
+        <p class="text-lg text-cyan-400 font-semibold max-w-2xl mx-auto">
+          Curated collection of tools and resources to enhance your Astro +
+          Tailwind development experience
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 justify-center mb-12">
+        <button
+          class="category-tab active px-4 py-2 bg-cyan-500 text-white rounded-lg font-medium transition-colors border border-default"
+          data-category="all"
+        >
+          All Tools
+        </button>
+        {
+          categories.map((category) => (
+            <button
+              class="category-tab px-4 py-2 bg-neutral-tertiary hover:bg-cyan-200/20 text-body hover:text-white hover:transition hover:ease-in-out rounded-lg font-medium transition-colors border border-default"
+              data-category={category}
+            >
+              {category}
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          tools.map((tool) => {
+            const IconComponent = iconComponents[tool.icon];
+            return (
+              <a
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tool-card group bg-neutral-secondary-soft rounded-xl p-6 border border-default hover:bg-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 hover:scale-105"
+                data-category={tool.category}
+              >
+                <div class="flex items-start gap-4 mb-4">
+                  <div class="shrink-0 w-12 h-12 bg-linear-to-br from-cyan-500/20 to-blue-500/20 rounded-lg flex items-center justify-center border border-cyan-500/30 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all">
+                    <IconComponent
+                      class="text-cyan-400 group-hover:text-cyan-300 transition-colors"
+                      size={24}
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-start justify-between mb-2">
+                      <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <svg
+                        class="w-5 h-5 text-body/50 group-hover:text-cyan-400 transition-colors shrink-0 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </div>
+                    <span class="inline-block px-2 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-full border border-cyan-500/30 mb-3">
+                      {tool.category}
+                    </span>
+                  </div>
+                </div>
+                <p class="text-body/80 text-sm">{tool.description}</p>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-linear-to-r from-cyan-950/40 to-blue-950/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Ready to Build Something Amazing?
+      </h2>
+      <p class="text-lg text-cyan-400 font-semibold mb-8">
+        Start creating your next project with Astro and Tailwind CSS
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="/docs/introduction"
+          class="px-8 py-3 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg font-semibold shadow-lg shadow-cyan-500/30 transition-all duration-300 hover:scale-105"
+        >
+          Get Started
+        </a>
+        <a
+          href="/docs"
+          class="px-8 py-3 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-semibold border border-default transition-all duration-300 hover:scale-105"
+        >
+          View Documentation
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll(".category-tab");
+  const cards = document.querySelectorAll(".tool-card");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const category = tab.dataset.category;
+
+      tabs.forEach((t) => {
+        t.classList.remove("active", "bg-cyan-500", "text-white");
+        t.classList.add("bg-neutral-tertiary", "text-body");
+      });
+      tab.classList.add("active", "bg-cyan-500", "text-white");
+      tab.classList.remove("bg-neutral-tertiary", "text-body");
+
+      cards.forEach((card) => {
+        if (category === "all" || card.dataset.category === category) {
+          card.style.display = "block";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "scale(1)";
+          }, 10);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 300);
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .tool-card {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+</style>
