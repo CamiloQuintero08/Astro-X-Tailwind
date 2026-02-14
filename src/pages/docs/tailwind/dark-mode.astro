@@ -5,7 +5,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 <DocsLayout>
   <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
     <section class="text-center mb-12 p-8 bg-linear-to-r from-blue-700/30 to-cyan-300/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
-      <div class="flex items-center justify-center gap-3 mb-4">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
         <svg
           class="w-10 h-10 text-cyan-400"
           fill="none"
@@ -78,7 +78,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             > class on the HTML element:
           </p>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <p class="text-cyan-300 text-sm mb-2">tailwind.config.mjs</p>
             <pre
               class="text-sm text-cyan-200"><code>{`/** @type {import('tailwindcss').Config} */
@@ -104,7 +104,7 @@ export default {
           <h3 class="text-xl font-bold text-cyan-400 mb-3">Media Strategy</h3>
           <p class="text-body/80 mb-4">Automatic based on system preference:</p>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <p class="text-cyan-300 text-sm mb-2">tailwind.config.mjs</p>
             <pre
               class="text-sm text-cyan-200"><code>{`/** @type {import('tailwindcss').Config} */
@@ -154,7 +154,7 @@ export default {
             > prefix to any utility class:
           </p>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<div class="bg-white dark:bg-gray-900">
   <h1 class="text-gray-900 dark:text-white">
@@ -184,7 +184,7 @@ export default {
           <h3 class="text-xl font-bold text-white mb-3">Multiple Properties</h3>
           <p class="text-body/80 mb-4">Apply dark variants to any property:</p>
 
-          <div class="bg-black/30 p-4 rounded-lg">
+          <div class="bg-black/30 p-4 rounded-lg overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<button class="
   bg-blue-500 dark:bg-blue-600
@@ -229,7 +229,7 @@ export default {
             Full dark mode toggle with localStorage persistence:
           </p>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <p class="text-cyan-300 text-sm mb-2">Add to your layout:</p>
             <pre
               class="text-sm text-cyan-200"><code>{`<!-- Dark Mode Toggle Button -->
@@ -293,7 +293,7 @@ export default {
           </h3>
           <p class="text-body/80 mb-4">Basic implementation without icons:</p>
 
-          <div class="bg-black/30 p-4 rounded-lg">
+          <div class="bg-black/30 p-4 rounded-lg overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<button onclick="toggleDarkMode()">
   Toggle Dark Mode
@@ -345,7 +345,7 @@ export default {
             Define semantic color variables that adapt to dark mode:
           </p>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <p class="text-cyan-300 text-sm mb-2">global.css</p>
             <pre
               class="text-sm text-cyan-200"><code>{`@tailwind base;
@@ -373,7 +373,7 @@ export default {
 }`}</code></pre>
           </div>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <p class="text-cyan-300 text-sm mb-2">tailwind.config.mjs</p>
             <pre
               class="text-sm text-cyan-200"><code>{`export default {
@@ -391,7 +391,7 @@ export default {
 }`}</code></pre>
           </div>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <p class="text-cyan-300 text-sm mb-2">Usage:</p>
             <pre
               class="text-sm text-cyan-200"><code>{`<div class="bg-bg-primary text-text-primary border-border">
@@ -417,7 +417,7 @@ export default {
           </h3>
           <p class="text-body/80 mb-4">Apply dark variants directly:</p>
 
-          <div class="bg-black/30 p-4 rounded-lg">
+          <div class="bg-black/30 p-4 rounded-lg overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white border-gray-200 dark:border-gray-700">
   <!-- More verbose but explicit -->
@@ -451,7 +451,7 @@ export default {
         >
           <h3 class="text-xl font-bold text-white mb-3">Dark Mode Card</h3>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<div class="
   bg-white dark:bg-gray-800
@@ -491,7 +491,7 @@ export default {
         >
           <h3 class="text-xl font-bold text-white mb-3">Button Variants</h3>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<!-- Primary Button -->
 <button class="
@@ -549,7 +549,7 @@ export default {
         >
           <h3 class="text-xl font-bold text-white mb-3">Form Elements</h3>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<input 
   type="text" 
@@ -584,7 +584,7 @@ export default {
         >
           <h3 class="text-xl font-bold text-white mb-3">Navigation Bar</h3>
 
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
+          <div class="bg-black/30 p-4 rounded-lg mb-4 overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<nav class="
   bg-white dark:bg-gray-900
@@ -662,7 +662,7 @@ export default {
             Show different images for light and dark modes:
           </p>
 
-          <div class="bg-black/30 p-4 rounded-lg">
+          <div class="bg-black/30 p-4 rounded-lg overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<!-- Light mode image -->
 <img src="logo-dark.png" class="block dark:hidden" alt="Logo" />
@@ -680,7 +680,7 @@ export default {
           </h3>
           <p class="text-body/80 mb-4">Reduce brightness in dark mode:</p>
 
-          <div class="bg-black/30 p-4 rounded-lg">
+          <div class="bg-black/30 p-4 rounded-lg overflow-x-auto">
             <pre
               class="text-sm text-cyan-200"><code>{`<img 
   src="photo.jpg" 
