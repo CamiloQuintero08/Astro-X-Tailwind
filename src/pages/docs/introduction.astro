@@ -1,10 +1,18 @@
 ---
 import IntroductionIcon from "../../icons/IntroductionIcon.astro";
+import LightningIcon from "../../icons/LightningIcon.astro";
+import RocketIcon from "../../icons/RocketIcon.astro";
 import DocsLayout from "../../layouts/DocsLayout.astro";
+import DeviceIcon from "../../icons/DeviceIcon.astro"
+import PaintIcon from "../../icons/Paint.astro";
+import StarsIcon from "../../icons/StartsIcon.astro";
+import ConceptIcon from "../../icons/ConceptIcon.astro";
+import PaletteIcon from "../../icons/PaletteIcon.astro";
+import ZoomIcon from "../../icons/ZoomIcon.astro";
 ---
 
 <DocsLayout>
-  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <section
       class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
     >
@@ -16,33 +24,41 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           Introduction
         </h1>
       </div>
-      <p class="text-lg text-body/80">
+      <p class="text-lg text-white">
         Learn the fundamentals of building modern web applications with Astro
         and Tailwind CSS
       </p>
     </section>
 
-    <section
-      class="mb-12 p-6 bg-neutral-secondary-soft rounded-lg border border-default"
-    >
-      <h2 class="text-2xl font-bold text-white mb-4">What is Astro?</h2>
-      <p class="text-body/80 mb-4">
+    <section class="mb-12 p-6 bg-black/70 rounded-lg border border-purple-600">
+      <h2 class="text-3xl text-center font-bold text-purple-500 mb-4">
+        What is Astro?
+      </h2>
+      <p class="mb-4 text-white text-center">
         Astro is a modern web framework designed for building fast,
         content-focused websites. It combines the best of static site generation
         with the flexibility of dynamic components, allowing you to create
         incredibly performant web applications with minimal JavaScript overhead.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-        <div class="p-4 bg-cyan-950/20 rounded-lg border border-cyan-500/30">
-          <h3 class="text-cyan-300 font-bold mb-2">⚡ Performance First</h3>
-          <p class="text-sm text-body/80">
+        <div class="p-4 bg-pink-800/30 rounded-lg border border-cyan-500/30">
+          <div class="flex gap-2">
+            <LightningIcon class="text-purple-300"/>
+            <h3 class="text-purple-300 font-bold mb-2">Performance First</h3>
+          </div>
+          <p class="text-sm text-white">
             Sends minimal JavaScript to the browser, resulting in lightning-fast
             load times and better user experience.
           </p>
         </div>
-        <div class="p-4 bg-blue-950/20 rounded-lg border border-blue-500/30">
-          <h3 class="text-blue-300 font-bold mb-2">🔧 Islands Architecture</h3>
-          <p class="text-sm text-body/80">
+        <div class="p-4 bg-orange-800/30 rounded-lg border border-blue-500/30">
+          <div class="flex gap-2">
+            <DeviceIcon class="size-7 text-orange-300"/>
+            <h3 class="text-orange-300 font-bold mb-2">
+              Islands Architecture
+            </h3>
+          </div>
+          <p class="text-sm text-white">
             Load interactive components only when needed, keeping your pages
             lightweight and responsive.
           </p>
@@ -50,27 +66,33 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <section
-      class="mb-12 p-6 bg-neutral-secondary-soft rounded-lg border border-default"
-    >
-      <h2 class="text-2xl font-bold text-white mb-4">What is Tailwind CSS?</h2>
-      <p class="text-body/80 mb-4">
+    <section class="mb-12 p-6 bg-black/70 rounded-lg border border-cyan-600">
+      <h2 class="text-3xl text-center font-bold text-cyan-400 mb-4">
+        What is Tailwind CSS?
+      </h2>
+      <p class="text-white mb-4 text-center">
         Tailwind CSS is a utility-first CSS framework that empowers you to build
         modern designs without ever leaving your HTML. Instead of relying on
         pre-made components, Tailwind provides low-level utility classes that
         let you construct custom designs with precision and consistency.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-        <div class="p-4 bg-cyan-950/20 rounded-lg border border-cyan-500/30">
-          <h3 class="text-cyan-300 font-bold mb-2">🎨 Design System</h3>
-          <p class="text-sm text-body/80">
+        <div class="p-4 bg-cyan-800/30 rounded-lg border border-cyan-500/30">
+          <div class="flex gap-2">
+            <PaintIcon class="size-7 text-cyan-300"/>
+            <h3 class="text-cyan-300 font-bold mb-2">Design System</h3>
+          </div>
+          <p class="text-sm text-white">
             A comprehensive set of colors, spacing, typography, and more that
             ensures visual consistency across your project.
           </p>
         </div>
-        <div class="p-4 bg-blue-950/20 rounded-lg border border-blue-500/30">
-          <h3 class="text-blue-300 font-bold mb-2">✨ Rapid Development</h3>
-          <p class="text-sm text-body/80">
+        <div class="p-4 bg-blue-800/30 rounded-lg border border-blue-500/30">
+          <div class="flex gap-2">
+            <StarsIcon class="size-7 text-blue-300"/>
+            <h3 class="text-blue-300 font-bold mb-2">Rapid Development</h3>
+          </div>
+          <p class="text-sm text-white">
             Style your components directly in markup, accelerating development
             and reducing context switching.
           </p>
@@ -78,13 +100,13 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <section
-      class="mb-12 p-6 bg-neutral-secondary-soft rounded-lg border border-default"
-    >
-      <h2 class="text-2xl font-bold text-white mb-4">
-        Why Astro + Tailwind CSS?
+    <section class="mb-12 p-6 bg-black/70 rounded-lg border border-white/20">
+      <h2 class="text-3xl text-center font-bold text-white mb-4">
+        Why <span class="text-purple-500">Astro</span> + <span
+          class="text-cyan-500">Tailwind CSS</span
+        >?
       </h2>
-      <p class="text-body/80 mb-4">
+      <p class="text-white text-center mb-4">
         Combining Astro with Tailwind CSS creates a powerful and efficient
         development experience. Astro handles the architecture and performance
         optimization, while Tailwind CSS provides the styling tools to create
@@ -92,36 +114,36 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </p>
       <div class="space-y-3 mt-6">
         <div
-          class="flex items-start gap-4 p-4 bg-cyan-950/20 rounded-lg border border-cyan-500/30"
+          class="flex items-start gap-4 p-4 bg-cyan-950/50 rounded-lg border border-cyan-500/30"
         >
           <span class="text-cyan-400 font-bold text-lg mt-1">✓</span>
           <div>
             <p class="text-white font-semibold">Ship less JavaScript</p>
-            <p class="text-sm text-body/80">
+            <p class="text-sm text-white">
               Astro's minimal JavaScript approach pairs perfectly with
               Tailwind's class-based styling
             </p>
           </div>
         </div>
         <div
-          class="flex items-start gap-4 p-4 bg-blue-950/20 rounded-lg border border-blue-500/30"
+          class="flex items-start gap-4 p-4 bg-blue-950/50 rounded-lg border border-blue-500/30"
         >
           <span class="text-blue-400 font-bold text-lg mt-1">✓</span>
           <div>
             <p class="text-white font-semibold">Faster development workflow</p>
-            <p class="text-sm text-body/80">
+            <p class="text-sm text-white">
               Build complete, styled components quickly without context
               switching between HTML and CSS files
             </p>
           </div>
         </div>
         <div
-          class="flex items-start gap-4 p-4 bg-purple-950/20 rounded-lg border border-purple-500/30"
+          class="flex items-start gap-4 p-4 bg-purple-950/50 rounded-lg border border-purple-500/30"
         >
           <span class="text-purple-400 font-bold text-lg mt-1">✓</span>
           <div>
             <p class="text-white font-semibold">Excellent scalability</p>
-            <p class="text-sm text-body/80">
+            <p class="text-sm text-white">
               Both frameworks are designed to scale from small projects to
               large-scale applications
             </p>
@@ -130,49 +152,59 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <section
-      class="mb-12 p-6 bg-neutral-secondary-soft rounded-lg border border-default"
-    >
-      <h2 class="text-2xl font-bold text-white mb-4">What You'll Learn</h2>
-      <p class="text-body/80 mb-6">
+    <section class="mb-12 p-6 bg-black/70 rounded-lg border border-white/20">
+      <h2 class="text-3xl text-center font-bold text-cyan-400 mb-4">
+        What You'll Learn
+      </h2>
+      <p class="text-white text-center mb-6">
         This documentation provides comprehensive guides to help you master both
         Astro and Tailwind CSS:
       </p>
       <div class="space-y-4">
         <div
-          class="p-4 bg-black/20 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all"
+          class="p-4 bg-cyan-300/5 rounded-lg border border-gray-700 hover:border-cyan-300 hover:bg-white/10 transition-all"
         >
-          <h3 class="text-cyan-300 font-bold mb-2">🚀 Getting Started</h3>
-          <p class="text-sm text-body/80">
+          <div class="flex gap-2">
+            <RocketIcon class="text-cyan-300"/>
+            <h3 class="text-cyan-300 font-bold mb-2">Getting Started</h3>
+          </div>
+          <p class="text-sm text-white">
             Installation instructions and initial setup to get your project
             running in minutes
           </p>
         </div>
         <div
-          class="p-4 bg-black/20 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all"
+          class="p-4 bg-blue-300/5 rounded-lg border border-gray-700 hover:border-blue-300 hover:bg-white/10 transition-all"
         >
-          <h3 class="text-blue-300 font-bold mb-2">📚 Core Concepts</h3>
-          <p class="text-sm text-body/80">
+          <div class="flex gap-2">
+            <ConceptIcon class="size-7 text-blue-300" />
+            <h3 class="text-blue-300 font-bold mb-2">Core Concepts</h3>
+          </div>
+          <p class="text-sm text-white"> 
             Understand Astro's routing, layouts, components, islands
             architecture, and content collections
           </p>
         </div>
         <div
-          class="p-4 bg-black/20 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all"
+          class="p-4 bg-purple-300/5 rounded-lg border border-gray-700 hover:border-purple-300 hover:bg-white/10 transition-all"
         >
-          <h3 class="text-purple-300 font-bold mb-2">
-            🎨 Styling with Tailwind
-          </h3>
-          <p class="text-sm text-body/80">
+          <div class="flex gap-2">
+            <PaletteIcon class="size-7 text-purple-300"/>
+            <h3 class="text-purple-300 font-bold mb-2">Styling with Tailwind</h3>
+          </div>
+          <p class="text-sm text-white">
             Master responsive design, colors, spacing, typography, dark mode and
             advanced configuration
           </p>
         </div>
         <div
-          class="p-4 bg-black/20 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all"
+          class="p-4 bg-green-300/5 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all"
         >
-          <h3 class="text-green-300 font-bold mb-2">⚙️ Best Practices</h3>
-          <p class="text-sm text-body/80">
+          <div class="flex gap-2">
+            <ZoomIcon class="size-7 text-green-300" />
+            <h3 class="text-green-300 font-bold mb-2">Best Practices</h3>
+          </div>
+          <p class="text-sm text-white">
             Professional patterns and techniques for building scalable,
             maintainable web applications
           </p>
@@ -183,8 +215,8 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     <section
       class="p-6 bg-linear-to-r from-cyan-950/30 to-blue-950/30 rounded-lg border border-cyan-500/30"
     >
-      <h2 class="text-2xl font-bold text-white mb-4">Ready to Begin?</h2>
-      <p class="text-body/80 mb-6">
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Ready to Begin?</h2>
+      <p class="text-white mb-6">
         If you're new to either Astro or Tailwind CSS, we recommend starting
         with the Installation guide to set up your first project. If you already
         have experience with these tools, feel free to jump directly to the

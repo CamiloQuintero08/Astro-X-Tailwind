@@ -1,10 +1,14 @@
 ---
+import CommandsIcon from "../../icons/CommandsIcon.astro";
 import InstallationIcon from "../../icons/InstallationIcon.astro";
 import DocsLayout from "../../layouts/DocsLayout.astro";
+import LinkIcon from "../../icons/LinkIcon.astro";
+import ListIcon from "../../icons/ListIcon.astro";
+import QuestionIcon from "../../icons/QuestionIcon.astro";
 ---
 
 <DocsLayout>
-  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <section
       class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
     >
@@ -16,14 +20,14 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           Astro + Tailwind CSS Installation
         </h1>
       </div>
-      <p class="text-lg text-body/80">
+      <p class="text-lg text-white">
         Complete guide to set up Astro with Tailwind CSS in your project
       </p>
     </section>
 
     <section class="space-y-6 mb-12">
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
       >
         <div
           class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
@@ -31,14 +35,14 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           1
         </div>
         <div class="flex-1">
-          <h2 class="text-2xl font-bold text-white mb-2">
+          <h2 class="text-2xl font-bold text-cyan-400 mb-2">
             Create a new Astro project
           </h2>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Run the following command to create a new Astro project:
           </p>
           <div
-            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+            class="bg-white/10 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
           >
             <code>npm create astro@latest my-project</code>
           </div>
@@ -54,7 +58,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
 
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
       >
         <div
           class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
@@ -62,12 +66,12 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           2
         </div>
         <div class="flex-1">
-          <h2 class="text-2xl font-bold text-white mb-2">
+          <h2 class="text-2xl font-bold text-cyan-400 mb-2">
             Navigate to project directory
           </h2>
-          <p class="text-body/80 mb-4">Navigate to your project folder:</p>
+          <p class="text-white mb-4">Navigate to your project folder:</p>
           <div
-            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+            class="bg-white/10 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
           >
             <code>cd my-project</code>
           </div>
@@ -75,7 +79,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
 
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
       >
         <div
           class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
@@ -86,23 +90,23 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           <h2 class="text-2xl font-bold text-white mb-2">
             Install Tailwind CSS
           </h2>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Use the official Astro command to install and configure Tailwind CSS
             automatically:
           </p>
           <div
-            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+            class="bg-white/10 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
           >
             <code>npx astro add tailwind</code>
           </div>
           <div
             class="mt-4 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg"
           >
-            <p class="text-blue-200 text-sm mb-3">
-              💡 This command does the following automatically:
+            <p class="text-blue-200 font-semibold text-sm mb-3">
+              💡 This command does the following automatically:2
             </p>
             <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-body/80 text-sm">
+              <li class="flex items-start gap-2 text-white text-sm">
                 <span class="text-green-400 font-bold mt-0.5">✓</span>
                 <span
                   >Installs the necessary packages: <code
@@ -114,7 +118,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
                   ></span
                 >
               </li>
-              <li class="flex items-start gap-2 text-body/80 text-sm">
+              <li class="flex items-start gap-2 text-white text-sm">
                 <span class="text-green-400 font-bold mt-0.5">✓</span>
                 <span
                   >Creates the Tailwind configuration file: <code
@@ -123,7 +127,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
                   ></span
                 >
               </li>
-              <li class="flex items-start gap-2 text-body/80 text-sm">
+              <li class="flex items-start gap-2 text-white text-sm">
                 <span class="text-green-400 font-bold mt-0.5">✓</span>
                 <span
                   >Creates the global CSS file: <code
@@ -132,7 +136,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
                   ></span
                 >
               </li>
-              <li class="flex items-start gap-2 text-body/80 text-sm">
+              <li class="flex items-start gap-2 text-white text-sm">
                 <span class="text-green-400 font-bold mt-0.5">✓</span>
                 <span>Updates the Astro configuration</span>
               </li>
@@ -141,9 +145,8 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
         </div>
       </div>
 
-      <!-- Step 4 -->
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
       >
         <div
           class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
@@ -151,16 +154,16 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           4
         </div>
         <div class="flex-1">
-          <h2 class="text-2xl font-bold text-white mb-2">
+          <h2 class="text-2xl font-bold text-cyan-400 mb-2">
             Configure Tailwind CSS (Optional)
           </h2>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Edit the <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
               >tailwind.config.mjs</code
             > file if you need to customize Tailwind:
           </p>
           <div
-            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto"
+            class="bg-white/10 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto"
           >
             <pre
               class="text-cyan-300"><code>{`/** @type {import('tailwindcss').Config} */ 
@@ -180,7 +183,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
 
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
       >
         <div
           class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
@@ -188,15 +191,15 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           5
         </div>
         <div class="flex-1">
-          <h2 class="text-2xl font-bold text-white mb-2">
+          <h2 class="text-2xl font-bold text-cyan-400 mb-2">
             Verify the installation
           </h2>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Start the development server to verify that everything works
             correctly:
           </p>
           <div
-            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
+            class="bg-white/10 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-sm overflow-x-auto"
           >
             <code>npm run dev</code>
           </div>
@@ -205,7 +208,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           >
             <p class="text-blue-200 text-sm">
               💡 Your project should be running at <code
-                class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                class="bg-black/30 font-bold px-2 py-0.5 rounded text-cyan-300"
                 >http://localhost:4321</code
               >
             </p>
@@ -214,7 +217,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
 
       <div
-        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 group"
       >
         <div
           class="shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
@@ -222,14 +225,14 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           6
         </div>
         <div class="flex-1">
-          <h2 class="text-2xl font-bold text-white mb-2">
+          <h2 class="text-2xl font-bold text-cyan-400 mb-2">
             Start using Tailwind
           </h2>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Now you can use Tailwind CSS classes in your Astro components:
           </p>
           <div
-            class="bg-black/50 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto"
+            class="bg-white/10 text-cyan-300 p-4 rounded-lg border-l-4 border-cyan-500 font-mono text-xs sm:text-sm overflow-x-auto"
           >
             <pre
               class="text-cyan-300"><code>&lt;div class="flex items-center justify-center min-h-screen bg-linear-to-r from-blue-500 to-purple-600"&gt;
@@ -241,9 +244,9 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     </section>
 
     <section
-      class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8"
+      class="bg-black/70 p-6 sm:p-8 rounded-lg border border-white/20 mb-8"
     >
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+      <h2 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">
         <svg
           class="w-8 h-8 text-cyan-400"
           fill="none"
@@ -258,9 +261,13 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
         </svg>
         Installation Verification
       </h2>
-      <div class="space-y-3">
+      <p class="text-white mb-3">
+        Select the parts you have already completed to finish the installation
+        correctly
+      </p>
+      <div class="space-y-3 text-white">
         <label
-          class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group"
+          class="flex items-center gap-3 p-3 rounded-lg bg-white/10 hover:bg-cyan-400/20 transition-colors cursor-pointer group"
         >
           <input
             type="checkbox"
@@ -271,7 +278,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           >
         </label>
         <label
-          class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group"
+          class="flex items-center gap-3 p-3 rounded-lg bg-white/10 hover:bg-cyan-400/20 transition-colors cursor-pointer group"
         >
           <input
             type="checkbox"
@@ -282,7 +289,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           >
         </label>
         <label
-          class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group"
+          class="flex items-center gap-3 p-3 rounded-lg bg-white/10 hover:bg-cyan-400/20 transition-colors cursor-pointer group"
         >
           <input
             type="checkbox"
@@ -295,7 +302,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           >
         </label>
         <label
-          class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group"
+          class="flex items-center gap-3 p-3 rounded-lg bg-white/10 hover:bg-cyan-400/20 transition-colors cursor-pointer group"
         >
           <input
             type="checkbox"
@@ -306,7 +313,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           >
         </label>
         <label
-          class="flex items-center gap-3 p-3 rounded-lg hover:bg-neutral-tertiary transition-colors cursor-pointer group"
+          class="flex items-center gap-3 p-3 rounded-lg bg-white/10 hover:bg-cyan-400/20 transition-colors cursor-pointer group"
         >
           <input
             type="checkbox"
@@ -320,9 +327,12 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     </section>
 
     <section
-      class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8"
+      class="bg-black/70 p-6 sm:p-8 rounded-lg border border-white/20 mb-8"
     >
-      <h2 class="text-3xl font-bold text-white mb-6">Useful Commands</h2>
+      <div class="flex gap-2">
+        <CommandsIcon class="size-9 text-cyan-400" />
+        <h2 class="text-3xl font-bold text-white mb-6">Useful Commands</h2>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div
           class="bg-linear-to-br from-cyan-500 to-blue-500 p-5 rounded-lg hover:-translate-y-1 transition-transform duration-200"
@@ -370,46 +380,49 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     </section>
 
     <section
-      class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default mb-8"
+      class="bg-black/70 p-6 sm:p-8 rounded-lg border border-white/10 mb-8"
     >
-      <h2 class="text-3xl font-bold text-white mb-6">Useful Resources</h2>
+      <div class="flex gap-2">
+        <ListIcon class="size-9 text-cyan-400" />
+        <h2 class="text-3xl font-bold text-white mb-6">Useful Resources</h2>
+      </div>
       <ul class="space-y-3">
         <li class="flex items-start gap-3">
-          <span class="text-2xl">🔗</span>
+          <LinkIcon class="size-7 text-cyan-400" />
           <a
             href="https://docs.astro.build"
             target="_blank"
-            class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+            class="text-white hover:text-cyan-300 hover:underline hover:scale-105 hover:transition-all transition-colors"
           >
             Official Astro Documentation
           </a>
         </li>
         <li class="flex items-start gap-3">
-          <span class="text-2xl">🔗</span>
+          <LinkIcon class="size-7 text-cyan-400" />
           <a
             href="https://tailwindcss.com/docs"
             target="_blank"
-            class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+            class="text-white hover:text-cyan-300 hover:underline hover:scale-105 hover:transition-all transition-colors"
           >
             Official Tailwind CSS Documentation
           </a>
         </li>
         <li class="flex items-start gap-3">
-          <span class="text-2xl">🔗</span>
+          <LinkIcon class="size-7 text-cyan-400" />
           <a
             href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
             target="_blank"
-            class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+            class="text-white hover:text-cyan-300 hover:underline hover:scale-105 hover:transition-all transition-colors"
           >
             Tailwind Integration in Astro
           </a>
         </li>
         <li class="flex items-start gap-3">
-          <span class="text-2xl">🔗</span>
+          <LinkIcon class="size-7 text-cyan-400" />
           <a
             href="https://tailwindcss.com/blog/tailwindcss-v4"
             target="_blank"
-            class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+            class="text-white hover:text-cyan-300 hover:underline hover:scale-105 hover:transition-all transition-colors"
           >
             Tailwind CSS v4 News
           </a>
@@ -417,16 +430,17 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </ul>
     </section>
 
-    <section
-      class="bg-neutral-secondary-soft p-6 sm:p-8 rounded-lg border border-default"
-    >
+    <section class="bg-black/70 p-6 sm:p-8 rounded-lg border border-white/20">
       <h2 class="text-3xl font-bold text-white mb-6">Troubleshooting</h2>
       <div class="space-y-6">
-        <div class="pb-6 border-b border-default">
-          <h3 class="text-xl font-semibold text-white mb-2">
-            ❓ Tailwind styles are not being applied
-          </h3>
-          <p class="text-body/80 leading-relaxed">
+        <div class="pb-6 border-b border-cyan-400">
+          <div class="flex gap-1">
+            <QuestionIcon class="size-7 text-cyan-400" />
+            <h3 class="text-xl font-semibold text-white mb-2">
+              Tailwind styles are not being applied
+            </h3>
+          </div>
+          <p class="text-white leading-relaxed">
             Verify that the <code
               class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
               >content</code
@@ -436,11 +450,14 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             > includes the correct paths to your Astro files (.astro).
           </p>
         </div>
-        <div class="pb-6 border-b border-default">
-          <h3 class="text-xl font-semibold text-white mb-2">
-            ❓ Error during installation
-          </h3>
-          <p class="text-body/80 leading-relaxed">
+        <div class="pb-6 border-b border-cyan-400">
+          <div class="flex gap-1">
+            <QuestionIcon class="size-7 text-cyan-400" />
+            <h3 class="text-xl font-semibold text-white mb-2">
+              Error during installation
+            </h3>
+          </div>
+          <p class="text-white leading-relaxed">
             Try deleting the <code
               class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
               >node_modules</code
@@ -454,10 +471,13 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           </p>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-white mb-2">
-            ❓ Tailwind classes are marked in red in the editor
-          </h3>
-          <p class="text-body/80 leading-relaxed">
+          <div class="flex gap-1">
+            <QuestionIcon class="size-7 text-cyan-400" />
+            <h3 class="text-xl font-semibold text-white mb-2">
+              Tailwind classes are marked in red in the editor
+            </h3>
+          </div>
+          <p class="text-white leading-relaxed">
             Install the official Tailwind CSS extension for VS Code to get
             autocomplete and intellisense.
           </p>
