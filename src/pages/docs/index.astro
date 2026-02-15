@@ -4,8 +4,9 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
 <DocsLayout>
   <div class="max-w-5xl mx-auto mt-12 px-4 text-white">
-    <div class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
-      <div class="flex items-center justify-center gap-3 mb-4">
+    <!-- Hero con animación de entrada -->
+    <div class="text-center mb-12 p-8 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-xl border border-cyan-500/20 backdrop-blur-sm fade-in-up">
+      <div class="flex items-center justify-center gap-3 mb-4 fade-in-up delay-100">
         <svg
           class="w-10 h-10 text-cyan-400"
           fill="none"
@@ -22,14 +23,16 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
         <h1 class="text-5xl font-bold text-white">Documentation</h1>
       </div>
 
-      <p class="text-body/90 text-white text-xl leading-relaxed">
-        Welcome to the complete documentation of <span
+      <p class="text-body/90 text-white text-xl leading-relaxed fade-in-up delay-200">
+        Welcome to the complete documentation of <span class="text-purple-400 font-semibold">Astro</span> & <span
           class="text-cyan-400 font-semibold">Tailwind CSS</span
-        > with <span class="text-purple-400 font-semibold">Astro</span>. Learn to
+        >. Learn to
         build fast, modern, and responsive web applications.
       </p>
     </div>
-    <section class="mb-12">
+
+    <!-- Start Here Section -->
+    <section class="mb-12 fade-in-up delay-300">
       <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
           class="w-6 h-6 text-cyan-400"
@@ -49,7 +52,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       <div class="grid gap-6 md:grid-cols-3">
         <a
           href="/docs/introduction"
-          class="group p-6 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all duration-200"
+          class="group p-6 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all duration-200 fade-in-up delay-350"
         >
           <div class="flex items-center gap-3 mb-3">
             <svg
@@ -74,7 +77,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
         <a
           href="/docs/installation"
-          class="group p-6 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all duration-200"
+          class="group p-6 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all duration-200 fade-in-up delay-400"
         >
           <div class="flex items-center gap-3 mb-3">
             <svg
@@ -99,7 +102,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
         <a
           href="/docs/quick-start"
-          class="group p-6 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all duration-200"
+          class="group p-6 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all duration-200 fade-in-up delay-450"
         >
           <div class="flex items-center gap-3 mb-3">
             <svg
@@ -123,7 +126,8 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <section class="mb-12">
+    <!-- Main Topics Section -->
+    <section class="mb-12 fade-in-up delay-500">
       <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
           class="w-6 h-6 text-cyan-400"
@@ -143,7 +147,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
       <div class="grid gap-6 md:grid-cols-2">
         <div
-          class="p-6 bg-black/80 rounded-lg border border-default border-white/20"
+          class="p-6 bg-black/80 rounded-lg border border-default border-white/20 fade-in-up delay-550"
         >
           <div class="flex items-center gap-3 mb-4">
             <svg
@@ -228,7 +232,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           </ul>
         </div>
         <div
-          class="p-6 bg-black/70 rounded-lg border border-default border-white/20"
+          class="p-6 bg-black/70 rounded-lg border border-default border-white/20 fade-in-up delay-600"
         >
           <div class="flex items-center gap-3 mb-4">
             <svg
@@ -316,7 +320,8 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <section class="mb-12">
+    <!-- Component Library Section -->
+    <section class="mb-12 fade-in-up delay-650">
       <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
           class="w-6 h-6 text-cyan-400"
@@ -337,7 +342,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       <div class="grid gap-4 md:grid-cols-4">
         <a
           href="/docs/components/buttons"
-          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group"
+          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group fade-in-up delay-700"
         >
           <svg
             class="w-6 h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform"
@@ -358,7 +363,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
         <a
           href="/docs/components/cards"
-          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group"
+          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group fade-in-up delay-750"
         >
           <svg
             class="w-6 h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform"
@@ -381,7 +386,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
         <a
           href="/docs/components/forms"
-          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group"
+          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group fade-in-up delay-800"
         >
           <svg
             class="w-6 h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform"
@@ -404,7 +409,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 
         <a
           href="/docs/components/navigation"
-          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group"
+          class="p-4 bg-white/10 rounded-lg border border-default border-white/20 hover:border-cyan-500/50 hover:bg-blue-950/20 transition-all group fade-in-up delay-850"
         >
           <svg
             class="w-6 h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform"
@@ -424,9 +429,10 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </section>
 
+    <!-- Advanced & Resources Section -->
     <div class="grid gap-6 md:grid-cols-2 mb-12">
       <div
-        class="p-6 bg-linear-to-br from-purple-950/30 to-pink-950/30 rounded-lg border border-purple-500/20"
+        class="p-6 bg-linear-to-br from-purple-950/30 to-pink-950/30 rounded-lg border border-purple-500/20 fade-in-up delay-900"
       >
         <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <svg
@@ -508,7 +514,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
 
       <div
-        class="p-6 bg-linear-to-br from-purple-950/30 to-pink-950/30 rounded-lg border border-purple-500/20"
+        class="p-6 bg-linear-to-br from-purple-950/30 to-pink-950/30 rounded-lg border border-purple-500/20 fade-in-up delay-950"
       >
         <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
           <svg
@@ -599,8 +605,9 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       </div>
     </div>
 
+    <!-- Help Section -->
     <section
-      class="p-6 bg-black/70 rounded-lg border border-default border-white/20"
+      class="p-6 bg-black/70 rounded-lg border border-default border-white/20 fade-in-up delay-1000"
     >
       <div class="flex items-start gap-4">
         <svg
@@ -637,3 +644,90 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
     </section>
   </div>
 </DocsLayout>
+
+<style>
+  /* Animaciones de entrada */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-350 {
+    animation-delay: 0.35s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-450 {
+    animation-delay: 0.45s;
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .delay-550 {
+    animation-delay: 0.55s;
+  }
+
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .delay-650 {
+    animation-delay: 0.65s;
+  }
+
+  .delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  .delay-750 {
+    animation-delay: 0.75s;
+  }
+
+  .delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .delay-850 {
+    animation-delay: 0.85s;
+  }
+
+  .delay-900 {
+    animation-delay: 0.9s;
+  }
+
+  .delay-950 {
+    animation-delay: 0.95s;
+  }
+
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+</style>
