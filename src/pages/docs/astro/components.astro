@@ -3,69 +3,106 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout>
-  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
-    <section class="text-center mb-12 p-8 bg-linear-to-r from-purple-400/30 to-pink-500/30 rounded-xl border border-cyan-500/20 backdrop-blur-sm">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <section
+      class="text-center mb-12 p-8 bg-linear-to-r from-purple-400/30 to-pink-500/30 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
+    >
       <div class="flex items-center justify-center gap-3 mb-4">
-        <svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+        <svg
+          class="w-10 h-10 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+          ></path>
         </svg>
-        <h1 class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text ">
+        <h1
+          class="text-4xl md:text-5xl font-bold text-white bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text"
+        >
           Astro Components
         </h1>
       </div>
 
-      <p class="text-body/90 text-lg leading-relaxed mb-4">
-        Components are the building blocks of your Astro application. Learn how to create reusable, performant components with Astro's unique syntax.
+      <p class="text-white text-lg leading-relaxed mb-4">
+        Components are the building blocks of your Astro application. Learn how
+        to create reusable, performant components with Astro's unique syntax.
       </p>
 
-      <div class="bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg">
-        <p class="text-blue-200 text-sm">
-          💡 <strong>Key Advantage:</strong> Astro components render to HTML at build time with zero JavaScript by default, resulting in blazing-fast websites.
+      <div class="bg-purple-950/30 border-l-4 border-purple-400 p-4 rounded-lg">
+        <p class="text-pink-200 text-sm">
+          💡 <strong>Key Advantage:</strong> Astro components render to HTML at build
+          time with zero JavaScript by default, resulting in blazing-fast websites.
         </p>
       </div>
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
         </svg>
         What are Astro Components?
       </h2>
 
-      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default mb-6">
-        <p class="text-body/80 mb-4 leading-relaxed">
-          Astro components are reusable pieces of UI with a <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">.astro</code> extension. They combine:
+      <div class="bg-black/70 p-6 rounded-lg border border-white/20 mb-6">
+        <p class="text-white mb-4 leading-relaxed">
+          Astro components are reusable pieces of UI with a <code
+            class="bg-white/10 px-2 py-0.5 rounded text-pink-300">.astro</code
+          > extension. They combine:
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <span class="text-green-400 font-bold text-xl">✓</span>
             <div>
               <strong class="text-white">HTML Template:</strong>
-              <span class="text-body/80"> The structure and markup of your component</span>
+              <span class="text-white">
+                The structure and markup of your component</span
+              >
             </div>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-green-400 font-bold text-xl">✓</span>
             <div>
               <strong class="text-white">Component Script:</strong>
-              <span class="text-body/80"> Server-side logic that runs at build time</span>
+              <span class="text-white">
+                Server-side logic that runs at build time</span
+              >
             </div>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-green-400 font-bold text-xl">✓</span>
             <div>
               <strong class="text-white">Scoped Styles:</strong>
-              <span class="text-body/80"> CSS that only applies to this component</span>
+              <span class="text-white">
+                CSS that only applies to this component</span
+              >
             </div>
           </li>
         </ul>
       </div>
 
-      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30">
-        <h3 class="text-xl font-bold text-white mb-4">Basic Component Structure</h3>
-        <div class="bg-black/30 p-4 rounded-lg">
-          <pre class="text-sm text-cyan-200"><code>{`---
+      <div class="bg-linear-to-r from-pink-500/10 to-purple-500/10 hover:shadow-lg hover:shadow-purple-900 transition-all duration-300 p-6 rounded-lg border border-purple-500">
+        <h3 class="text-2xl font-bold text-white mb-4">
+          Basic Component Structure
+        </h3>
+        <div class="bg-white/10 p-4 rounded-lg">
+          <pre
+            class="text-sm text-pink-200"><code>{`---
 // Component Script (runs on the server)
 const greeting = "Hello";
 const name = "World";
@@ -89,25 +126,48 @@ const name = "World";
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
         </svg>
         Creating Your First Component
       </h2>
 
-      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 mb-6 group">
-        <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-purple-500 transition-all duration-300 mb-6 group"
+      >
+        <div
+          class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-pink-500 to-purple-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+        >
           1
         </div>
         <div class="flex-1">
-          <h3 class="text-2xl font-bold text-white mb-2">Create a Component File</h3>
-          <p class="text-body/80 mb-4">
-            Create a new <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">.astro</code> file in <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">src/components/</code>:
+          <h3 class="text-2xl font-bold text-white mb-2">
+            Create a Component File
+          </h3>
+          <p class="text-white mb-4">
+            Create a new <code
+              class="bg-white/10 font-semibold px-2 py-0.5 rounded text-pink-300">.astro</code
+            > file in <code
+              class="bg-white/10 font-semibold px-2 py-0.5 rounded text-pink-300"
+              >src/components/</code
+            >:
           </p>
-          <div class="bg-black/30 p-4 rounded-lg mb-3">
-            <p class="text-cyan-300 text-sm mb-2">src/components/Button.astro</p>
-            <pre class="text-sm text-cyan-200"><code>{`---
+          <div class="bg-white/10 border border-white/10 p-4 rounded-lg mb-3">
+            <p class="text-pink-300 font-semibold text-lg mb-2">
+              src/components/Button.astro
+            </p>
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 // No props yet - just a simple button
 ---
 
@@ -133,18 +193,23 @@ const name = "World";
         </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-neutral-secondary-soft p-6 rounded-lg border border-default hover:border-cyan-500/50 transition-all duration-300 group">
-        <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-blue-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+      <div
+        class="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-black/70 p-6 rounded-lg border border-white/20 hover:border-purple-500 transition-all duration-300 group"
+      >
+        <div
+          class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-pink-500 to-purple-500 text-white font-bold text-2xl rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+        >
           2
         </div>
         <div class="flex-1">
           <h3 class="text-2xl font-bold text-white mb-2">Use the Component</h3>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Import and use your component in any page or layout:
           </p>
-          <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">src/pages/index.astro</p>
-            <pre class="text-sm text-cyan-200"><code>{`---
+          <div class="bg-white/10 border border-white/10 p-4 rounded-lg">
+            <p class="text-pink-300 text-lg font-semibold mb-2">src/pages/index.astro</p>
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 import Button from '../components/Button.astro';
 ---
 
@@ -161,23 +226,37 @@ import Button from '../components/Button.astro';
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
         </svg>
         Component Props
       </h2>
 
       <div class="space-y-6">
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Defining Props</h3>
-          <p class="text-body/80 mb-4">
-            Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">Astro.props</code> to access props passed to your component:
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">Defining Props</h3>
+          <p class="text-white mb-4">
+            Use <code class="bg-purple-500/20 px-2 py-0.5 rounded text-pink-300 font-semibold"
+              >Astro.props</code
+            > to access props passed to your component:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg mb-4">
-            <p class="text-cyan-300 text-sm mb-2">src/components/Greeting.astro</p>
-            <pre class="text-sm text-cyan-200"><code>{`---
+
+          <div class="bg-linear-to-r from-yellow-500/10 to-orange-500/10 p-4 rounded-lg mb-4 border border-orange-400">
+            <p class="text-yellow-300 text-lg font-semibold mb-2">
+              src/components/Greeting.astro
+            </p>
+            <pre
+              class="text-sm text-yellow-200"><code>{`---
 const { name, age } = Astro.props;
 ---
 
@@ -187,9 +266,10 @@ const { name, age } = Astro.props;
 </div>`}</code></pre>
           </div>
 
-          <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">Usage:</p>
-            <pre class="text-sm text-cyan-200"><code>{`---
+          <div class="bg-linear-to-r from-pink-500/10 to-purple-500/10 p-4 rounded-lg border border-pink-400">
+            <p class="text-pink-300 text-lg font-semibold mb-2">Usage:</p>
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 import Greeting from '../components/Greeting.astro';
 ---
 
@@ -198,14 +278,17 @@ import Greeting from '../components/Greeting.astro';
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">TypeScript Props Interface</h3>
-          <p class="text-body/80 mb-4">
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">
+            TypeScript Props Interface
+          </h3>
+          <p class="text-white mb-4">
             Define a TypeScript interface for type-safe props:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+
+          <div class="bg-white/10 p-4 rounded-lg border border-white/20">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 interface Props {
   title: string;
   description?: string;
@@ -227,14 +310,13 @@ const {
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Default Values</h3>
-          <p class="text-body/80 mb-4">
-            Set default values using destructuring:
-          </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">Default Values</h3>
+          <p class="text-white mb-4">Set default values using destructuring:</p>
+
+          <div class="bg-white/10 p-4 rounded-lg">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 const { 
   variant = 'primary',
   size = 'medium',
@@ -254,24 +336,37 @@ const {
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+          ></path>
         </svg>
         Slots for Content Projection
       </h2>
 
       <div class="space-y-6">
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Default Slot</h3>
-          <p class="text-body/80 mb-4">
-            Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">&lt;slot /&gt;</code> to inject content:
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">Default Slot</h3>
+          <p class="text-white mb-6">
+            Use <code class="bg-purple-500/20 px-2 py-0.5 rounded text-pink-300 font-semibold"
+              >&lt;slot /&gt;</code
+            > to inject content:
           </p>
-          
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">Card.astro</p>
-              <pre class="text-xs text-cyan-200"><code>{`---
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-linear-to-r from-white/10 to-purple-500/10 border border-purple-600 p-4 rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-purple-600/50 transition-all duration-300 ease-in-out">
+              <p class="text-pink-300 text-lg font-semibold mb-2">Card.astro</p>
+              <pre
+                class="text-sm text-pink-200"><code>{`---
 const { title } = Astro.props;
 ---
 
@@ -283,9 +378,10 @@ const { title } = Astro.props;
 </div>`}</code></pre>
             </div>
 
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">Usage</p>
-              <pre class="text-xs text-cyan-200"><code>{`<Card title="My Card">
+            <div class="bg-linear-to-r from-purple-500/10 to-white/10 border border-pink-600 p-4 rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-pink-600/50 transition-all duration-300 ease-in-out">
+              <p class="text-pink-300 text-lg font-semibold mb-2">Usage</p>
+              <pre
+                class="text-sm text-pink-200"><code>{`<Card title="My Card">
   <p>This content goes in the slot!</p>
   <button>Click me</button>
 </Card>`}</code></pre>
@@ -293,15 +389,16 @@ const { title } = Astro.props;
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Named Slots</h3>
-          <p class="text-body/80 mb-4">
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">Named Slots</h3>
+          <p class="text-white mb-4">
             Create multiple injection points with named slots:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg mb-3">
-            <p class="text-cyan-300 text-sm mb-2">Layout.astro</p>
-            <pre class="text-sm text-cyan-200"><code>{`---
+
+          <div class="bg-linear-to-r from-yellow-500/10 to-orange-500/10 p-4 rounded-lg mb-3 border border-orange-500">
+            <p class="text-yellow-300 text-lg font-semibold mb-2">Layout.astro</p>
+            <pre
+              class="text-sm text-yellow-200"><code>{`---
 ---
 
 <div class="layout">
@@ -323,9 +420,10 @@ const { title } = Astro.props;
 </div>`}</code></pre>
           </div>
 
-          <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">Usage with Named Slots</p>
-            <pre class="text-sm text-cyan-200"><code>{`<Layout>
+          <div class="bg-linear-to-r from-pink-500/10 to-purple-500/10 border border-purple-500 p-4 rounded-lg">
+            <p class="text-pink-300 text-lg font-semibold mb-2">Usage with Named Slots</p>
+            <pre
+              class="text-sm text-pink-200"><code>{`<Layout>
   <h1 slot="header">My Website</h1>
   
   <p>This is the main content</p>
@@ -339,14 +437,17 @@ const { title } = Astro.props;
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Fallback Content</h3>
-          <p class="text-body/80 mb-4">
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">
+            Fallback Content
+          </h3>
+          <p class="text-white mb-4">
             Provide default content when slot is empty:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 ---
 
 <div class="alert">
@@ -368,22 +469,33 @@ const { title } = Astro.props;
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"
+          ></path>
         </svg>
         Component Composition
       </h2>
 
-      <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-        <p class="text-body/80 mb-4">
+      <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+        <p class="text-white text-xl font-semibold mb-4">
           Build complex UIs by composing smaller components:
         </p>
 
         <div class="space-y-4">
-          <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">BlogPost.astro</p>
-            <pre class="text-sm text-cyan-200"><code>{`---
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <p class="text-pink-300 text-lg font-semibold mb-2">BlogPost.astro</p>
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 import Card from './Card.astro';
 import Badge from './Badge.astro';
 import Author from './Author.astro';
@@ -426,22 +538,36 @@ const { title, date, tags, author } = Astro.props;
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+          ></path>
         </svg>
         Scoped Styles
       </h2>
 
       <div class="space-y-6">
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-white mb-3">Automatic Scoping</h3>
-          <p class="text-body/80 mb-4">
-            Styles in <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">&lt;style&gt;</code> tags are automatically scoped:
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-pink-500 mb-3">Automatic Scoping</h3>
+          <p class="text-white mb-4">
+            Styles in <code
+              class="bg-purple-500/20 font-semibold px-2 py-0.5 rounded text-pink-300"
+              >&lt;style&gt;</code
+            > tags are automatically scoped:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 const { variant = 'primary' } = Astro.props;
 ---
 
@@ -476,14 +602,17 @@ const { variant = 'primary' } = Astro.props;
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-white mb-3">Global Styles</h3>
-          <p class="text-body/80 mb-4">
-            Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">:global()</code> for styles that affect children:
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-pink-500 mb-3">Global Styles</h3>
+          <p class="text-white mb-4">
+            Use <code class="bg-purple-500/20 font-semibold px-2 py-0.5 rounded text-pink-300"
+              >:global()</code
+            > for styles that affect children:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`<style>
+
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <pre
+              class="text-sm text-pink-200"><code>{`<style>
   .container {
     padding: 2rem;
   }
@@ -506,22 +635,36 @@ const { variant = 'primary' } = Astro.props;
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
         </svg>
         Client-Side Scripts
       </h2>
 
       <div class="space-y-6">
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Adding Interactivity</h3>
-          <p class="text-body/80 mb-4">
-            Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">&lt;script&gt;</code> tags for client-side JavaScript:
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">
+            Adding Interactivity
+          </h3>
+          <p class="text-white mb-4">
+            Use <code class="bg-purple-500/20 font-semibold px-2 py-0.5 rounded text-pink-300"
+              >&lt;script&gt;</code
+            > tags for client-side JavaScript:
           </p>
-          
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 ---
 
 <button id="theme-toggle" class="btn">
@@ -549,30 +692,37 @@ const { variant = 'primary' } = Astro.props;
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Script Directives</h3>
-          <p class="text-body/80 mb-4">
-            Control how scripts are processed:
-          </p>
-          
+        <div class="bg-black/70 p-8 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-purple-400 mb-3">
+            Script Directives
+          </h3>
+          <p class="text-white mb-4">Control how scripts are processed:</p>
+
           <div class="space-y-3">
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">Default (bundled & optimized)</p>
-              <pre class="text-xs text-cyan-200"><code>{`<script>
+            <div class="bg-purple-500/10 p-4 rounded-lg border border-purple-500 hover:scale-102 transition-all ease-in-out duration-300 mb-4">
+              <p class="text-purple-300 text-2sm font-semibold mb-2">
+                Default (bundled & optimized)
+              </p>
+              <pre
+                class="text-sm text-purple-200"><code>{`<script>
   console.log('This gets bundled');
 </script>`}</code></pre>
             </div>
 
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">is:inline (not processed)</p>
-              <pre class="text-xs text-cyan-200"><code>{`<script is:inline>
+            <div class="bg-pink-500/10 p-4 rounded-lg border border-pink-500 hover:scale-102 transition-all ease-in-out duration-300 mb-4">
+              <p class="text-pink-300 text-2sm font-semibold mb-2">
+                is:inline (not processed)
+              </p>
+              <pre
+                class="text-sm text-pink-200"><code>{`<script is:inline>
   console.log('Runs inline, not bundled');
 </script>`}</code></pre>
             </div>
 
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">External script</p>
-              <pre class="text-xs text-cyan-200"><code>{`<script src="/scripts/analytics.js"></script>`}</code></pre>
+            <div class="bg-orange-500/10 p-4 rounded-lg border border-orange-500 hover:scale-102 transition-all ease-in-out duration-300 mb-4">
+              <p class="text-yellow-300 text-2sm font-semibold mb-2">External script</p>
+              <pre
+                class="text-sm text-yellow-200"><code>{`<script src="/scripts/analytics.js"></script>`}</code></pre>
             </div>
           </div>
         </div>
@@ -580,18 +730,29 @@ const { variant = 'primary' } = Astro.props;
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+          ></path>
         </svg>
         Practical Examples
       </h2>
 
       <div class="space-y-6">
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-white mb-3">Alert Component</h3>
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-pink-500 mb-3">Alert Component</h3>
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 interface Props {
   type?: 'info' | 'success' | 'warning' | 'error';
   dismissible?: boolean;
@@ -649,10 +810,11 @@ const { type = 'info', dismissible = false } = Astro.props;
           </div>
         </div>
 
-        <div class="bg-neutral-secondary-soft p-6 rounded-lg border border-default">
-          <h3 class="text-xl font-bold text-white mb-3">Modal Component</h3>
-          <div class="bg-black/30 p-4 rounded-lg">
-            <pre class="text-sm text-cyan-200"><code>{`---
+        <div class="bg-black/70 p-6 rounded-lg border border-white/20">
+          <h3 class="text-xl font-bold text-pink-500 mb-3">Modal Component</h3>
+          <div class="bg-white/10 p-4 rounded-lg border border-purple-500">
+            <pre
+              class="text-sm text-pink-200"><code>{`---
 interface Props {
   id: string;
   title?: string;
@@ -750,17 +912,29 @@ const { id, title } = Astro.props;
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
-        <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
+        <svg
+          class="size-8 text-purple-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         Best Practices
       </h2>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gradient-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          class="bg-gradient-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg 
+          border border-green-500/50 hover:shadow-lg hover:shadow-green-500 hover:scale-105 transition-all ease-in-out duration-300 "
+        >
           <h3 class="text-lg font-semibold text-green-400 mb-4">✓ DO</h3>
-          <ul class="space-y-3 text-sm text-body/80">
+          <ul class="space-y-3 text-sm text-white">
             <li class="flex items-start gap-2">
               <span class="text-green-400">✓</span>
               <span>Keep components small and focused</span>
@@ -788,9 +962,12 @@ const { id, title } = Astro.props;
           </ul>
         </div>
 
-        <div class="bg-gradient-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20">
+        <div
+          class="bg-gradient-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border 
+          border-red-500/50 hover:shadow-lg hover:shadow-red-500 hover:scale-105 transition-all ease-in-out duration-300" 
+        >
           <h3 class="text-lg font-semibold text-red-400 mb-4">✗ DON'T</h3>
-          <ul class="space-y-3 text-sm text-body/80">
+          <ul class="space-y-3 text-sm text-white">
             <li class="flex items-start gap-2">
               <span class="text-red-400">✗</span>
               <span>Create overly complex components</span>
@@ -820,24 +997,46 @@ const { id, title } = Astro.props;
       </div>
     </section>
 
-    <section class="p-6 bg-gradient-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30">
+    <section
+      class="p-6 bg-gradient-to-r from-purple-950/40 to-pink-950/40 rounded-lg border border-orange-500/30"
+    >
       <div class="flex items-start gap-4">
-        <svg class="w-8 h-8 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        <svg
+          class="w-8 h-8 text-purple-400 flex-shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+          ></path>
         </svg>
         <div>
           <h3 class="text-lg font-semibold text-white mb-2">Next Steps</h3>
-          <p class="text-body/80 mb-4">
+          <p class="text-white mb-4">
             Now that you understand components, explore these related topics:
           </p>
           <div class="flex flex-wrap gap-3">
-            <a href="/docs/astro/layouts" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors">
+            <a
+              href="/docs/astro/layouts"
+              class="px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-medium transition-all duration-300 ease-in-out hover:scale-102"
+            >
               Layouts
             </a>
-            <a href="/docs/astro/islands" class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default">
+            <a
+              href="/docs/astro/islands"
+              class="px-4 py-2 bg-white/10 hover:bg-black/70 text-white rounded-lg font-medium transition-all duration-300 ease-in-out hover:scale-102"
+            >
               Astro Islands
             </a>
-            <a href="https://docs.astro.build/en/core-concepts/astro-components/" target="_blank" class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default">
+            <a
+              href="https://docs.astro.build/en/core-concepts/astro-components/"
+              target="_blank"
+              class="px-4 py-2 bg-white/10 hover:bg-black/70 text-white rounded-lg font-medium transition-all duration-300 ease-in-out hover:scale-102"
+            >
               Official Docs
             </a>
           </div>

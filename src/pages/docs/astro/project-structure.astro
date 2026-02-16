@@ -3,13 +3,13 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout>
-  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <section
       class="text-center mb-12 p-8 bg-linear-to-r from-purple-400/30 to-pink-500/30 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
     >
       <div class="flex justify-center items-center gap-3 mb-4">
         <svg
-          class="w-10 h-10 text-cyan-400"
+          class="w-10 h-10 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -27,16 +27,18 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
         </h1>
       </div>
 
-      <p class="text-body/90 text-lg leading-relaxed">
+      <p class="text-white text-lg leading-relaxed">
         A clear and practical layout for Astro projects. Learn how to organize
         your files for scalability, maintainability, and ease of navigation.
       </p>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+    <section class="mb-12 bg-black/70 p-6 rounded-2xl border border-white/20">
+      <h2
+        class="text-4xl font-bold text-white mb-3 flex items-center gap-2 justify-center"
+      >
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="size-8 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -50,17 +52,19 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
         </svg>
         Overview
       </h2>
-      <p class="text-body/80 text-base mb-6 leading-relaxed">
+      <p
+        class="text-white font-semibold text-base mb-6 leading-relaxed text-center"
+      >
         Organize files by purpose: content, presentation, reusable components,
         and public assets. This approach keeps projects scalable and easy to
         navigate.
       </p>
 
       <div
-        class="bg-white/10 p-6 rounded-lg border border-cyan-500/30 overflow-auto"
+        class="bg-white/10 p-6 rounded-lg border border-pink-500 overflow-auto"
       >
         <pre
-          class="text-sm text-cyan-300 font-mono"><code>/
+          class="text-sm text-white font-mono"><code>/
 ├── 📄 astro.config.mjs           # Astro configuration
 ├── 📄 package.json               # Project metadata & dependencies
 ├── 📄 tailwind.config.mjs        # Tailwind CSS configuration
@@ -125,10 +129,12 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
       </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+    <section class="mb-12 bg-black/70 p-6 rounded-2xl border border-white/20 text-white">
+      <h2
+        class="text-4xl font-bold text-white mb-6 flex items-center justify-center gap-2"
+      >
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="size-8 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -143,21 +149,20 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
       </h2>
 
       <div class="space-y-6">
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
+        <div class="bg-white/10 p-6 rounded-lg border border-pink-500">
           <h3
-            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+            class="text-2xl font-bold text-pink-500 mb-3 flex items-center gap-2"
           >
             <span class="text-2xl">📁</span>
             src/pages/
           </h3>
           <p class="text-body/80 mb-4">
             The heart of your Astro site. Every <code
-              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">.astro</code
-            >, <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
+              >.astro</code
+            >, <code class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
               >.md</code
-            >, or <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+            >, or <code class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
               >.mdx</code
             > file here becomes a route.
           </p>
@@ -165,19 +170,21 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
               <span
-                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
                   >index.astro</code
                 > → Homepage <code
-                  class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">/</code
+                  class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
+                  >/</code
                 ></span
               >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
               <span
-                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
                   >about.astro</code
-                > → <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                > → <code
+                  class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
                   >/about</code
                 ></span
               >
@@ -185,10 +192,10 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
               <span
-                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
                   >blog/[slug].astro</code
                 > → Dynamic routes like <code
-                  class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                  class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
                   >/blog/my-post</code
                 ></span
               >
@@ -196,7 +203,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
               <span
-                ><code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                ><code class="bg-black/30 px-2 py-0.5 rounded text-purple-500"
                   >api/data.json.ts</code
                 > → API endpoints</span
               >
@@ -204,11 +211,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           </ul>
         </div>
 
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
+        <div class="bg-white/10 p-6 rounded-lg border border-pink-500">
           <h3
-            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+            class="text-2xl font-bold text-pink-500 mb-3 flex items-center gap-2"
           >
             <span class="text-2xl">📁</span>
             src/layouts/
@@ -218,10 +223,12 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             typically include common elements like headers, footers, and
             metadata.
           </p>
-          <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">Example: Layout.astro</p>
+          <div class="bg-black/50 p-4 rounded-lg">
+            <p class="text-purple-500 font-semibold text-lg mb-2">
+              Example: Layout.astro
+            </p>
             <pre
-              class="text-xs text-cyan-200"><code>&lt;!-- Layout.astro --&gt;
+              class="text-sm text-pink-200"><code>&lt;!-- Layout.astro --&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;{Astro.props.title}&lt;/title&gt;
@@ -237,11 +244,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           </div>
         </div>
 
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
+        <div class="bg-white/10 p-6 rounded-lg border border-pink-500">
           <h3
-            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+            class="text-2xl font-bold text-pink-500 mb-3 flex items-center gap-2"
           >
             <span class="text-2xl">📁</span>
             src/components/
@@ -253,21 +258,21 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           <ul class="space-y-2 text-body/80">
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
-              <span
+              <span class="text-pink-200"
                 ><strong class="text-white">Astro components</strong> (.astro) - Server-rendered
                 by default</span
               >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
-              <span
+              <span class="text-pink-200"
                 ><strong class="text-white">Framework components</strong> (.jsx, .vue,
                 .svelte) - For interactive islands</span
               >
             </li>
             <li class="flex items-start gap-2">
               <span class="text-green-400 font-bold mt-0.5">✓</span>
-              <span
+              <span class="text-pink-200"
                 ><strong class="text-white">Organize by feature</strong> - Group related
                 components in subdirectories</span
               >
@@ -275,11 +280,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           </ul>
         </div>
 
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
+        <div class="bg-white/10 p-6 rounded-lg border border-pink-500">
           <h3
-            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+            class="text-2xl font-bold text-pink-500 mb-3 flex items-center gap-2"
           >
             <span class="text-2xl">📁</span>
             public/
@@ -303,9 +306,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             </li>
           </ul>
           <div
-            class="mt-4 bg-blue-950/30 border-l-4 border-blue-400 p-4 rounded-lg"
+            class="mt-4 bg-purple-950/30 border-l-4 border-purple-400 p-4 rounded-lg"
           >
-            <p class="text-blue-200 text-sm">
+            <p class="text-pink-200 text-sm">
               💡 <strong>Tip:</strong> Files in <code
                 class="bg-black/30 px-2 py-0.5 rounded">public/</code
               > are served at the root. So <code
@@ -317,15 +320,13 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
           </div>
         </div>
 
-        <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
-        >
+        <div class="bg-white/10 p-6 rounded-lg border border-pink-500">
           <h3
-            class="text-xl font-bold text-cyan-400 mb-3 flex items-center gap-2"
+            class="text-2xl font-bold text-pink-500 mb-3 flex items-center gap-2"
           >
             <span class="text-2xl">📁</span>
             src/content/ <span
-              class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded"
+              class="text-xs bg-purple-500/20 text-pink-300 px-2 py-1 rounded"
               >Optional</span
             >
           </h3>
@@ -334,8 +335,11 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             blogs, documentation, and portfolios.
           </p>
           <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">Example: config.ts</p>
-            <pre class="text-xs text-cyan-200"><code>{`import { defineCollection, z } from 'astro:content';
+            <p class="text-purple-500 font-semibold text-lg mb-2">
+              Example: config.ts
+            </p>
+            <pre
+              class="text-sm text-pink-200"><code>{`import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
   schema: z.object({
@@ -352,9 +356,9 @@ export const collections = { blog };`}</code></pre>
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="size-8 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -370,19 +374,19 @@ export const collections = { blog };`}</code></pre>
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        class="bg-linear-to-r from-green-500/10 to-red-500/10 shadow-lg shadow-white p-6 rounded-lg border border-white/20 text-white"
       >
         <div class="grid md:grid-cols-2 gap-6">
           <div>
             <h3
-              class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+              class="text-xl font-semibold text-white mb-3 flex items-center gap-2"
             >
               <span class="text-green-400">✓</span>
               Recommended
             </h3>
             <ul class="space-y-2 text-sm text-body/80">
               <li class="flex items-start gap-2">
-                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                <code class="bg-black/30 px-2 py-0.5 rounded text-green-400"
                   >kebab-case</code
                 >
                 <span
@@ -393,7 +397,7 @@ export const collections = { blog };`}</code></pre>
                 >
               </li>
               <li class="flex items-start gap-2">
-                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                <code class="bg-black/30 px-2 py-0.5 rounded text-green-400"
                   >PascalCase</code
                 >
                 <span
@@ -404,7 +408,7 @@ export const collections = { blog };`}</code></pre>
                 >
               </li>
               <li class="flex items-start gap-2">
-                <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+                <code class="bg-black/30 px-2 py-0.5 rounded text-green-400"
                   >lowercase</code
                 >
                 <span
@@ -418,26 +422,26 @@ export const collections = { blog };`}</code></pre>
           </div>
           <div>
             <h3
-              class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+              class="text-xl font-semibold text-white mb-3 flex items-center gap-2"
             >
               <span class="text-red-400">✗</span>
               Avoid
             </h3>
             <ul class="space-y-2 text-sm text-body/80">
               <li class="flex items-start gap-2">
-                <code class="bg-black/30 px-2 py-0.5 rounded text-red-300"
+                <code class="bg-black/30 px-2 py-0.5 rounded text-red-400"
                   >snake_case</code
                 >
                 <span>for files (inconsistent)</span>
               </li>
               <li class="flex items-start gap-2">
-                <code class="bg-black/30 px-2 py-0.5 rounded text-red-300"
+                <code class="bg-black/30 px-2 py-0.5 rounded text-red-400"
                   >UPPERCASE</code
                 >
                 <span>for regular files</span>
               </li>
               <li class="flex items-start gap-2">
-                <code class="bg-black/30 px-2 py-0.5 rounded text-red-300"
+                <code class="bg-black/30 px-2 py-0.5 rounded text-red-400"
                   >spaces</code
                 >
                 <span>in filenames</span>
@@ -448,10 +452,10 @@ export const collections = { blog };`}</code></pre>
       </div>
     </section>
 
-    <section class="mb-12">
+    <section class="mb-12 text-white">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -467,10 +471,14 @@ export const collections = { blog };`}</code></pre>
 
       <div class="grid md:grid-cols-2 gap-6">
         <div
-          class="bg-linear-to-br from-green-950/30 to-emerald-950/30 p-6 rounded-lg border border-green-500/20"
+          class="bg-linear-to-br from-green-950/30 to-emerald-950/30
+p-6 rounded-lg border border-green-500/70
+transition-all duration-300 ease-in-out
+hover:shadow-lg hover:shadow-green-900
+hover:scale-105"
         >
           <h3
-            class="text-lg font-semibold text-green-400 mb-4 flex items-center gap-2"
+            class="text-xl font-bold text-green-400 mb-4 flex items-center gap-2"
           >
             <svg
               class="w-5 h-5"
@@ -520,7 +528,8 @@ export const collections = { blog };`}</code></pre>
         </div>
 
         <div
-          class="bg-linear-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/20"
+          class="bg-linear-to-br from-red-950/30 to-pink-950/30 p-6 rounded-lg border border-red-500/70
+          transition-all ease-in-out duration-300 hover:shadow-lg hover:shadow-red-900 hover:scale-105"
         >
           <h3
             class="text-lg font-semibold text-red-400 mb-4 flex items-center gap-2"
@@ -569,17 +578,18 @@ export const collections = { blog };`}</code></pre>
               <span
                 >Import components using relative paths like <code
                   class="bg-black/30 px-1 rounded text-xs">../../../</code
-                ></span>
+                ></span
+              >
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+    <section class="mb-12 text-white">
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="size-8 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -595,19 +605,20 @@ export const collections = { blog };`}</code></pre>
 
       <div class="space-y-6">
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-white/20"
         >
-          <h3 class="text-lg font-semibold text-white mb-3">
+          <h3 class="text-xl font-semibold text-purple-500 mb-3">
             Use Path Aliases
           </h3>
           <p class="text-body/80 mb-4">
             Configure path aliases in <code
-              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+              class="bg-black/30 px-2 py-0.5 rounded text-pink-300"
               >tsconfig.json</code
             > to avoid long relative imports:
           </p>
-          <div class="bg-black/30 p-4 rounded-lg mb-3">
-            <pre class="text-xs text-cyan-200"><code>{`{
+          <div class="bg-white/10 p-4 rounded-lg mb-3">
+            <pre
+              class="text-sm text-pink-200"><code>{`{
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -618,10 +629,10 @@ export const collections = { blog };`}</code></pre>
   } 
 }`}</code></pre>
           </div>
-          <div class="bg-black/30 p-4 rounded-lg">
-            <p class="text-cyan-300 text-sm mb-2">Usage:</p>
+          <div class="bg-white/10 p-4 rounded-lg">
+            <p class="text-purple-500 font-semibold text-lg mb-2">Usage:</p>
             <pre
-              class="text-xs text-cyan-200"><code>// Instead of:
+              class="text-sm text-pink-200"><code>// Instead of:
 import Button from '../../../components/Button.astro';
 
 // Use:
@@ -630,27 +641,27 @@ import Button from '@components/Button.astro';</code></pre>
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-white/20"
         >
-          <h3 class="text-lg font-semibold text-white mb-3">
+          <h3 class="text-xl font-semibold text-purple-500 mb-3">
             Environment Variables
           </h3>
-          <p class="text-body/80 mb-4">
+          <p class="text-white text-lg mb-4">
             Store configuration in <code
-              class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">.env</code
+              class="bg-purple-500/20 px-2 py-0.5 rounded text-pink-300">.env</code
             > files:
           </p>
           <div class="grid md:grid-cols-2 gap-4">
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">.env</p>
+            <div class="bg-white/10 p-4 rounded-lg">
+              <p class="text-purple-500 font-semibold text-lg mb-2">.env</p>
               <pre
-                class="text-xs text-cyan-200"><code>PUBLIC_API_URL=https://api.example.com
+                class="text-sm text-pink-200"><code>PUBLIC_API_URL=https://api.example.com
 SECRET_API_KEY=abc123</code></pre>
             </div>
-            <div class="bg-black/30 p-4 rounded-lg">
-              <p class="text-cyan-300 text-sm mb-2">Usage in .astro</p>
+            <div class="bg-white/10 p-4 rounded-lg">
+              <p class="text-purple-500 font-semibold text-lg mb-2">Usage in .astro</p>
               <pre
-                class="text-xs text-cyan-200"><code>const apiUrl = import.meta.env.PUBLIC_API_URL;
+                class="text-sm text-pink-200"><code>const apiUrl = import.meta.env.PUBLIC_API_URL;
 // Only accessible server-side:
 const apiKey = import.meta.env.SECRET_API_KEY;</code></pre>
             </div>
@@ -660,9 +671,9 @@ const apiKey = import.meta.env.SECRET_API_KEY;</code></pre>
     </section>
 
     <section class="mb-12">
-      <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
+      <h2 class="text-4xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="size-8 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -677,14 +688,14 @@ const apiKey = import.meta.env.SECRET_API_KEY;</code></pre>
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30"
+        class="bg-black/70 p-6 rounded-lg border border-pink-500"
       >
-        <p class="text-body/80 mb-4">
+        <p class="text-white text-lg font-semibold mb-4">
           Here's how a documentation site might be structured:
         </p>
         <div class="bg-white/10 p-4 rounded-lg overflow-auto">
           <pre
-            class="text-sm text-cyan-300 font-mono"><code>my-docs-site/
+            class="text-sm text-pink-300 font-mono"><code>my-docs-site/
 ├── src/
 │   ├── pages/
 │   │   ├── index.astro                # Homepage
@@ -727,11 +738,11 @@ const apiKey = import.meta.env.SECRET_API_KEY;</code></pre>
     </section>
 
     <section
-      class="p-6 bg-linear-to-r from-cyan-950/40 to-blue-950/40 rounded-lg border border-cyan-500/30"
+      class="p-6 bg-linear-to-r from-pink-950/40 to-purple-950/40 rounded-lg border border-pink-500/30 text-white"
     >
       <div class="flex items-start gap-4">
         <svg
-          class="w-8 h-8 text-cyan-400 shrink-0"
+          class="size-8 text-pink-400 shrink-0"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -752,16 +763,16 @@ const apiKey = import.meta.env.SECRET_API_KEY;</code></pre>
             needs. Remember: organization is about making your code easy to find
             and maintain.
           </p>
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-4">
             <a
               href="/docs/installation"
-              class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg font-medium transition-colors"
+              class="px-4 py-2 bg-pink-500 hover:bg-pink-600 hover:scale-105 text-white rounded-lg font-medium transition-all ease-in-out duration-300"
             >
               Get Started
             </a>
             <a
               href="/docs/astro/components"
-              class="px-4 py-2 bg-neutral-tertiary hover:bg-neutral-secondary-medium text-white rounded-lg font-medium transition-colors border border-default"
+              class="px-4 py-2 bg-neutral-tertiary hover:bg-black/70 hover:scale-105 text-white rounded-lg font-medium transition-all ease-in-out duration-300 border border-default"
             >
               Learn Components
             </a>
