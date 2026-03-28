@@ -3,13 +3,13 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
 ---
 
 <DocsLayout>
-  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8 text-white">
+  <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <section
       class="text-center mb-12 p-8 bg-linear-to-r from-purple-400/30 to-pink-500/30 rounded-xl border border-cyan-500/20 backdrop-blur-sm"
     >
       <div class="flex items-center justify-center gap-3 mb-4">
         <svg
-          class="w-10 h-10 text-cyan-400"
+          class="w-10 h-10 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
         </h1>
       </div>
 
-      <p class="text-body/90 text-lg leading-relaxed mb-4">
+      <p class="text-body/90 text-lg leading-relaxed mb-4 text-white">
         Astro uses file-based routing, where every file in your <code
           class="bg-black/30 px-2 py-0.5 rounded text-cyan-300">src/pages/</code
         > directory automatically becomes a route on your website.
@@ -45,7 +45,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -61,11 +61,11 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default mb-6"
+        class="bg-black/70 p-6 rounded-lg border border-purple-500 mb-6 "
       >
-        <p class="text-body/80 mb-4">
+        <p class="text-body/80 mb-4 text-white">
           Each file in <code
-            class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
+            class="bg-pink-400/20 px-2 py-0.5 rounded text-pink-300"
             >src/pages/</code
           > creates a route based on its filename:
         </p>
@@ -75,9 +75,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             <h3 class="text-lg font-semibold text-white mb-3">
               📁 File Structure
             </h3>
-            <div class="bg-black/30 p-4 rounded-lg">
+            <div class="bg-purple-400/30 p-4 rounded-lg">
               <pre
-                class="text-sm text-cyan-300 font-mono"><code>{`src/pages/
+                class="text-sm text-pink-300 font-mono"><code>{`src/pages/
 ├── index.astro
 ├── about.astro
 ├── contact.astro
@@ -90,9 +90,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
             <h3 class="text-lg font-semibold text-white mb-3">
               🌐 Generated Routes
             </h3>
-            <div class="bg-black/30 p-4 rounded-lg">
+            <div class="bg-pink-400/30 p-4 rounded-lg">
               <pre
-                class="text-sm text-green-300 font-mono"><code>{`/
+                class="text-sm text-purple-300 font-mono"><code>{`/
 /about
 /contact
 /blog`}</code></pre>
@@ -104,7 +104,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
       <!-- Examples -->
       <div class="space-y-4">
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
           <div class="flex items-center justify-between mb-3">
             <code class="text-cyan-300 font-mono">src/pages/index.astro</code>
@@ -121,7 +121,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
           <div class="flex items-center justify-between mb-3">
             <code class="text-cyan-300 font-mono">src/pages/about.astro</code>
@@ -139,7 +139,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
           <div class="flex items-center justify-between mb-3">
             <code class="text-cyan-300 font-mono"
@@ -163,7 +163,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -179,7 +179,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-cyan-500/30"
+        class="bg-black/70 p-6 rounded-lg border border-cyan-500/30"
       >
         <p class="text-body/80 mb-6">
           Create nested URLs by organizing files in folders:
@@ -241,7 +241,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -258,7 +258,7 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
       <div class="space-y-6">
         <!-- Introduction -->
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
           <p class="text-body/80 mb-4">
             Use square brackets <code
@@ -286,9 +286,9 @@ import DocsLayout from "../../../layouts/DocsLayout.astro";
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+          <h3 class="text-xl font-bold text-pink-400 mb-3">
             Basic Dynamic Route
           </h3>
           <p class="text-body/80 mb-4">
@@ -318,9 +318,9 @@ const { slug } = Astro.params;
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+          <h3 class="text-xl font-bold text-pink-400 mb-3">
             Dynamic Routes with Props
           </h3>
           <p class="text-body/80 mb-4">
@@ -355,9 +355,9 @@ const { post } = Astro.props;
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+          <h3 class="text-xl font-bold text-pink-400 mb-3">
             Multiple Dynamic Parameters
           </h3>
           <p class="text-body/80 mb-4">
@@ -411,7 +411,7 @@ const { lang, category, slug } = Astro.params;
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -426,7 +426,7 @@ const { lang, category, slug } = Astro.params;
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        class="bg-black/70 p-6 rounded-lg border border-default"
       >
         <p class="text-body/80 mb-4">
           Use <code class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
@@ -477,7 +477,7 @@ const path = slug || '';
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -492,7 +492,7 @@ const path = slug || '';
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        class="bg-black/70 p-6 rounded-lg border border-default"
       >
         <p class="text-body/80 mb-6">
           When multiple routes could match a URL, Astro uses this priority
@@ -581,7 +581,7 @@ const path = slug || '';
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -598,9 +598,9 @@ const path = slug || '';
 
       <div class="space-y-6">
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">Static Redirects</h3>
+          <h3 class="text-xl font-bold text-pink-400 mb-3">Static Redirects</h3>
           <p class="text-body/80 mb-4">
             Configure redirects in <code
               class="bg-black/30 px-2 py-0.5 rounded text-cyan-300"
@@ -628,9 +628,9 @@ export default defineConfig({
 
         <!-- Dynamic Redirects -->
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
-          <h3 class="text-xl font-bold text-cyan-400 mb-3">
+          <h3 class="text-xl font-bold text-pink-400 mb-3">
             Dynamic Redirects
           </h3>
           <p class="text-body/80 mb-4">
@@ -665,7 +665,7 @@ if (slug === 'old-slug') {
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -680,7 +680,7 @@ if (slug === 'old-slug') {
       </h2>
 
       <div
-        class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+        class="bg-black/70 p-6 rounded-lg border border-default"
       >
         <p class="text-body/80 mb-4">
           Create a custom 404 page by adding <code
@@ -729,7 +729,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -745,7 +745,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="space-y-6">
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
           <h3 class="text-xl font-bold text-white mb-3">
             Blog with Pagination
@@ -783,7 +783,7 @@ const { page } = Astro.props;
         </div>
 
         <div
-          class="bg-neutral-secondary-soft p-6 rounded-lg border border-default"
+          class="bg-black/70 p-6 rounded-lg border border-default"
         >
           <h3 class="text-xl font-bold text-white mb-3">
             E-commerce Product Pages
@@ -825,7 +825,7 @@ const { product } = Astro.props;
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-2">
         <svg
-          class="w-7 h-7 text-cyan-400"
+          class="w-7 h-7 text-pink-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -915,7 +915,7 @@ const { product } = Astro.props;
     >
       <div class="flex items-start gap-4">
         <svg
-          class="w-8 h-8 text-cyan-400 flex-shrink-0"
+          class="w-8 h-8 text-pink-400 flex-shrink-0"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
